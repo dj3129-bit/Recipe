@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.checked{
+	width: 15px;
+  	height: 15px;
+  	border-radius: 50%;        
+  	background-color: grey;  
+  	border: none;
+  	color: white;
+  	font-size: 16px;
+  	cursor: pointer;
+}
+
+.checked:active{
+	background-color: #3498db
+}
