@@ -11,7 +11,7 @@
 		<typeAlias type="com.recipe.model.RecipeUser" alias="recipeuser"/>
 	</typeAliases>
 	
-	<!-- <mappers>
-		<mapper resource="mapper/recipe.xml"/>
-	</mappers>	 -->
+	<mappers>
+		<mapper resource="mapper/recipeuser.xml"/>
+	</mappers>
 </configuration>

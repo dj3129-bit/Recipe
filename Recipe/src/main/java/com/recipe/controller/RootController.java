@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.recipe.model.RecipeUser;
 import com.recipe.service.RecipeUserService;
@@ -35,9 +36,9 @@ public class RootController {
 		return "redirect:.";
 	}
 	
-	@GetMapping("/ts")
-	String ts() {
-		return "ts";
+	@GetMapping("/agree")
+	String agree() {
+		return "agree";
 	}
 	
 	@GetMapping("/signup")

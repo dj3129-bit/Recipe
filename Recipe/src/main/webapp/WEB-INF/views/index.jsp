@@ -19,7 +19,7 @@
 			<div><a href="login">로그인</a></div>
 		</div>
 		<div>
-			<div><a href="ts">회원가입</a></div>
+			<div><a href="agree">회원가입</a></div>
 		</div>
 	
 	</div>

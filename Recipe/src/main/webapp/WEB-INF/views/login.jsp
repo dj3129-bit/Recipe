@@ -23,7 +23,7 @@
 				</div>
 				
 				<div>
-					<div><button>로그인</button></div>
+					<div><button type="submit">로그인</button></div>
 				</div>
 			</form>
 		</div>
