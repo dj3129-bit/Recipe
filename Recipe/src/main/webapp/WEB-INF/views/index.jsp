@@ -4,23 +4,29 @@
 <html>
 <head>
 	<title>Recipe</title>
+	<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 </head>
 <meta charset="UTF-8">
 <body>
 <header>
 	<div>
-		<div>
-			<h1>레시피 로고</h1>
-		</div>
-		<div>
-			<input type="text">	
-		</div>
-		<div>
-			<div><a href="login">로그인</a></div>
-		</div>
-		<div>
-			<div><a href="agree">회원가입</a></div>
-		</div>
+		<c:if test="${sessionScope.recipeuser == null}">
+			<div>
+				<div><a href="login">로그인</a></div>
+			</div>
+			<div>
+				<div><a href="agree">회원가입</a></div>
+			</div>
+		</c:if>
+		
+		<c:if test="${sessionScope.recipeuser != null}">
+			<div>
+				<div>${sessionScope.recipeuser.nickname}님 환영합니다</div>
+				<div><a href="post/add">레시피 등록</a></div>
+				<div><a href="post/mypage">마이페이지</a></div>
+				<div><a href="logout">로그아웃</a></div>
+			</div>
+		</c:if>
 	
 	</div>
 	<nav>

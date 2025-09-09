@@ -6,4 +6,9 @@
 		INSERT INTO recipeuser 
 		VALUES (#{userid}, #{userpw}, #{username}, #{nickname}, #{useremail}, #{usertel})
 	</insert>
+	
+	<select id="item" resultType="RecipeUser">
+		SELECT * FROM recipeuser
+		WHERE userid=#{userid}
+	</select>
 </mapper>

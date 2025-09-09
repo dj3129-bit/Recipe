@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.recipe.model.RecipeUser;
 import com.recipe.service.RecipeUserService;
@@ -53,6 +52,13 @@ public class RootController {
 		return "redirect:welcome";
 	}
 	
+	@GetMapping("/logout")
+	String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:.";
+	}
+	
 	@GetMapping("/findid")
 	String findid() {
 		return "findid";
@@ -61,5 +67,10 @@ public class RootController {
 	@GetMapping("/welcome")
 	String welcome() {
 		return "welcome";
+	}
+	
+	@GetMapping("/mypage")
+	String mypage() {
+		return "mypage";
 	}
 }

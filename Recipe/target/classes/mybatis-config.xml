@@ -9,9 +9,11 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.recipe.model.RecipeUser" alias="recipeuser"/>
+		<typeAlias type="com.recipe.model.Recipe" alias="recipe"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mapper/recipeuser.xml"/>
+		<mapper resource="mapper/recipe.xml"/>
 	</mappers>
 </configuration>
