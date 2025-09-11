@@ -6,6 +6,7 @@ public class RecipeUser {
 	private String username;
 	private String nickname;
 	private String useremail;
+	private String usertel;
 	public String getUserid() {
 		return userid;
 	}
@@ -42,5 +43,4 @@ public class RecipeUser {
 	public void setUsertel(String usertel) {
 		this.usertel = usertel;
 	}
-	private String usertel;
 }

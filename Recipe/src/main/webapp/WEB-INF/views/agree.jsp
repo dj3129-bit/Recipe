@@ -38,6 +38,6 @@
 		<div><a href="signup"><button>다음으로</button></a></div>
 	</div>
 	
-<script src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/agree.js"></script>
 </body>
 </html>

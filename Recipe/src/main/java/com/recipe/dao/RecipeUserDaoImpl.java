@@ -21,4 +21,9 @@ public class RecipeUserDaoImpl implements RecipeUserDao{
 	public void add(RecipeUser item) {
 		sql.insert("recipeuser.add", item);
 	}
+
+	@Override
+	public void update(RecipeUser item) {
+		sql.update("recipeuser.update", item);
+	}
 }

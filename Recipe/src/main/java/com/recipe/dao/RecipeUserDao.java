@@ -8,4 +8,6 @@ public interface RecipeUserDao {
 
 	void add(RecipeUser item);
 
+	void update(RecipeUser item);
+
 }

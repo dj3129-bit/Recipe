@@ -10,4 +10,10 @@ public interface RecipeService {
 
 	void add(Recipe item);
 
+	Recipe item(int recipeid);
+
+	void update(Recipe item);
+
+	void delete(int recipeid);
+
 }

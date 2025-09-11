@@ -10,7 +10,7 @@
 	<div>
 		<div id="photo"></div>
 		<label id="nickname"></label>
-		<button type="button"></button>
+		<div><a href="${pageContext.request.contextPath}/user/update/${item.userid}"><button type="button">회원정보 수정</button></a></div>
 		<div>
 			<p>팔로워</p>
 			<p></p>
@@ -21,10 +21,10 @@
 		</div>
 	</div>
 	<div>
-		<h2>즐겨찾기 레시피</h2>
+		<h3>즐겨찾기 레시피</h3>
 		<ul></ul>
 	</div>
-		<h2>내가 작성한 레시피</h2>
+		<h3>내가 작성한 레시피</h3>
 		<div>
 			<c:if test="${list.size() < 1}">
 				<ul>
@@ -38,13 +38,16 @@
 						<img src="">
 						<li>${item.recipeviews}</li>
 						<li>${item.recommend}</li>
-						<button><a href="update">수정</a></button>
-						<button><a href="delete">삭제</a></button>
+						<a href="update/${item.recipeid}"><button>수정</button></a>
+						<a href="delete/${item.recipeid}" id="del"><button>삭제</button></a>
 					</div>
 					<h3>${item.recipetitle}</h3>
 				</div>
 			</c:forEach>
 		</div>
 	</div>
+	<div><a href="${pageContext.request.contextPath}/user/question"><button type="button">문의작성</button></a></div>
+	
+<script src="${pageContext.request.contextPath}/resources/js/delete.js"></script>
 </body>
 </html>

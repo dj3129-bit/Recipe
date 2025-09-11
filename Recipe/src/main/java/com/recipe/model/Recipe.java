@@ -7,6 +7,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Recipe {
 	private int recipeid;
 	private String recipetitle;
+	private String introduce;
+	private String recipetag;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate recipewritedate;
 	private LocalDate recipefixdate;
@@ -16,6 +18,7 @@ public class Recipe {
 	private boolean isreport;
 	private String writerid;
 	private int maincategoryid;
+	private String userid;
 	
 	public int getRecipeid() {
 		return recipeid;
@@ -76,5 +79,20 @@ public class Recipe {
 	}
 	public void setMaincategoryid(int maincategoryid) {
 		this.maincategoryid = maincategoryid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public String getRecipetag() {
+		return recipetag;
+	}
+	public void setRecipetag(String recipetag) {
+		this.recipetag = recipetag;
+	}
+	public String getIntroduce() {
+		return introduce;
+	}
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
 	}
 }

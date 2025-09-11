@@ -14,21 +14,31 @@ public class RecipeUserServiceImpl implements RecipeUserService{
 	RecipeUserDao dao;
 
 	@Override
-	public boolean login(RecipeUser recipeuser) {
+	public RecipeUser login(RecipeUser recipeuser) {
 		RecipeUser result = dao.item(recipeuser.getUserid());
 		
 		if(result != null && recipeuser.getUserpw().equals(result.getUserpw())) {
 			BeanUtils.copyProperties(result, recipeuser);
-			recipeuser.setUserpw(null);
+			result.setUserpw(null);
 			
-			return true;
+			return result;
 		}
 		
-		return false;
+		return null;
 	}
 
 	@Override
 	public void add(RecipeUser item) {
 		dao.add(item);
+	}
+
+	@Override
+	public RecipeUser item(String userid) {
+		return dao.item(userid);
+	}
+
+	@Override
+	public void update(RecipeUser item) {
+		dao.update(item);
 	}
 }

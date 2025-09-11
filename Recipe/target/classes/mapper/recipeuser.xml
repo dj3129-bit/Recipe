@@ -11,4 +11,10 @@
 		SELECT * FROM recipeuser
 		WHERE userid=#{userid}
 	</select>
+	
+	<update id="update">
+		UPDATE recipeuser
+		SET nickname=#{nickname}, useremail=#{useremail}, usertel=#{usertel}
+		WHERE userid=#{userid}
+	</update>
 </mapper>

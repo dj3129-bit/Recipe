@@ -5,14 +5,25 @@
 	<select id="list" resultType="recipe">
 		SELECT * FROM recipepost
 	</select>
-	<insert id="add">
-		INSERT INTO recipepost
-		VALUES (#{recipeid}, #{recipetitle}, #{recipewritedate}, #{recipefixdate}, #{recipeviews}, #{recommend}, #{isprivate}, #{isreport}, 
-		#{writerid}, #{maincategoryid}, #{userid})
+	<insert id="add" useGeneratedKeys="true" keyProperty="recipeid">
+		INSERT INTO recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, maincategoryid, userid)
+		VALUES (#{recipetitle}, #{introduce}, #{recipetag}, #{recipeviews}, #{recommend}, #{isprivate}, #{maincategoryid}, #{userid})
 	</insert>
 	
 	<select id="item" resultType="Recipe">
 		SELECT * FROM recipepost
-		WHERE userid=#{userid}
+		WHERE recipeid=#{recipeid}
 	</select>
+	
+	<update id="update">
+		UPDATE recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, maincategoryid, userid)
+		SET recipetitle=#{recipetitle}, introduce=#{introduce}, recipetag=#{recipetag},recipeviews=#{recipeviews}, recommend=#{recommend}, 
+		isprivate=#{isprivate}, maincategoryid=#{maincategoryid}, userid=#{userid}
+		WHERE recipeid=#{recipeid}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM recipepost
+		WHERE recipeid=#{recipeid}
+	</delete>
 </mapper>

@@ -4,7 +4,11 @@ import com.recipe.model.RecipeUser;
 
 public interface RecipeUserService {
 
-	boolean login(RecipeUser recipeuser);
+	RecipeUser login(RecipeUser recipeuser);
 
 	void add(RecipeUser item);
+
+	RecipeUser item(String userid);
+
+	void update(RecipeUser item);
 }

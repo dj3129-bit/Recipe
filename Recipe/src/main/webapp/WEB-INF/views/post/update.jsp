@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레시피 등록</title>
+<title>레시피 수정</title>
 </head>
 <body>
 	<form method="post">
@@ -12,19 +12,19 @@
 			<h2>기본 정보</h2>
 			<div>
 				<h3>레시피 제목</h3>
-				<input type="text" name="recipetitle">
+				<input type="text" name="recipetitle" value="${item.recipetitle}">
 			</div>
 			<div>
 				<h3>레시피 소개</h3>
-				<input type="textarea" name="introduce">
+				<input type="textarea" name="introduce" value="${item.introduce}">
 			</div>
 			<div>
 				<h3>태그</h3>
-				<input type="text" name="recipetag">
+				<input type="text" value="${item.recipetag}">
 			</div>
 			<div>
 				<h3>공개여부</h3>
-				<select id="isprivate">
+				<select id="isprivate" value="${item.isprivate}">
 					<option>공개</option>
 					<option>비공개</option>
 				</select>
@@ -33,11 +33,11 @@
 		<div>
 			<div width="200" height="150">
 				<h2>대표 이미지</h2>
-				<button type="">추가</button>
+				<button type="">변경</button>
 			</div>
 			<div width="200" height="150">
 				<h2>완성 요리 이미지</h2>
-				<button type="">추가</button>
+				<button type="">변경</button>
 			</div>
 		</div>
 		<div>
@@ -126,7 +126,7 @@
 		<div>
 			<h3>재료정보</h3>
 			<ul>
-				
+	
 			</ul>
 			<button type="button"></button>
 		</div>
@@ -142,7 +142,7 @@
 			<button type="button">STEP 추가하기</button>
 		</div>
 		<div>
-			<button type="submit">레시피 등록</button>
+			<button type="submit">레시피 재등록</button>
 		</div>
 	</form>
 </body>

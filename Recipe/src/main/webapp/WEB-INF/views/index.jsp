@@ -23,7 +23,7 @@
 			<div>
 				<div>${sessionScope.recipeuser.nickname}님 환영합니다</div>
 				<div><a href="post/add">레시피 등록</a></div>
-				<div><a href="post/mypage">마이페이지</a></div>
+				<div><a href="goMypage">마이 페이지</a></div>
 				<div><a href="logout">로그아웃</a></div>
 			</div>
 		</c:if>

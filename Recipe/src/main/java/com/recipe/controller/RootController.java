@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,12 +28,16 @@ public class RootController {
 	}
 	
 	@PostMapping("/login")
-	String login(RecipeUser recipeuser, HttpSession session) {
-		if(service.login(recipeuser)) {
-			session.setAttribute("recipeuser", recipeuser);
-		}
-
-		return "redirect:.";
+	String login(RecipeUser recipeuser, HttpSession session, Model model) {
+		RecipeUser recipeUser = service.login(recipeuser); 
+		if(recipeUser != null) {
+			session.setAttribute("userid", recipeUser.getUserid());
+			session.setAttribute("recipeuser", recipeUser);
+			return "redirect:.";
+		} 
+		
+		model.addAttribute("loginError", "아이디 또는 비밀번호를 다시 입력해주세요.");
+		return "login";
 	}
 	
 	@GetMapping("/agree")
@@ -69,8 +74,8 @@ public class RootController {
 		return "welcome";
 	}
 	
-	@GetMapping("/mypage")
-	String mypage() {
-		return "mypage";
+	@GetMapping("/goMypage")
+	String goMypage() {
+		return "redirect:/post/mypage";
 	}
 }
