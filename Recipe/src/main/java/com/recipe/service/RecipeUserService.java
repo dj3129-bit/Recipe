@@ -11,4 +11,6 @@ public interface RecipeUserService {
 	RecipeUser item(String userid);
 
 	void update(RecipeUser item);
+
+	boolean checkId(String userid);
 }

@@ -81,10 +81,5 @@ public class RecipeController {
 		
 		return "redirect:/post/mypage";
 	}
-	
-	@GetMapping("/question")
-	String question() {
-		return "user/question";
-	}
 }
 

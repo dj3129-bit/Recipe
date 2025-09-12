@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>회원가입</title>
 
 </head>
@@ -17,22 +18,21 @@
 			<form method="post" name="signup_form">
 				<div>
 					<div><label>아이디:</label></div>
-					<div><input type="text" name="userid"></div> 
+					<div><input type="text" name="userid" id="userid"></div> 
 					<div>
-						<button type="button" id="check_id_fetch">중복확인</button>
+						<button type="button" id="checkid">중복확인</button>
 					</div>
 				</div>
 				
-				<div class="pwd">
+				<div>
 					<div><label>비밀번호:</label></div>
 					<div><input type="password" name="userpw"></div>
-					<div><button type="button" class="view">확인</button></div>
 				</div>
 				
-				<div class="pwd">
+				<div>
 					<div><label>비밀번호 확인:</label></div>
 					<div><input type="password" name="checkuserpw"></div>
-					<div><button type="button" class="view">확인</button></div>
+					<div><button type="button" id="checkpw">확인</button></div>
 				</div>
 				
 				<div>
@@ -56,13 +56,13 @@
 				</div>
 				
 				<div>
-					<div><a href="welcome"><button type="submit" id="signup">회원가입</button></a></div>
+					<div><button type="button" id="signup">회원가입</button></div>
 					<div><a href="."><button type="button">취소</button></a></div>
 				</div>
 			</form>		
 		</div>
 	</div>
 	
-<!-- 	<script src="/js/signup.js"></script> -->
+<script src="${pageContext.request.contextPath}/resources/js/checkid.js"></script>
 </body>
 </html>

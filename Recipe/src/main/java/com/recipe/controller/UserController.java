@@ -32,4 +32,9 @@ public class UserController {
 		service.update(item);
 		return "redirect:/post/mypage";
 	}
+	
+	@GetMapping("/question")
+	String question() {
+		return "user/question";
+	}
 }

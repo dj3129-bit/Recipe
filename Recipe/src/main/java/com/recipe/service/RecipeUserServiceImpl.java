@@ -41,4 +41,14 @@ public class RecipeUserServiceImpl implements RecipeUserService{
 	public void update(RecipeUser item) {
 		dao.update(item);
 	}
+
+	@Override
+	public boolean checkId(String userid) {
+		RecipeUser item = dao.item(userid);
+		
+		if(item ==  null)
+			return true;
+		
+		return false;
+	}
 }

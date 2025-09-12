@@ -1,7 +1,18 @@
 @charset "UTF-8";
-
-.allchecked:active{
-	
+.noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+h3{
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  font-size: 50px;
+  padding: 20px 20px;
+}
+hr{
+	margin: 0 50px 15px 50px;
 }
 
 .checked:active{
