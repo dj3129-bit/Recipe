@@ -6,13 +6,31 @@
   font-style: normal;
 }
 h3{
-  font-family: 'Noto Sans KR', sans-serif;
-  text-align: center;
-  font-size: 50px;
-  padding: 20px 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    padding: 50px 50px;
 }
 hr{
-	margin: 0 50px 15px 50px;
+	margin: 50px 50px;
+}
+
+.row .custom-input:first-child{
+	margin-top: 40px;
+	height: 80px;
+}
+.row .custom-input:last-child{
+	margin-bottom: 20px;
+}
+
+.custom-input{
+	padding-left: 16px; 
+	padding-top: 11px;
+}
+
+.custom-input::placeholder {
+  font-size: 30px;        
+  line-height: 80px;
 }
 
 .checked:active{

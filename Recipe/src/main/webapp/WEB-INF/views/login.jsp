@@ -11,32 +11,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div>
+	<div class="row">
 		<div><h3>로그인</h3></div>
-		<hr class="border border-dark border-3 opacity-100">
+		<hr class="border border-dark border-3 opacity-100 w-80">
 		
-		<div>
+		<div class="col-4"></div>
+		<div class="col">
 			<c:if test="${not empty loginError}">
         		<div style="color:red;">${loginError}</div>
     		</c:if>
-		
-			<form method="post">
-				<div>
-					<div><input type="text" name="userid" placeholder="아이디"></div>
+			
+			<div><p>사이트 로고</p></div>
+			<form method="post" class="row g-3">
+				<div class="col-12">
+					<div><input type="text" name="userid" placeholder="아이디" class="custom-input w-100 rounded-pill"></div>
+				</div>
+
+				<div class="col-12">
+					<div><input type="password" name="userpw" placeholder="비밀번호" class="custom-input w-100 rounded-pill"></div>
 				</div>
 
 				<div>
-					<div><input type="password" name="userpw" placeholder="비밀번호"></div>
-				</div>
-
-				<div>
-					<div><button type="submit">로그인</button></div>
+					<div class="text-center"><button type="submit" class="btn btn-secondary btn-lg rounded-pill" style="width: 200px; height: 65px;">로그인</button></div>
 				</div>
 			</form>
 		</div>
+		<div class="col-4"></div>
 		<div>
-			<div><a href="findid"><button>아이디/비밀번호 찾기</button></a></div>
-			<div><a href="signup"><button>회원가입</button></a></div>
+			<div class="text-center"><a href="findid"><button>아이디/비밀번호 찾기</button></a></div>
+			<div class="text-center"><a href="signup"><button>회원가입</button></a></div>
 		</div>
 	</div>
 </body>
