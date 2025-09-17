@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    padding: 50px 50px;
+}
+hr{
+	margin: 20px 50px;
+}
+.d-flex:first-child{
+	margin-top: 20px;
+}
+.d-flex{
+	margin-bottom: 20px;
+}
+.label{
+	padding-right: 16px; 
+	padding-top: 11px;
+}
+.lbbox{
+	width: 150px;
+	font-size: 18px;
+}
+#checkid{
+	margin-left: 20px;
+}
+#checkpw{
+	margin-left: 20px;
+}
+.btnsu{
+	width: 400px;
+}

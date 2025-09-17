@@ -1,5 +1,7 @@
 package com.recipe.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
@@ -20,6 +24,8 @@ import com.recipe.service.RecipeUserService;
 @Controller
 @RequestMapping("/post")
 public class RecipeController {
+	final String uploadPath = "d:/upload/";
+	
 	@Autowired
 	RecipeService rservice;
 	
@@ -46,12 +52,24 @@ public class RecipeController {
 	}
 	
 	@PostMapping("/add")
-	String add(Recipe item, HttpSession session) {
+	String add(Recipe item, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
 		
 		if (userid == null) {
 	        return "redirect:/login"; 
 	    }
+		
+		if(!uploadFile.isEmpty()) {
+			String fileName = uploadFile.getOriginalFilename();
+			File image = new File(uploadPath, fileName);
+			
+			try {
+				uploadFile.transferTo(image);
+				session.setAttribute("fileName", fileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		item.setUserid(userid);
 		rservice.add(item);

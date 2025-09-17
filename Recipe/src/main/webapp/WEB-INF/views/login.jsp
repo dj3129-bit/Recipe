@@ -11,10 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+	<div><h3>로그인</h3></div>
+	<hr class="border border-dark border-3 opacity-100 w-80">
 	<div class="row">
-		<div><h3>로그인</h3></div>
-		<hr class="border border-dark border-3 opacity-100 w-80">
-		
 		<div class="col-4"></div>
 		<div class="col">
 			<c:if test="${not empty loginError}">
@@ -24,22 +23,26 @@
 			<div><p>사이트 로고</p></div>
 			<form method="post" class="row g-3">
 				<div class="col-12">
-					<div><input type="text" name="userid" placeholder="아이디" class="custom-input w-100 rounded-pill"></div>
+					<div><input type="text" name="userid" placeholder="아이디" class="custom-input w-100 rounded-pill fs-3"></div>
 				</div>
 
 				<div class="col-12">
-					<div><input type="password" name="userpw" placeholder="비밀번호" class="custom-input w-100 rounded-pill"></div>
+					<div><input type="password" name="userpw" placeholder="비밀번호" class="custom-input w-100 rounded-pill fs-3"></div>
 				</div>
 
 				<div>
-					<div class="text-center"><button type="submit" class="btn btn-secondary btn-lg rounded-pill" style="width: 200px; height: 65px;">로그인</button></div>
+					<div class="text-center"><button type="submit" class="btn btn-secondary btn-lg rounded-pill fs-3" style="width: 200px; height: 65px;">로그인</button></div>
 				</div>
 			</form>
 		</div>
 		<div class="col-4"></div>
-		<div>
-			<div class="text-center"><a href="findid"><button>아이디/비밀번호 찾기</button></a></div>
-			<div class="text-center"><a href="signup"><button>회원가입</button></a></div>
+		<div class="row btn-group" >
+			<div class="col-4"></div>
+			<div class="col-2"><a href="findid"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
+				style="width: 330px; height: 45px;">아이디/비밀번호 찾기</button></a></div>
+			<div class="col-2"><a href="signup"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
+				style="width: 330px; height: 45px; text-align:right;">회원가입</button></a></div>
+			<div class="col-4"></div>
 		</div>
 	</div>
 </body>

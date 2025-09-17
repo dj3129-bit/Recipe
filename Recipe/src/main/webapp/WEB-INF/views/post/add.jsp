@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 <title>레시피 등록</title>
 </head>
 <body>
-	<form method="post">
+	<form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/post/add">
 		<div>
 			<h2>기본 정보</h2>
 			<div>
@@ -25,20 +25,22 @@
 			</div>
 			<div>
 				<h3>공개여부</h3>
-				<select id="isprivate">
-					<option>공개</option>
-					<option>비공개</option>
+				<select id="isprivate" name="isprivate">
+					<option value="false">공개</option>
+					<option value="true">비공개</option>
 				</select>
 			</div>
 		</div>
 		<div>
 			<div width="200" height="150">
 				<h2>대표 이미지</h2>
-				<button type="">추가</button>
+				<ul id="files"></ul>
+				<div><button type="button" id="mainedit">추가</button></div>
 			</div>
 			<div width="200" height="150">
 				<h2>완성 요리 이미지</h2>
-				<button type="">추가</button>
+				<ul id="files2"></ul>
+				<button type="button" id="comedit">추가</button>
 			</div>
 		</div>
 		<div>
@@ -126,10 +128,16 @@
 		</div>
 		<div>
 			<h3>재료정보</h3>
-			<ul>
-				
+			<ul id="infoul">
+				<li id="infoli">
+					<input type="text" name="ingredient" placeholder="재료명" />
+					<input type="text" name="quantity" placeholder="수량" />
+					<input type="text" name="unit" placeholder="단위" />
+					<input type="text" name="note" placeholder="비고" />
+					<button type="button" id="delete">-</button>
+				</li>
 			</ul>
-			<button type="button"></button>
+			<button type="button" id="addmaterial">추가하기</button>
 		</div>
 		<div>
 			<h3>요리순서</h3>
@@ -146,5 +154,8 @@
 			<button type="submit">레시피 등록</button>
 		</div>
 	</form>
+	
+<script src="${pageContext.request.contextPath}/resources/js/imageadd.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/materialinfo.js"></script>3we
 </body>
 </html>

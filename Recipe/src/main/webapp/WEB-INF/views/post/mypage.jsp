@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>마이 페이지</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/mypage.css">
 </head>
 <body>
-	<div>
+	<div class="profile">
 		<div id="photo"></div>
 		<label id="nickname"></label>
 		<div><a href="${pageContext.request.contextPath}/user/update/${item.userid}"><button type="button">회원정보 수정</button></a></div>
