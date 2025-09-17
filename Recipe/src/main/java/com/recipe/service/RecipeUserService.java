@@ -1,5 +1,6 @@
 package com.recipe.service;
 
+import com.recipe.model.Question;
 import com.recipe.model.RecipeUser;
 
 public interface RecipeUserService {

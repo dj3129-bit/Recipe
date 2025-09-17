@@ -10,10 +10,12 @@
 	<typeAliases>
 		<typeAlias type="com.recipe.model.RecipeUser" alias="recipeuser"/>
 		<typeAlias type="com.recipe.model.Recipe" alias="recipe"/>
+		<typeAlias type="com.recipe.model.Question" alias="question"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mapper/recipeuser.xml"/>
 		<mapper resource="mapper/recipe.xml"/>
+		<mapper resource="mapper/question.xml"/>
 	</mappers>
 </configuration>
