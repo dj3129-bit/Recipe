@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>레시피 수정</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/signup.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 	<form method="post">

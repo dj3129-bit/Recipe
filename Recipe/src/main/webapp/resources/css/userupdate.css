@@ -14,9 +14,10 @@ h3{
 hr{
 	margin: 20px 50px;
 }
-.d-flex:first-child{
+.col .d-flex:first-child{
 	margin-top: 20px;
 }
+
 .d-flex{
 	margin-bottom: 20px;
 }
@@ -28,15 +29,18 @@ hr{
 	width: 150px;
 	font-size: 18px;
 }
-#checkid{
+.checknick, .auth1, .auth2{
 	margin-left: 20px;
 }
-#checkpw{
-	margin-left: 20px;
+.btnbox{
+	margin-top: 40px;
 }
-.btnsu{
-	width: 400px;
+.userout{
+	margin-right: 360px;
 }
-.qtitle{
-	margin-bottom: 25px; 
+.logout{
+	margin-left: 240px;
+}
+.logoutlink{
+	display: inline-block;
 }

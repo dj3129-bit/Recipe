@@ -156,6 +156,6 @@
 	</form>
 	
 <script src="${pageContext.request.contextPath}/resources/js/imageadd.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/materialinfo.js"></script>3we
+<script src="${pageContext.request.contextPath}/resources/js/materialinfo.js"></script>
 </body>
 </html>

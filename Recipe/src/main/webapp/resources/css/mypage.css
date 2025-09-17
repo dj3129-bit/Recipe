@@ -14,28 +14,74 @@
 	padding-top: 20px;
 /* 	box-sizing: border-box; */
 }
+a button{
+	cursor: pointer;
+}
 .fa-solid fa-pen{
 	cursor: pointer;
 }
 .recipe{
-	width: 60%
+	width: 30%
 }
 .fa-circle-user{
 	display: inline-block;
 	padding-bottom: 20px;
-/* 	margin: 0 auto; */
 }
 .userinfo{
 	display: flex;
   	justify-content: center;
   	gap: 10px;
+  	list
+}
+.iteminfo{
+	display: flex;
+	list-style: none;
+	position: relative;
+}
+.viewli{
+	position:absolute;
+	top:200px;
+	left: 80px;
+}
+.rcli{
+	position:absolute;
+	top:200px;
+	left: 160px;
+}
+.editli{
+	position:absolute;
+	top:200px;
+	right: 130px;
+}
+.delli{
+	position:absolute;
+	top:200px;
+	right: 105px;
 }
 .editbtn{
-	background-color: #ffffff;
+	background-color: transparent;
 	border: none;
+	cursor: pointer;
+}
+.del{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 .follow{
 	display: flex;
   	justify-content: center;
   	gap: 20px;
+}
+.itemtitle{
+	text-align: center;
+}
+.itemtitle a{
+	display: inline-block;
+}
+.qbtn{
+	width: 150px; 
+	height: 45px;
+	border-radius: 45px;
+	font-size: 20px;
 }

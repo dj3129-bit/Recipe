@@ -42,19 +42,19 @@
 							
 				<c:forEach var="item" items="${list}">
 					<div>
-						<div>
-							<img src="">
-							<li>${item.recipeviews}</li>
-							<li>${item.recommend}</li>
-							<a href="update/${item.recipeid}"><button>수정</button></a>
-							<a href="delete/${item.recipeid}" id="del"><button>삭제</button></a>
-						</div>
-						<h3><a href="detail/${item.recipeid}">${item.recipetitle}</a></h3>
+						<ul class="iteminfo">
+							<li><img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 400px; height: 250px;"></li>
+							<li class="viewli">조회수 : ${item.recipeviews}</li>
+							<li class="rcli">추천수 : ${item.recommend}</li>
+							<li class="editli"><a href="update/${item.recipeid}"><button class="editbtn"><i class="fa-solid fa-pen"></i></button></a></li>
+							<li class="delli"><a href="delete/${item.recipeid}"><button class="del"><i class="fa-solid fa-trash"></i></button></a></li>
+						</ul>
+						<h3 class="itemtitle"><a href="detail/${item.recipeid}">${item.recipetitle}</a></h3>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
-		<div><a href="${pageContext.request.contextPath}/user/question"><button type="button">문의작성</button></a></div>
+		<div><a href="${pageContext.request.contextPath}/user/question"><button type="button" class="qbtn">문의작성</button></a></div>
 	</div>
 	
 <script src="${pageContext.request.contextPath}/resources/js/delete.js"></script>
