@@ -9,25 +9,27 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user.css">
 
 </head>
 <body>
 	<div class="container">
 		<div><h3>문의 목록</h3></div>
+		<hr class="border border-dark border-2 opacity-100 hrl">
 		
 		<div>
-			<table border="1" class="table table-sm">
-				<thead class="table-dark">
+			<table class="table table-sm">
+				<thead class="table-secondary">
 					<tr>
-						<th>No.</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일시</th>
-						<th>삭제 여부</th>
+						<th class="fs-5" style="width: 10%;">No.</th>
+						<th class="fs-5">제목</th>
+						<th class="fs-5">작성자</th>
+						<th class="fs-5" style="width: 20%;">작성일시</th>
+						<th class="fs-5" style="width: 20%; text-align: center;">삭제 여부</th>
 					</tr>
 				</thead>
 				
-				<tbody>
+				<tbody class="table-group-divider">
 					<c:if test="${list.size() < 1}">
 						<tr><td colspan="5">문의가 없습니다</td></tr>
 					</c:if>
@@ -38,7 +40,7 @@
 							<td>${item.questiontitle}</td>
 							<td>${item.questioncontent}</td>
 							<td>${item.questiondate}</td>
-							<td><a href="delete/${item.questionid}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i>삭제</a></td>
+							<td style="text-align: center;"><a href="delete/${item.questionid}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i>삭제</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -65,22 +67,24 @@
 		
 		<div class="mb-2">
 			<form class="row">
-				<div class="col-5"></div>
+				<div class="col-3"></div>
 				<div class="col-2">
-					<select name="search" class="form-select form-select-sm">
+					<select name="search" class="form-select rounded-pill form-select-sm" style="height: 40px;">
 						<option value="1">No.</option>
 						<option value="2">제목</option>
 						<option value="3">작성자</option>
 					</select>
 				</div>
 				
-				<div class="col"> 
-					<input type="text" name="keyword" class="form-control form-control-sm">
+				<div class="col searchbox"> 
+					<input type="text" name="keyword" class="form-control rounded-pill form-control-sm" style="height: 40px;">
+					<div class="text-end search"><i class="bi bi-search"></i></div>
 				</div>
 				
 				<div class="col-1 d-grid">
-					<button class="btn btn-primary btn-sm">검색</button>
+					<button class="btn btn-dark btn-sm rounded-pill" style="height: 40px;">검색</button>
 				</div>
+				<div class="col-3"></div>
 			</form>
 		</div>
 	</div>

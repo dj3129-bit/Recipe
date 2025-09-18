@@ -10,4 +10,5 @@ public interface QuestionDao {
 
 	List<Question> list();
 
+	void delete(int questionid);
 }

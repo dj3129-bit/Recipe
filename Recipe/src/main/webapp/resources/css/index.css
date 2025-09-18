@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+.headerbox{
+	margin: 0 auto;
+	display: flex;
+	width: 90%;
+	height: 180px;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	align-items: center;
+}
+.headinput{
+	width: 35%;
+	height: 40%;
+	border-radius: 50px;
+	font-size: 30px;
+}
+.headbtn{
+	width: 120px;
+	height: 30%;
+	border-radius: 50px;
+	font-size: 18px;
+}
+.welcome{
+	text-align: center;
+}
+.libox, .lobox{
+	text-align: center;
+}
+.libox a{
+	text-decoration: none;
+	color: #000;
+}
+.lobox a{
+	text-decoration: none;
+	color: #000;
+}
+.memberbox{
+	display: flex;	
+	gap: 15px;
+}
+.memberbox div a{
+	text-decoration: none;
+	color: #000;
+}
+.memberchild{
+	text-align: center;
+}
+nav{
+	display: flex;
+	background-color: #ccc;
+	height: 90px;
+	justify-content: center;
+	gap: 50px;
+	align-items: center;
+}
+nav div a{
+	font-size: 25px;
+}

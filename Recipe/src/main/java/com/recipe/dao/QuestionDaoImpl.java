@@ -23,4 +23,9 @@ public class QuestionDaoImpl implements QuestionDao {
 	public List<Question> list() {
 		return sql.selectList("question.list");
 	}
+
+	@Override
+	public void delete(int questionid) {
+		sql.delete("question.delete", questionid);
+	}
 }

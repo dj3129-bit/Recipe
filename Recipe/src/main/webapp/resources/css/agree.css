@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    padding: 50px 50px;
+}
+hr{
+	margin: 20px 50px;
+}
+
+.row .custom-input:first-child{
+	margin-top: 40px;
+	height: 80px;
+}
+.row .custom-input:last-child{
+	margin-bottom: 20px;
+}
+
+.custom-input{
+	padding-left: 16px; 
+	padding-top: 11px;
+}
+
+.custom-input::placeholder {
+  font-size: 30px;        
+  line-height: 80px;
+}
+
+.btn-secondary{
+	margin-bottom: 35px;
+}
+.allchecked{
+	margin-bottom: 30px;
+	margin-top: 40px;
+}
+
+.round{
+	appearance:none;
+	position: relative;
+	top: 6px;
+	width: 30px;
+	height: 30px;
+	background-color: #ccc;
+	border-radius: 30px;
+	cursor:pointer;
+}
+.round:checked{
+	background-color: #3498db;
+} 
+
+.agree{
+	padding-left: 10px;
+}
+
+.text-end{
+	margin-top: 30px;
+}
+
+.agreebody{
+	position: relative;
+}
+.before{
+	position: absolute;
+	top: 90%;
+}
+.btnbefore{
+	margin-left: 650px;
+}

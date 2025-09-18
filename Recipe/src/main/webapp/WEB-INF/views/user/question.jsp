@@ -6,13 +6,14 @@
 <meta charset="UTF-8">
 <title>문의</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/signup.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 	<div>
 		<h3>1:1 문의</h3>
-		<hr class="border border-dark border-3 opacity-100">
+		<hr class="border border-dark border-3 opacity-100 hrq">
 	</div>
 	<div class="row">
 		
@@ -28,10 +29,10 @@
 					</div>
 					<div>
 						<p>사진 첨부</p>
-						<div><button type="button"></button></div>
+						<div class="photobox"><button type="button" class="rounded-pill photoedit" style="width: 60px; height: 60px;"><i class="bi bi-plus-circle fs-3"></i></button></div>
 					</div>
 				</div>
-				<div><a href=""><button type="submit" class="fs-5 rounded-pill" style="width: 130px; height: 45px;">등록</button></a></div>
+				<div class="submitbtn"><a href=""><button type="submit" class="fs-5 rounded-pill" style="width: 130px; height: 45px;">등록</button></a></div>
 			</form>
 		</div>
 		<div class="col-4"></div>

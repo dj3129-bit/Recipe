@@ -9,4 +9,6 @@ public interface QuestionService {
 	void add(Question item);
 
 	List<Question> list();
+
+	void delete(int questionid);
 }
