@@ -15,8 +15,7 @@ public class Recipe {
 	private int recipeviews;
 	private int recommend;
 	private boolean isprivate;
-	private boolean isreport;
-	private String writerid;
+	private String imagepath;
 	private int maincategoryid;
 	private String userid;
 	
@@ -62,18 +61,6 @@ public class Recipe {
 	public void setIsprivate(boolean isprivate) {
 		this.isprivate = isprivate;
 	}
-	public boolean isIsreport() {
-		return isreport;
-	}
-	public void setIsreport(boolean isreport) {
-		this.isreport = isreport;
-	}
-	public String getWriterid() {
-		return writerid;
-	}
-	public void setWriterid(String writerid) {
-		this.writerid = writerid;
-	}
 	public int getMaincategoryid() {
 		return maincategoryid;
 	}
@@ -95,4 +82,11 @@ public class Recipe {
 	public void setIntroduce(String introduce) {
 		this.introduce = introduce;
 	}
+	public String getImagepath() {
+		return imagepath;
+	}
+	public void setImagepath(String imagepath) {
+		this.imagepath = imagepath;
+	}
+	
 }

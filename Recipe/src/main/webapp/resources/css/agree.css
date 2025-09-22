@@ -29,8 +29,8 @@ hr{
 }
 
 .custom-input::placeholder {
-  font-size: 30px;        
-  line-height: 80px;
+  	font-size: 30px;        
+  	line-height: 80px;
 }
 
 .btn-secondary{

@@ -48,21 +48,160 @@
 	</div>
 </header>
 <nav>
-	<div><a>추천 레시피</a></div>
-	<div><a>HOT 레시피</a></div>
-	<div><a>BEST 셰프</a></div>
-	<div><a>고객센터</a></div>
-</nav>	
-<div>
-	<div>카테고리</div>
-	<div><a>종류별</a></div>
-	<div><a>상황별</a></div>
-	<div><a>인원별</a></div>
-	<div><a>방법별</a></div>
-	<div><a>재료별</a></div>
-</div>	
+	<div><a href="#">추천 레시피</a></div>
+	<div><a href="#">HOT 레시피</a></div>
+	<div><a href="#">BEST 셰프</a></div>
+	<div><a href="#">고객센터</a></div>
+</nav>		
 <main>
-
+	<div class="container">
+		<div class="category">
+			<div><i class="bi bi-funnel fs-2"></i></div>
+			<div><a>종류별 <i class="bi bi-chevron-down"></i></a></div>
+			<div><a>상황별 <i class="bi bi-chevron-down"></i></a></div>
+			<div><a>인원별 <i class="bi bi-chevron-down"></i></a></div>
+			<div><a>방법별 <i class="bi bi-chevron-down"></i></a></div>
+			<div><a>재료별 <i class="bi bi-chevron-down"></i></a></div>
+		</div>
+		
+		<h3>HOT 레시피</h3>
+		<div class="hot">
+			<div class="hotdiv">
+				<div class="hotphoto"></div>
+				<div class="hotcontent">
+					<div>
+						<h3>레시피명</h3>
+						<p>레시피 설명</p>
+					</div>
+					<div class="cook">
+						<p><i class="bi bi-clock"></i>요리 시간</p>
+						<p><i class="bi bi-bookmark"></i>요리 종류</p>
+						<p><i class="bi bi-hash"></i>요리 방법</p>
+					</div>
+					<div>재료 : </div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>
+			</div>
+			<div class="hotdiv">
+				<div class="hotphoto"></div>
+				<div class="hotcontent">
+					<div>
+						<h3>레시피명</h3>
+						<p>레시피 설명</p>
+					</div>
+					<div class="cook">
+						<p><i class="bi bi-clock"></i>요리 시간</p>
+						<p><i class="bi bi-bookmark"></i>요리 종류</p>
+						<p><i class="bi bi-hash"></i>요리 방법</p>
+					</div>
+					<div>재료 : </div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>
+			</div>
+			<div class="hotdiv">
+				<div class="hotphoto"></div>
+				<div class="hotcontent">
+					<div>
+						<h3>레시피명</h3>
+						<p>레시피 설명</p>
+					</div>
+					<div class="cook">
+						<p><i class="bi bi-clock"></i>요리 시간</p>
+						<p><i class="bi bi-bookmark"></i>요리 종류</p>
+						<p><i class="bi bi-hash"></i>요리 방법</p>
+					</div>
+					<div>재료 : </div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>
+			</div>
+		</div>	
+		
+		<h3>BEST 레시피</h3>
+		<div class="best">
+			<div class="bestdiv">
+				<div class="bestphoto"></div>
+				<div class="bestcontent">
+					<div>
+						<h3>레시피명</h3>
+						<p>레시피 설명</p>
+					</div>
+					<div class="cook">
+						<p><i class="bi bi-clock"></i>요리 시간</p>
+						<p><i class="bi bi-bookmark"></i>요리 종류</p>
+						<p><i class="bi bi-hash"></i>요리 방법</p>
+					</div>
+					<div>재료 : </div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>	
+			</div>
+			<div class="bestdiv">
+				<div class="bestphoto"></div>
+				<div class="bestcontent">
+					<div>
+						<h3>레시피명</h3>
+						<p>레시피 설명</p>
+					</div>
+					<div class="cook">
+						<p><i class="bi bi-clock"></i>요리 시간</p>
+						<p><i class="bi bi-bookmark"></i>요리 종류</p>
+						<p><i class="bi bi-hash"></i>요리 방법</p>
+					</div>
+					<div>재료 : </div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>	
+			</div>
+			<div class="bestdiv">
+				<div class="bestphoto"></div>
+				<div class="bestcontent">
+					<div>
+						<h3>레시피명</h3>
+						<p>레시피 설명</p>
+					</div>
+					<div class="cook">
+						<p><i class="bi bi-clock"></i>요리 시간</p>
+						<p><i class="bi bi-bookmark"></i>요리 종류</p>
+						<p><i class="bi bi-hash"></i>요리 방법</p>
+					</div>
+					<div>재료 : </div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>	
+			</div>
+		</div>
+		
+		<h3>인기 요리사</h3>
+		<div class="chef">
+			<div class="chefdiv">
+				<div class="chefphoto"></div>
+				<div class="chefcontent">
+					<div>
+						<h3>요리사명</h3>
+						<p>주요 요리</p>
+					</div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>	
+			</div>
+			<div class="chefdiv">
+				<div class="chefphoto"></div>
+				<div class="chefcontent">
+					<div>
+						<h3>요리사명</h3>
+						<p>주요 요리</p>
+					</div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>	
+			</div>
+			<div class="chefdiv">
+				<div class="chefphoto"></div>
+				<div class="chefcontent">
+					<div>
+						<h3>요리사명</h3>
+						<p>주요 요리</p>
+					</div>
+					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+				</div>	
+			</div>
+		</div>
+	</div>
 </main>
 </body>
 </html>

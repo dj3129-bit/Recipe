@@ -3,6 +3,7 @@ package com.recipe.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -52,7 +53,7 @@ public class RecipeController {
 	}
 	
 	@PostMapping("/add")
-	String add(Recipe item, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
+		String add(Recipe item, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
 		
 		if (userid == null) {
@@ -60,12 +61,13 @@ public class RecipeController {
 	    }
 		
 		if(!uploadFile.isEmpty()) {
-			String fileName = uploadFile.getOriginalFilename();
+			String fileName = UUID.randomUUID().toString() + "-" + uploadFile.getOriginalFilename();
 			File image = new File(uploadPath, fileName);
 			
 			try {
 				uploadFile.transferTo(image);
 				session.setAttribute("fileName", fileName);
+				item.setImagepath("/upload/" + fileName);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -73,7 +75,6 @@ public class RecipeController {
 		
 		item.setUserid(userid);
 		rservice.add(item);
-		
 		return "redirect:mypage";
 	}
 	

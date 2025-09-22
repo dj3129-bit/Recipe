@@ -6,8 +6,8 @@
 		SELECT * FROM recipepost
 	</select>
 	<insert id="add" useGeneratedKeys="true" keyProperty="recipeid">
-		INSERT INTO recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, maincategoryid, userid)
-		VALUES (#{recipetitle}, #{introduce}, #{recipetag}, #{recipeviews}, #{recommend}, #{isprivate}, #{maincategoryid}, #{userid})
+		INSERT INTO recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, imagepath, maincategoryid, userid)
+		VALUES (#{recipetitle}, #{introduce}, #{recipetag}, #{recipeviews}, #{recommend}, #{isprivate}, #{imagepath}, #{maincategoryid}, #{userid})
 	</insert>
 	
 	<select id="item" resultType="Recipe">
@@ -16,9 +16,9 @@
 	</select>
 	
 	<update id="update">
-		UPDATE recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, maincategoryid, userid)
+		UPDATE recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, imagepath, maincategoryid, userid)
 		SET recipetitle=#{recipetitle}, introduce=#{introduce}, recipetag=#{recipetag},recipeviews=#{recipeviews}, recommend=#{recommend}, 
-		isprivate=#{isprivate}, maincategoryid=#{maincategoryid}, userid=#{userid}
+		isprivate=#{isprivate}, imagepath=#{imagepath}, maincategoryid=#{maincategoryid}, userid=#{userid}
 		WHERE recipeid=#{recipeid}
 	</update>
 	

@@ -12,7 +12,6 @@
 	height: 350px;
 	text-align: center;
 	padding-top: 20px;
-/* 	box-sizing: border-box; */
 }
 a button{
 	cursor: pointer;
@@ -21,7 +20,7 @@ a button{
 	cursor: pointer;
 }
 .recipe{
-	width: 30%
+	width: 65%
 }
 .fa-circle-user{
 	display: inline-block;
@@ -31,7 +30,15 @@ a button{
 	display: flex;
   	justify-content: center;
   	gap: 10px;
-  	list
+}
+.userecipe{
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+.imgli{
+	text-align:center;
 }
 .iteminfo{
 	display: flex;
@@ -40,30 +47,30 @@ a button{
 }
 .viewli{
 	position:absolute;
-	top:200px;
-	left: 80px;
+	top:80%;
+	left: 18%;
 }
 .rcli{
 	position:absolute;
-	top:200px;
-	left: 160px;
+	top:80%;
+	left: 35%;
 }
 .editli{
 	position:absolute;
-	top:200px;
-	right: 130px;
+	top:80%;
+	right: 15%;
 }
 .delli{
 	position:absolute;
-	top:200px;
-	right: 105px;
+	top: 80%;
+	right: 8%;
 }
 .editbtn{
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
 }
-.del{
+#del{
 	background-color: transparent;
 	border: none;
 	cursor: pointer;

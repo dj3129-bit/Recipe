@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+form{
+	width: 70%;
+	margin: 0 auto;
+}
+.container{
+	display: flex;
+	width: 100%;
+	height: 550px;
+}
+.info{
+	width: 60%;
+	height: 100%;
+}
+.img{
+	width: 40%;
+	height: 100%;
+}
+.info input{
+	width: 60%;
+	background-color: #ccc;
+	border: none;
+	border-radius: 5px;
+}
+.shortext{
+	height: 30px;
+}
+.longtext{
+	height: 120px;
+}
+.type{
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+}
+.type > div{
+	text-align:center;
+}
+#infoli{
+	list-style: none;
+	height: 35px;
+}
+#infoli input{
+	width: 20%;
+	height: 30px;
+	margin-right: 10px;
+}
+#delete{
+	height: 35px;
+	width: 35px;
+	font-size: 15px;
+	border-radius: 20px;
+	border: 1px solid #000;
+	backgorund-color: #dc143c;
+}
+#addmaterial{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.cookorder{
+	background-color: #ccc;
+	padding: 20px;
+	border-radius: 10px;
+	height: 370px;
+	margin-bottom: 15px;
+}
+.step{
+	background-color: #fff;
+	height: 200px;
+	padding: 15px;
+	width: 97.5%;
+	border: none;
+	font-size: 20px;
+}
+.cookmethod{
+	display: flex;
+	width: 100%;
+}
+.cookmethod div{
+	height: 100%;
+	width: calc(100% /3);
+	display: flex;
+	align-items: center;
+}
+.cookmethod p{
+	margin-right: 20px;
+}
+.cookmethod div input{
+	width: 70%;
+	border-radius: 5px;
+	height: 30px;
+	border: 1px solid #000;
+}
+.stepadd{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 45px;
+	margin-top: 15px;
+	border-radius: 45px;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+#addstep{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 55px;
+	border-radius: 5px;
+}
+.editbox{
+	text-align: right;
+}
+.cookedit{
+	display: inline-block;
+	width: 300px;
+	height: 75px;
+	border-radius: 15px;
+	border: 1px solid #000;
+	cursor: pointer;
+	background-color: darkred;
+	color: white;
+	font-size: 25px;
+}
