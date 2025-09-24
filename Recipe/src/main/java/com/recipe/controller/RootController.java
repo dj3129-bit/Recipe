@@ -72,6 +72,18 @@ public class RootController {
 		return "findid";
 	}
 	
+	@PostMapping("/findid")
+	String findid(String username, String useremail, Model model) {
+		String userId = service.findUserId(username, useremail);
+		model.addAttribute("userId", userId);
+		return "findresult";
+	}
+	
+	@GetMapping("/findresult")
+	String findresult() {
+		return "findresult";
+	}
+	
 	@GetMapping("/welcome")
 	String welcome() {
 		return "welcome";

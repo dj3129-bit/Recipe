@@ -17,4 +17,9 @@
 		SET nickname=#{nickname}, useremail=#{useremail}, usertel=#{usertel}
 		WHERE userid=#{userid}
 	</update>
+	
+	<select id="findId" resultType="String">
+		SELECT userid FROM recipeuser
+		WHERE username=#{username} AND useremail=#{useremail}
+	</select>
 </mapper>

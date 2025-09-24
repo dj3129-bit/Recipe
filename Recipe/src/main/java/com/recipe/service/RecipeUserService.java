@@ -14,4 +14,6 @@ public interface RecipeUserService {
 	void update(RecipeUser item);
 
 	boolean checkId(String userid);
+
+	String findUserId(String username, String useremail);
 }

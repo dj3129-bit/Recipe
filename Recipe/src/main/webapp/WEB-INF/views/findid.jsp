@@ -7,36 +7,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>아이디 찾기</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/findid.css">
 </head>
 <body>
-<div class="bg-area change_box">
-	<form id="findid" name="findid" method="post">
-		<legend>아이디찾기</legend>
-		<div class="change_inp">
-			<div>
-				<input type="email" name="userNm" class="form-control" id="exampleFormControlInput1" placeholder="실명을 입력하세요."/>
+<div class="findheader">
+	<div id="findid"><h1>아이디 찾기</h1></div>
+	<div id="findpw"><h1>비밀번호 찾기</h1></div>
+</div> 
+<hr class="border border-dark border-2 opacity-100 w-60">
+<div class="bg-area change_box row" style="margin-top: 100px;">
+	<div class="col-4"></div>
+	<div class="col">
+		<form id="idbox" name="findid" method="post" action="findid">
+			<div class="col"></div>
+			<div class="change_inp">
+				<div style="height: 50px; margin-bottom: 40px;">
+					<input type="text" name="username" class="form-control fs-4" id="exampleFormControlInput1" placeholder="실명을 입력하세요." 
+					style="border: none; border-bottom: 1px solid #ccc;" />
+				</div>
+				<div style="height: 50px; margin-bottom: 50px;">
+					<input type="text" name="useremail" class="form-control fs-4" id="exampleFormControlInput1" 
+					placeholder="가입시 입력한 이메일을 입력하세요.." style="border: none; border-bottom: 1px solid #ccc;"/>
+				</div>
 			</div>
-			<div>
-				<input type="email" name="emailAdres" class="form-control" id="exampleFormControlInput1" placeholder="가입시 입력한 이메일을 입력하세요.."/>
+			<div class="text-center"><a href="findresult"><button type="submit" class="fs-4 rounded-pill" style="width: 200px; height: 65px;">아이디 찾기</button></a></div>
+		</form>
+		<form id="pwbox" name="findpw" method="post">
+			<div class="change_inp">
+				<div style="height: 50px; margin-bottom: 40px;">
+					<input type="text" name="userid" class="form-control fs-4" id="exampleFormControlInput1" placeholder="아이디을 입력하세요." 
+					style="border: none; border-bottom: 1px solid #ccc;"/>
+				</div>
+				<div style="height: 50px; margin-bottom: 40px;">
+					<input type="text" name="username" class="form-control fs-4" id="exampleFormControlInput1" placeholder="실명을 입력하세요." 
+					style="border: none; border-bottom: 1px solid #ccc;"/>
+				</div>
+				<div style="height: 50px; margin-bottom: 40px;">
+					<input type="text" name="useremail" class="form-control fs-4" id="exampleFormControlInput1" 
+					placeholder="가입시 입력한 이메일을 입력하세요.." style="border: none; border-bottom: 1px solid #ccc;"/>
+				</div>
 			</div>
-		</div>
-		<div><a href="completeid"><button>아이디 찾기</button></a></div>
-	</form>
-	<form id="findpw" name="findpw" method="post">
-		<legend>비밀번호찾기</legend>
-		<div class="change_inp">
-			<div>
-				<input type="email" name="userNm" class="form-control" id="exampleFormControlInput1" placeholder="아이디을 입력하세요."/>
-			</div>
-			<div>
-				<input type="email" name="userNm" class="form-control" id="exampleFormControlInput1" placeholder="실명을 입력하세요."/>
-			</div>
-			<div>
-				<input type="email" name="emailAdres" class="form-control" id="exampleFormControlInput1" placeholder="가입시 입력한 이메일을 입력하세요.."/>
-			</div>
-		</div>
-		<div><a href=""><button>비밀번호 찾기</button></a></div>
-	</form>
+			<div class="text-center"><a href="completepw"><button type="button" class="fs-4 rounded-pill pwbtn" style="width: 200px; height: 65px;">비밀번호 찾기</button></a></div>
+		</form>
+	</div>
+	<div class="col-4"></div>
 </div>
+
+<script src="${pageContext.request.contextPath}/resources/js/findid.js"></script>
 </body>
 </html>

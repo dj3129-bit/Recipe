@@ -10,4 +10,6 @@ public interface RecipeUserDao {
 
 	void update(RecipeUser item);
 
+	String findUserId(String username, String useremail);
+
 }

@@ -1,5 +1,8 @@
 package com.recipe.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,5 +28,13 @@ public class RecipeUserDaoImpl implements RecipeUserDao{
 	@Override
 	public void update(RecipeUser item) {
 		sql.update("recipeuser.update", item);
+	}
+
+	@Override
+	public String findUserId(String username, String useremail) {
+		Map<String, String> param = new HashMap<>();
+		param.put("username", username);
+		param.put("useremail", useremail);
+		return sql.selectOne("recipeuser.findId", param);
 	}
 }

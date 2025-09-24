@@ -51,4 +51,9 @@ public class RecipeUserServiceImpl implements RecipeUserService{
 		
 		return false;
 	}
+
+	@Override
+	public String findUserId(String username, String useremail) {
+		return dao.findUserId(username, useremail);
+	}
 }
