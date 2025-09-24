@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="question">
-	<select id="list" resultType="question">
-		SELECT * FROM question
-	</select>
 	<insert id="add" useGeneratedKeys="true" keyProperty="questionid">
 		INSERT INTO question (questiontitle, questioncontent, ischecked, userid)
 		VALUES (#{questiontitle}, #{questioncontent}, #{ischecked}, #{userid})
@@ -19,4 +16,31 @@
 		DELETE FROM question
 		WHERE questionid=#{questionid}
 	</delete>
+	
+	<sql id="search">
+		<where>
+			<if test="search == 1">
+				questionid=#{keyword}
+			</if>
+			
+			<if test="search == 2">
+				questiontitle LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+			
+			<if test="search == 3">
+				questioncontent LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+		</where>
+	</sql>
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM question <include refid="search"></include>
+	</select>
+	
+	<select id="list" resultType="question">
+		SELECT * FROM question
+		<include refid="search"></include>
+        ORDER BY questionid
+        LIMIT #{perPage} OFFSET ${(page - 1) * perPage}
+	</select>
 </mapper>

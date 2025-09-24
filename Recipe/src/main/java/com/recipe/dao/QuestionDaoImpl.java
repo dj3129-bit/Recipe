@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.recipe.model.Question;
+import com.recipe.pager.Pager;
 
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
@@ -20,12 +21,17 @@ public class QuestionDaoImpl implements QuestionDao {
 	}
 
 	@Override
-	public List<Question> list() {
-		return sql.selectList("question.list");
+	public List<Question> list(Pager pager) {
+		return sql.selectList("question.list", pager);
 	}
 
 	@Override
 	public void delete(int questionid) {
 		sql.delete("question.delete", questionid);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("question.total", pager);
 	}
 }

@@ -23,7 +23,7 @@
 					<tr>
 						<th class="fs-5" style="width: 10%;">No.</th>
 						<th class="fs-5">제목</th>
-						<th class="fs-5">작성자</th>
+						<th class="fs-5">내용</th>
 						<th class="fs-5" style="width: 20%;">작성일시</th>
 						<th class="fs-5" style="width: 20%; text-align: center;">삭제 여부</th>
 					</tr>
@@ -46,7 +46,7 @@
 				</tbody>
 				
 				<tfoot>
-					<%-- <tr>
+					<tr>
 						<td colspan="6">
 							<div class="pagination pagination-sm justify-content-center">
 								<div class="page-item"><a href="?page=1${pager.query}" class="page-link">처음</a></div>
@@ -60,7 +60,7 @@
 								<div class="page-item"><a href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></div>
 							</div>
 						</td>
-					</tr> --%>
+					</tr>
 				</tfoot>
 			</table>
 		</div>

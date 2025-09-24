@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.recipe.dao.QuestionDao;
 import com.recipe.model.Question;
+import com.recipe.pager.Pager;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
@@ -20,8 +21,12 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public List<Question> list() {
-		return dao.list();
+	public List<Question> list(Pager pager) {
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override

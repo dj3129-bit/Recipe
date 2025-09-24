@@ -100,5 +100,14 @@ public class RecipeController {
 		
 		return "redirect:/post/mypage";
 	}
+	
+	@GetMapping("/detail/{recipeid}")
+	String detail(@PathVariable int recipeid, Model model) {
+		Recipe item = rservice.item(recipeid);
+		
+		model.addAttribute("item", item);
+		
+		return "post/detail";
+	}
 }
 

@@ -36,12 +36,12 @@
 			</form>
 		</div>
 		<div class="col-4"></div>
-		<div class="row btn-group" >
+		<div class="row d-flex">
 			<div class="col-4"></div>
-			<div class="col-2"><a href="findid"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
+			<div class="col-3"><a href="findid"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
 				style="width: 330px; height: 45px;">아이디/비밀번호 찾기</button></a></div>
-			<div class="col-2"><a href="signup"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
-				style="width: 330px; height: 45px; text-align:right;">회원가입</button></a></div>
+			<div class="col-1"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
+				style="width: 150px; height: 45px;"><a href="signup" class="text-secondary">회원가입</a></button></div>
 			<div class="col-4"></div>
 		</div>
 	</div>

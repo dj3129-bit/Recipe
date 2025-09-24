@@ -128,3 +128,8 @@ form{
 	color: white;
 	font-size: 25px;
 }
+/* detail.jsp */
+.wrapper{
+	width: 70%;
+	margin: 0 auto;
+}

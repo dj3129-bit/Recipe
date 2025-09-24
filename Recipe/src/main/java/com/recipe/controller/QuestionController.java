@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.recipe.model.Question;
+import com.recipe.pager.Pager;
 import com.recipe.service.QuestionService;
 import com.recipe.service.RecipeUserService;
 
@@ -37,8 +38,8 @@ public class QuestionController {
 	 }
 	 
 	 @GetMapping("/list")
-	 String list(Model model) {
-		List<Question> list = service.list();
+	 String list(Model model, Pager pager) {
+		List<Question> list = service.list(pager);
 		
 		model.addAttribute("list", list);
 		return "user/list";
