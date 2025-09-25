@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
+import com.recipe.service.RecipeService;
 import com.recipe.service.RecipeUserService;
 
 @Controller
@@ -23,9 +25,15 @@ public class RootController {
 	
 	@Autowired
 	RecipeUserService service;
+	
+	@Autowired
+	RecipeService rservice;
 
 	@GetMapping("/")
-	String index(){
+	String index(Model model){
+		List<Recipe> list = rservice.list();
+		model.addAttribute("list", list);
+		
 		return "index";
 	}	
 	
@@ -68,7 +76,7 @@ public class RootController {
 	String logout(HttpSession session) {
 		session.invalidate();
 		
-		return "redirect:.";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/findid")
@@ -106,6 +114,14 @@ public class RootController {
 		return "FAIL";
 	}
 	
+	@GetMapping("/detail/{recipeid}")
+	String detail(@PathVariable int recipeid, Model model) {
+		Recipe item = rservice.item(recipeid);
+		
+		model.addAttribute("item", item);
+		
+		return "redirect:/post/detail";
+	}
 //	@GetMapping("/search")
 //	String search(@RequestParam("q") String query, Model model) {
 //		List<SearchResult> items = sservice.searchResult(query);

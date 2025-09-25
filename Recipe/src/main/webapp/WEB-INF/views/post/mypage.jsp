@@ -58,31 +58,33 @@
 				</c:if>
 							
 				<c:forEach var="item" items="${list}">
-					<div>
-						<ul class="iteminfo">
-							<li class="imgli">
-								<c:choose>
-									<c:when test="${not empty item.imagepath}">
-										<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 90%; height: 75%;">
-									</c:when>
-									<c:otherwise>
-										<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 100%; height: 100%;">
-									</c:otherwise>
-								</c:choose>
-							</li>
-							<li class="viewli">조회수 : ${item.recipeviews}</li>
-							<li class="rcli">추천수 : ${item.recommend}</li>
-							<li class="editli"><a href="update/${item.recipeid}"><button class="editbtn"><i class="fa-solid fa-pen"></i></button></a></li>
-							<li class="delli"><a href="delete/${item.recipeid}"><button id="del"><i class="fa-solid fa-trash"></i></button></a></li>
-						</ul>
-						<h3 class="itemtitle"><a href="detail/${item.recipeid}">${item.recipetitle}</a></h3>
-					</div>
+					<c:if test="${item.userid == userid}">
+						<div>
+							<ul class="iteminfo">
+								<li class="imgli">
+									<c:choose>
+										<c:when test="${not empty item.imagepath}">
+											<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 90%; height: 75%;">
+										</c:when>
+										<c:otherwise>
+											<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 100%; height: 100%;">
+										</c:otherwise>
+									</c:choose>
+								</li>
+								<li class="viewli">조회수 : ${item.recipeviews}</li>
+								<li class="rcli">추천수 : ${item.recommend}</li>
+								<li class="editli"><a href="update/${item.recipeid}"><button class="editbtn"><i class="fa-solid fa-pen"></i></button></a></li>
+								<li class="delli"><a href="delete/${item.recipeid}"><button id="del"><i class="fa-solid fa-trash"></i></button></a></li>
+							</ul>
+							<h3 class="itemtitle"><a href="detail/${item.recipeid}">${item.recipetitle}</a></h3>
+						</div>
+					</c:if>
 				</c:forEach>
 			</div>
 		</div>
 		<div><a href="${pageContext.request.contextPath}/user/question"><button type="button" class="qbtn">문의작성</button></a></div>
 	</div>
-	
+
 <script src="${pageContext.request.contextPath}/resources/js/delete.js"></script>
 <script>
   document.getElementById('inputProfile').addEventListener('change', function() {

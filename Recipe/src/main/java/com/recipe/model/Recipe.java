@@ -88,5 +88,8 @@ public class Recipe {
 	public void setImagepath(String imagepath) {
 		this.imagepath = imagepath;
 	}
+	public String getUserid() {
+		return userid;
+	}
 	
 }

@@ -65,12 +65,15 @@
 		
 		<h3>HOT 레시피</h3>
 		<div class="hot">
+		<c:forEach var="item" items="${list}" begin="0" end="2">
 			<div class="hotdiv">
-				<div class="hotphoto"></div>
+				<div class="hotphoto">
+					<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 100%; height: 100%; object-fit: cover;">
+				</div>
 				<div class="hotcontent">
 					<div>
-						<h3>레시피명</h3>
-						<p>레시피 설명</p>
+						<h3>${item.recipetitle}</h3>
+						<p>${item.introduce}</p>
 					</div>
 					<div class="cook">
 						<p><i class="bi bi-clock"></i>요리 시간</p>
@@ -78,128 +81,49 @@
 						<p><i class="bi bi-hash"></i>요리 방법</p>
 					</div>
 					<div>재료 : </div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+					<div class="detail"><a href="/post/detail/${item.recipeid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
 				</div>
 			</div>
-			<div class="hotdiv">
-				<div class="hotphoto"></div>
-				<div class="hotcontent">
-					<div>
-						<h3>레시피명</h3>
-						<p>레시피 설명</p>
-					</div>
-					<div class="cook">
-						<p><i class="bi bi-clock"></i>요리 시간</p>
-						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>요리 방법</p>
-					</div>
-					<div>재료 : </div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>
-			</div>
-			<div class="hotdiv">
-				<div class="hotphoto"></div>
-				<div class="hotcontent">
-					<div>
-						<h3>레시피명</h3>
-						<p>레시피 설명</p>
-					</div>
-					<div class="cook">
-						<p><i class="bi bi-clock"></i>요리 시간</p>
-						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>요리 방법</p>
-					</div>
-					<div>재료 : </div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>
-			</div>
-		</div>	
-		
-		<h3>BEST 레시피</h3>
-		<div class="best">
-			<div class="bestdiv">
-				<div class="bestphoto"></div>
-				<div class="bestcontent">
-					<div>
-						<h3>레시피명</h3>
-						<p>레시피 설명</p>
-					</div>
-					<div class="cook">
-						<p><i class="bi bi-clock"></i>요리 시간</p>
-						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>요리 방법</p>
-					</div>
-					<div>재료 : </div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>	
-			</div>
-			<div class="bestdiv">
-				<div class="bestphoto"></div>
-				<div class="bestcontent">
-					<div>
-						<h3>레시피명</h3>
-						<p>레시피 설명</p>
-					</div>
-					<div class="cook">
-						<p><i class="bi bi-clock"></i>요리 시간</p>
-						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>요리 방법</p>
-					</div>
-					<div>재료 : </div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>	
-			</div>
-			<div class="bestdiv">
-				<div class="bestphoto"></div>
-				<div class="bestcontent">
-					<div>
-						<h3>레시피명</h3>
-						<p>레시피 설명</p>
-					</div>
-					<div class="cook">
-						<p><i class="bi bi-clock"></i>요리 시간</p>
-						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>요리 방법</p>
-					</div>
-					<div>재료 : </div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>	
-			</div>
+		</c:forEach>
 		</div>
-		
-		<h3>인기 요리사</h3>
-		<div class="chef">
-			<div class="chefdiv">
-				<div class="chefphoto"></div>
-				<div class="chefcontent">
-					<div>
-						<h3>요리사명</h3>
-						<p>주요 요리</p>
-					</div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>	
+					
+			<h3>BEST 레시피</h3>
+			<div class="best">
+			<c:forEach var="item" items="${list}" begin="0" end="2">
+				<div class="bestdiv">
+					<div class="bestphoto"></div>
+					<div class="bestcontent">
+						<div>
+							<h3>레시피명</h3>
+							<p>레시피 설명</p>
+						</div>
+						<div class="cook">
+							<p><i class="bi bi-clock"></i>요리 시간</p>
+							<p><i class="bi bi-bookmark"></i>요리 종류</p>
+							<p><i class="bi bi-hash"></i>요리 방법</p>
+						</div>
+						<div>재료 : </div>
+						<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+					</div>	
+				</div>
+			</c:forEach>
 			</div>
-			<div class="chefdiv">
-				<div class="chefphoto"></div>
-				<div class="chefcontent">
-					<div>
-						<h3>요리사명</h3>
-						<p>주요 요리</p>
-					</div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>	
+			
+			<h3>인기 요리사</h3>
+			<div class="chef">
+			<c:forEach var="item" items="${list}" begin="0" end="2">
+				<div class="chefdiv">
+					<div class="chefphoto"></div>
+					<div class="chefcontent">
+						<div>
+							<h3>요리사명</h3>
+							<p>주요 요리</p>
+						</div>
+						<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
+					</div>	
+				</div>
+			</c:forEach>
 			</div>
-			<div class="chefdiv">
-				<div class="chefphoto"></div>
-				<div class="chefcontent">
-					<div>
-						<h3>요리사명</h3>
-						<p>주요 요리</p>
-					</div>
-					<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
-				</div>	
-			</div>
-		</div>
 	</div>
 </main>
 

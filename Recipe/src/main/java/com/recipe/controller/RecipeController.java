@@ -39,6 +39,8 @@ public class RecipeController {
 		model.addAttribute("list", list);
 		
 		String userid = (String) session.getAttribute("userid");
+		model.addAttribute("userid", userid);
+		
 		if(userid != null) {
 			RecipeUser recipeuser = ruservice.item(userid);
 			model.addAttribute("item", recipeuser);
