@@ -78,6 +78,26 @@ public class RecipeController {
 		return "redirect:mypage";
 	}
 	
+	@PostMapping("/profile")
+	String addProfile(@RequestParam("profilefile") MultipartFile imageFile, Model model) {
+		if(!imageFile.isEmpty()) {
+			String profileFileName = UUID.randomUUID().toString() + "-" + imageFile.getOriginalFilename();
+			File profileImage = new File(uploadPath, profileFileName);
+			
+			try {
+				imageFile.transferTo(profileImage);
+				model.addAttribute("profileImage", "/upload/" + profileFileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+				model.addAttribute("profileImage", "/images/defaultprofile.jpg");
+			}
+		}
+		List<Recipe> list = rservice.list();
+		model.addAttribute("list", list);
+		
+		return "post/mypage";
+	}
+	
 	@GetMapping("/update/{recipeid}")
 	String update(@PathVariable int recipeid, Model model) {
 		Recipe item = rservice.item(recipeid);

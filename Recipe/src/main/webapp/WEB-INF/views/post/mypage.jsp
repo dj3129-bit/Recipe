@@ -14,8 +14,22 @@
 	<div class="container">
 		<div class="profile">
 			<div id="photo">
-				<button type="button" class="addprofile"><i class="bi bi-camera" style="font-size: 1.5rem;"></i></button>
-				<img src="${pageContext.request.contextPath}/resources/images/defaultprofile.jpg" style="width: 90%; height: 90%; object-fit: cover;">
+				<form action="/post/profile" method="post" enctype="multipart/form-data">
+					<input type="file" id="inputProfile" name="profilefile" accept="image/*" style="display: none;">
+					<button type="button" class="addprofile" onclick="document.getElementById('inputProfile').click();">
+						<i class="bi bi-camera" style="font-size: 1.5rem;"></i>
+					</button>
+				</form>
+				<div>
+					<c:choose>
+				    	<c:when test="${not empty profileImage}">
+				      		<img src="${profileImage}" style="width: 100%; height: 100%;">
+				    	</c:when>
+				    	<c:otherwise>
+				      		<img src="${pageContext.request.contextPath}/resources/images/defaultprofile.jpg" style="width: 100%; height: 100%;">
+				    	</c:otherwise>
+				  	</c:choose>
+				</div>
 			</div>
 			<div class="userinfo">
 				<a href="${pageContext.request.contextPath}/user/update/${item.userid}"><button type="button" class="editbtn"><i class="fa-solid fa-pen"></i></button></a>
@@ -70,5 +84,10 @@
 	</div>
 	
 <script src="${pageContext.request.contextPath}/resources/js/delete.js"></script>
+<script>
+  document.getElementById('inputProfile').addEventListener('change', function() {
+    this.form.submit();
+  });
+</script>
 </body>
 </html>
