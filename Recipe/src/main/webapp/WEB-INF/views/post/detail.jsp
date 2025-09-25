@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>상세 페이지</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -163,6 +164,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<hr>
+		<div class="recbox">
+			<button type="button" class="recedit"><i class="bi bi-hand-thumbs-up-fill"></i>추천하기</button>
 		</div>
 	</div>
 </body>

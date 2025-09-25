@@ -61,6 +61,14 @@
 			<div><a>인원별 <i class="bi bi-chevron-down"></i></a></div>
 			<div><a>방법별 <i class="bi bi-chevron-down"></i></a></div>
 			<div><a>재료별 <i class="bi bi-chevron-down"></i></a></div>
+			<div class="subcategory">
+				<div><a>한식</a><a>양식</a><a>중식</a><a>동남아 음식</a><a>퓨전</a><a>차/음료/술</a></div>
+				<div><a>반찬</a><a>밑반찬</a><a>김치/젓갈/장류</a><a>디저트/간식/과자</a><a>캠핑</a><a>술안주</a><a>초간단</a><a>파티</a><a>해장</a><a>도시락</a><a>다이어트/건강식</a><a>명절</a>
+				<a>양념/소스/잼</a><a>아동</a><a>반려동물 간식</a><a>기타</a></div>
+				<div><a>1인</a><a>2인</a><a>3~4인</a><a>5인 이상</a></div>
+				<div><a>볶음</a><a>끓이기</a><a>부침</a><a>조림</a><a>비빔</a><a>튀김</a><a>무침</a><a>찜/삶기</a><a>굽기</a><a>데치기</a><a>회</a><a>기타</a></div>
+				<div><a>소고기</a><a>돼지고기</a><a>닭고기</a><a>채소류</a><a>해물류</a><a>달걀/유제품</a><a>가공식품</a><a>밀가루</a><a>건어물/버섯</a><a>콩/견과류</a><a>쌀/곡류</a><a>기타</a></div>
+			</div>
 		</div>
 		
 		<h3>HOT 레시피</h3>
@@ -78,7 +86,7 @@
 					<div class="cook">
 						<p><i class="bi bi-clock"></i>요리 시간</p>
 						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>요리 방법</p>
+						<p><i class="bi bi-hash"></i>추천수 : </p>
 					</div>
 					<div>재료 : </div>
 					<div class="detail"><a href="/post/detail/${item.recipeid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
@@ -100,7 +108,7 @@
 						<div class="cook">
 							<p><i class="bi bi-clock"></i>요리 시간</p>
 							<p><i class="bi bi-bookmark"></i>요리 종류</p>
-							<p><i class="bi bi-hash"></i>요리 방법</p>
+							<p><i class="bi bi-hash"></i>추천수 : </p>
 						</div>
 						<div>재료 : </div>
 						<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>

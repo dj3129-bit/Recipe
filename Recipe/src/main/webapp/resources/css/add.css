@@ -117,8 +117,7 @@ form{
 .editbox{
 	text-align: right;
 }
-.cookedit{
-	display: inline-block;
+.cookedit, .recedit{
 	width: 300px;
 	height: 75px;
 	border-radius: 15px;
@@ -128,8 +127,17 @@ form{
 	color: white;
 	font-size: 25px;
 }
+.cookedit{
+	display: inline-block;
+}
 /* detail.jsp */
 .wrapper{
 	width: 70%;
 	margin: 0 auto;
+}
+.recbox{
+	text-align: center;
+}
+.recedit i{
+	margin-right: 10px;
 }

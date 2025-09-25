@@ -47,7 +47,7 @@
 					placeholder="가입시 입력한 이메일을 입력하세요.." style="border: none; border-bottom: 1px solid #ccc;"/>
 				</div>
 			</div>
-			<div class="text-center"><a href="completepw"><button type="button" class="fs-4 rounded-pill pwbtn" style="width: 200px; height: 65px;">비밀번호 찾기</button></a></div>
+			<div class="text-center"><a href="findpw"><button type="button" class="fs-4 rounded-pill pwbtn" style="width: 200px; height: 65px;">비밀번호 찾기</button></a></div>
 		</form>
 	</div>
 	<div class="col-4"></div>

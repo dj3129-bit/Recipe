@@ -122,6 +122,11 @@ public class RootController {
 		
 		return "redirect:/post/detail";
 	}
+	
+	@GetMapping("/findpw")
+	String findpw() {
+		return "findpw";
+	}
 //	@GetMapping("/search")
 //	String search(@RequestParam("q") String query, Model model) {
 //		List<SearchResult> items = sservice.searchResult(query);
