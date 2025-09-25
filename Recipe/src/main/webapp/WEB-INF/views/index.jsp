@@ -13,8 +13,8 @@
 <header>
 	<div class="headerbox">
 		<h1>레시피 로고</h1>
-		<input type="text" class="headinput">	
-		<button type="button" class="headbtn">검색</button>
+		<input type="text" name="q" class="headinput">	
+		<button type="submit" class="headbtn">검색</button>
 		
 		<c:if test="${sessionScope.recipeuser == null}">
 			<div class="libox">

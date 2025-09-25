@@ -13,6 +13,23 @@
 	text-align: center;
 	padding-top: 20px;
 }
+#photo{
+	width: 75%;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.addprofile{
+	position: absolute;
+	top: 0;
+	right: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: 1px solid #000;
+	z-index: 1;
+	cursor: pointer;
+}
 a button{
 	cursor: pointer;
 }
@@ -31,7 +48,7 @@ a button{
   	justify-content: center;
   	gap: 10px;
 }
-.userecipe{
+.bookmark, .userecipe{
 	display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;

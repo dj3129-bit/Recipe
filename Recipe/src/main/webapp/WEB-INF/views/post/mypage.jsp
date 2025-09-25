@@ -7,13 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>마이 페이지</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/mypage.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <script src="https://kit.fontawesome.com/70bb3411ef.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="profile">
-			<div id="photo"></div>
-			<i class="fa-solid fa-circle-user" style="font-size: 150px;"></i>
+			<div id="photo">
+				<button type="button" class="addprofile"><i class="bi bi-camera" style="font-size: 1.5rem;"></i></button>
+				<img src="${pageContext.request.contextPath}/resources/images/defaultprofile.jpg" style="width: 90%; height: 90%; object-fit: cover;">
+			</div>
 			<div class="userinfo">
 				<a href="${pageContext.request.contextPath}/user/update/${item.userid}"><button type="button" class="editbtn"><i class="fa-solid fa-pen"></i></button></a>
 				<div><label id="nickname">${item.nickname}님</label></div>
@@ -30,7 +33,7 @@
 			</div>
 		</div>
 		<div class="recipe">
-			<div>
+			<div class="bookmark">
 				<h3>즐겨찾기 레시피</h3>
 				<ul></ul>
 			</div>
