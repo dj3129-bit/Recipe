@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.recipe.model.Question;
 import com.recipe.pager.Pager;
 import com.recipe.service.QuestionService;
-import com.recipe.service.RecipeUserService;
 
 @Controller
 @RequestMapping("/user")

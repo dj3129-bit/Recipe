@@ -9,15 +9,15 @@
 <script src="https://kit.fontawesome.com/70bb3411ef.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="row">
-		<div class="col-4"></div>
-		<div class="col">
+	<div class="row" style="margin-top: 150px;">
+		<div class="col-3"></div>
+		<div class="col" style="text-align: center; font-size: 2rem;">
 			<p>회원님의 이메일로 임시 비밀번호가 전송되었습니다.</p>
 			<p>임시 비밀번호로 로그인 후</p>
-			<p>마이 페이지 -> 프로필의 <i class="fa-solid fa-pen"></i> 회원정보 수정에 접속하여 
+			<p style="text-decoration:underline; text-underline-offset: 15px; ">마이 페이지 -> 프로필 ->&nbsp;<i class="fa-solid fa-pen""></i> 회원정보 수정에 접속하여</p>
 			<p>비밀번호를 변경해주세요.</p>
 		</div>
-		<div class="col-4"></div>
+		<div class="col-3"></div>
 	</div>
 </body>
 </html>

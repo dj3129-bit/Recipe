@@ -43,7 +43,7 @@
 				</div>
 				<div class="d-flex btnbox">
 					<div class="userout"><a href="userout"><button class="fs-5 rounded-pill" style="width: 130px; height: 45px;">회원 탈퇴</button></a></div>
-					<div><a href="updatepw"><button class="fs-5 rounded-pill" style="width: 170px; height: 45px;">비밀번호 변경</button></a></div>
+					<div><a href="${pageContext.request.contextPath}/user/changepw/${userid}"><button class="fs-5 rounded-pill" style="width: 170px; height: 45px;">비밀번호 변경</button></a></div>
 				</div>
 				<div>
 					<div class="logout"><a href="logout" class="logoutlink"><button class="fs-5 rounded-pill" style="width: 170px; height: 65px;">로그아웃</button></a></div>
