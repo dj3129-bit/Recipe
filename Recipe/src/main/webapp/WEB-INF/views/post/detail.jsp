@@ -132,10 +132,11 @@
 		<div>
 			<h3>재료정보</h3>
 			<ul id="infoul">
-				<li id="infoli"><input type="text" name="ingredient"
-					placeholder="재료명" /> <input type="text" name="quantity"
-					placeholder="수량" /> <input type="text" name="unit" placeholder="단위" />
-					<input type="text" name="note" placeholder="비고" />
+				<li id="infoli">
+					<input type="text" name="ingredient" placeholder="재료명" value="${ingredient.ingname}" /> 
+					<input type="text" name="quantity" placeholder="수량" value="${ingredient.quantity}" /> 
+					<input type="text" name="unit" placeholder="단위" value="${ingredient.unit}" />
+					<input type="text" name="note" placeholder="비고" value="${ingredient.exp}" />
 					<button type="button" id="delete">-</button></li>
 			</ul>
 		</div>
@@ -168,6 +169,7 @@
 		<hr>
 		<div class="recbox">
 			<button type="button" class="recedit"><i class="bi bi-hand-thumbs-up-fill"></i>추천하기</button>
+			<button type="button" class="favoredit"><i class="bi bi-heart-fill"></i>즐겨찾기 추가</button>
 		</div>
 	</div>
 </body>

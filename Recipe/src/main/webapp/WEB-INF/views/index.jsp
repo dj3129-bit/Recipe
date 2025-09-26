@@ -73,30 +73,33 @@
 		
 		<h3>HOT 레시피</h3>
 		<div class="hot">
-		<c:forEach var="item" items="${list}" begin="0" end="2">
-			<div class="hotdiv">
-				<div class="hotphoto">
-					<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 100%; height: 100%; object-fit: cover;">
-				</div>
-				<div class="hotcontent">
-					<div>
-						<h3>${item.recipetitle}</h3>
-						<p>${item.introduce}</p>
+			<div class="arrow"><i class="bi bi-chevron-compact-left" style="font-size: 4rem;"></i></div>
+			<c:forEach var="item" items="${list}" begin="0" end="2">
+				<div class="hotdiv">
+					<div class="hotphoto">
+						<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 100%; height: 100%; object-fit: cover;">
 					</div>
-					<div class="cook">
-						<p><i class="bi bi-clock"></i>요리 시간</p>
-						<p><i class="bi bi-bookmark"></i>요리 종류</p>
-						<p><i class="bi bi-hash"></i>추천수 : </p>
+					<div class="hotcontent">
+						<div>
+							<h3>${item.recipetitle}</h3>
+							<p>${item.introduce}</p>
+						</div>
+						<div class="cook">
+							<p><i class="bi bi-clock"></i>요리 시간</p>
+							<p><i class="bi bi-bookmark"></i>요리 종류</p>
+							<p><i class="bi bi-hash"></i>추천수 : </p>
+						</div>
+						<div>재료 : </div>
+						<div class="detail"><a href="/post/detail/${item.recipeid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
 					</div>
-					<div>재료 : </div>
-					<div class="detail"><a href="/post/detail/${item.recipeid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
 				</div>
-			</div>
-		</c:forEach>
+			</c:forEach>
+			<div class="arrow"><i class="bi bi-chevron-compact-right" style="font-size: 4rem;"></i></div>
 		</div>
 					
-			<h3>BEST 레시피</h3>
-			<div class="best">
+		<h3>BEST 레시피</h3>
+		<div class="best">
+			<div class="arrow"><i class="bi bi-chevron-compact-left" style="font-size: 4rem;"></i></div>
 			<c:forEach var="item" items="${list}" begin="0" end="2">
 				<div class="bestdiv">
 					<div class="bestphoto"></div>
@@ -115,10 +118,12 @@
 					</div>	
 				</div>
 			</c:forEach>
-			</div>
+			<div class="arrow"><i class="bi bi-chevron-compact-right" style="font-size: 4rem;"></i></div>
+		</div>
 			
-			<h3>인기 요리사</h3>
-			<div class="chef">
+		<h3>인기 요리사</h3>
+		<div class="chef">
+			<div class="arrow"><i class="bi bi-chevron-compact-left" style="font-size: 4rem;"></i></div>
 			<c:forEach var="item" items="${list}" begin="0" end="2">
 				<div class="chefdiv">
 					<div class="chefphoto"></div>
@@ -131,7 +136,8 @@
 					</div>	
 				</div>
 			</c:forEach>
-			</div>
+			<div class="arrow"><i class="bi bi-chevron-compact-right" style="font-size: 4rem;"></i></div>
+		</div>
 	</div>
 </main>
 

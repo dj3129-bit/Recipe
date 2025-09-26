@@ -135,10 +135,10 @@
 			<h3>재료정보</h3>
 			<ul id="infoul">
 				<li id="infoli">
-					<input type="text" name="ingredient" placeholder="재료명" />
+					<input type="text" name="ingname" placeholder="재료명" />
 					<input type="text" name="quantity" placeholder="수량" />
 					<input type="text" name="unit" placeholder="단위" />
-					<input type="text" name="note" placeholder="비고" />
+					<input type="text" name="exp" placeholder="비고" />
 					<button type="button" id="delete">-</button>
 				</li>
 			</ul>

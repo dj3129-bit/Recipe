@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +37,27 @@
 			<div class="img">
 				<div width="200" height="150">
 					<h2>대표 이미지</h2>
-					<button type="button">변경</button>
+					<c:choose>
+						<c:when test="${not empty item.imagepath}">
+							<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 30%; height: 30%;">
+						</c:when>
+						<c:otherwise>
+							<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 30%; height: 30%;">
+						</c:otherwise>
+					</c:choose>
+					<button type="button" id="mainchange">변경</button>
 				</div>
 				<div width="200" height="150">
 					<h2>완성 요리 이미지</h2>
-					<button type="button">변경</button>
+					<c:choose>
+						<c:when test="${not empty item.imagepath}">
+							<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 30%; height: 30%;">
+						</c:when>
+						<c:otherwise>
+							<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 30%; height: 30%;">
+						</c:otherwise>
+					</c:choose>
+					<button type="button" id="comchange">변경</button>
 				</div>
 			</div>
 		</div>
@@ -134,10 +150,10 @@
 			<h3>재료정보</h3>
 				<ul id="infoul">
 					<li id="infoli">
-						<input type="text" name="ingredient" placeholder="재료명" />
-						<input type="text" name="quantity" placeholder="수량" />
-						<input type="text" name="unit" placeholder="단위" />
-						<input type="text" name="note" placeholder="비고" />
+						<input type="text" name="ingredient" placeholder="재료명" value="${ingredient.ingname}" />
+						<input type="text" name="quantity" placeholder="수량" value="${ingredient.quantity}" />
+						<input type="text" name="unit" placeholder="단위" value="${ingredient.unit}" />
+						<input type="text" name="note" placeholder="비고" value="${ingredient.exp}" />
 						<button type="button" id="delete">-</button>
 					</li>
 				</ul>
@@ -164,5 +180,6 @@
 			<button type="submit" class="cookedit">레시피 재등록</button>
 		</div>
 	</form>
+
 </body>
 </html>

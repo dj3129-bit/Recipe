@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.recipe.dao.RecipeDao;
+import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 
 @Service
@@ -30,6 +31,11 @@ public class RecipeServiceImpl implements RecipeService{
 		return dao.item(recipeid);
 	}
 	
+	@Override
+	public Ingredient ingredient(int recipeid) {
+		return dao.ingredient(recipeid);
+	}
+	
 	@Transactional
 	@Override
 	public void update(Recipe item) {
@@ -37,7 +43,20 @@ public class RecipeServiceImpl implements RecipeService{
 	}
 
 	@Override
+	@Transactional
 	public void delete(int recipeid) {
+		dao.deletefirst(recipeid);
 		dao.delete(recipeid);
 	}
+
+	@Override
+	public void addmore(Ingredient ingredient) {
+		dao.addmore(ingredient);
+	}
+
+	@Override
+	public void updatemore(Ingredient ingredient) {
+		dao.updatemore(ingredient);
+	}
+
 }

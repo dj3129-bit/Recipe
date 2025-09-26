@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
 import com.recipe.service.RecipeService;
@@ -55,7 +57,7 @@ public class RecipeController {
 	}
 	
 	@PostMapping("/add")
-		String add(Recipe item, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
+		String add(Recipe item, @ModelAttribute Ingredient ingredient,  HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
 		
 		if (userid == null) {
@@ -77,6 +79,10 @@ public class RecipeController {
 		
 		item.setUserid(userid);
 		rservice.add(item);
+		
+		ingredient.setRecipeid(item.getRecipeid());
+		rservice.addmore(ingredient);
+		
 		return "redirect:mypage";
 	}
 	
@@ -103,16 +109,20 @@ public class RecipeController {
 	@GetMapping("/update/{recipeid}")
 	String update(@PathVariable int recipeid, Model model) {
 		Recipe item = rservice.item(recipeid);
+		Ingredient ingredient = rservice.ingredient(recipeid);
 		
 		model.addAttribute("item", item);
+		model.addAttribute("ingredient", ingredient);
 		return "post/update";
 	}
 	
 	@PostMapping("/update/{recipeid}")
-	String update(@PathVariable int recipeid, Recipe item) {
+	String update(@PathVariable int recipeid, Recipe item, @ModelAttribute Ingredient ingredient) {
 		item.setRecipeid(recipeid);
+		ingredient.setRecipeid(item.getRecipeid());
 		
 		rservice.update(item);
+		rservice.updatemore(ingredient);
 		return "redirect:/post/mypage";
 	}
 	
@@ -126,9 +136,10 @@ public class RecipeController {
 	@GetMapping("/detail/{recipeid}")
 	String detail(@PathVariable int recipeid, Model model) {
 		Recipe item = rservice.item(recipeid);
+		Ingredient ingredient = rservice.ingredient(recipeid);
 		
 		model.addAttribute("item", item);
-		
+		model.addAttribute("ingredient", ingredient);
 		return "post/detail";
 	}
 }
