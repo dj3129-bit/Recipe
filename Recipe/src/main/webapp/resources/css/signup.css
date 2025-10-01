@@ -24,6 +24,9 @@ hr{
 	padding-right: 16px; 
 	padding-top: 11px;
 }
+.custom-input{
+	padding-left: 15px;
+}
 .lbbox{
 	width: 150px;
 	font-size: 18px;

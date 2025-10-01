@@ -26,4 +26,16 @@
 		DELETE FROM recipepost
 		WHERE recipeid=#{recipeid}
 	</delete>
+	
+	<update id="recommend" parameterType="int">
+	  UPDATE recipepost
+	  SET recommend = recommend + 1
+	  WHERE recipeid = #{recipeid}
+	</update>
+	
+	<select id="recview" parameterType="int" resultType="int">
+	  SELECT recommend
+	  FROM recipepost
+	  WHERE recipeid = #{recipeid}
+	</select>
 </mapper>

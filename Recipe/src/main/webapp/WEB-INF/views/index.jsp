@@ -87,7 +87,7 @@
 						<div class="cook">
 							<p><i class="bi bi-clock"></i>요리 시간</p>
 							<p><i class="bi bi-bookmark"></i>요리 종류</p>
-							<p><i class="bi bi-hash"></i>추천수 : </p>
+							<p id="recup"><i class="bi bi-hash"></i>추천수 : ${item.recommend}</p>
 						</div>
 						<div>재료 : </div>
 						<div class="detail"><a href="/post/detail/${item.recipeid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
@@ -111,7 +111,7 @@
 						<div class="cook">
 							<p><i class="bi bi-clock"></i>요리 시간</p>
 							<p><i class="bi bi-bookmark"></i>요리 종류</p>
-							<p><i class="bi bi-hash"></i>추천수 : </p>
+							<p id="recup"><i class="bi bi-hash"></i>추천수 : ${item.recommend}</p>
 						</div>
 						<div>재료 : </div>
 						<div class="detail"><a><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>

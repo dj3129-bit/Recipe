@@ -2,20 +2,25 @@ package com.recipe.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.recipe.model.Ingredient;
@@ -141,6 +146,25 @@ public class RecipeController {
 		model.addAttribute("item", item);
 		model.addAttribute("ingredient", ingredient);
 		return "post/detail";
+	}
+	
+	@PostMapping("/recommend")
+	@ResponseBody
+	public Map<String, Object> recommend(@RequestBody Map<String, Object> payload) {
+		Map<String, Object> result = new HashMap<>();
+		try {
+			int recipeid = Integer.parseInt(payload.get("recipeid").toString());
+			rservice.recup(recipeid);
+			int recommend = rservice.recview(recipeid);
+			
+			Recipe item = rservice.item(recipeid);
+			result.put("success", true);
+			result.put("recommend", item.getRecommend());
+		}catch(Exception e) {
+			e.printStackTrace();
+			result.put("success", false);
+		}
+		return result;
 	}
 }
 

@@ -59,4 +59,14 @@ public class RecipeServiceImpl implements RecipeService{
 		dao.updatemore(ingredient);
 	}
 
+	@Override
+	public int recup(int recipeid) {
+		return dao.recup(recipeid);
+	}
+
+	@Override
+	public int recview(int recipeid) {
+		return dao.recview(recipeid);
+	}
+
 }

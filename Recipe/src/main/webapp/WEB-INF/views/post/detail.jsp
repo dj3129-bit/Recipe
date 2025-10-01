@@ -168,9 +168,37 @@
 		</div>
 		<hr>
 		<div class="recbox">
-			<button type="button" class="recedit"><i class="bi bi-hand-thumbs-up-fill"></i>추천하기</button>
+			<div class="text-start" style="width: 300px;">
+				<input type="hidden" name="recipeid" value="${item.recipeid}" />
+				<button type="button" class="recedit" id="recbtn" data-recipeid="${item.recipeid}"><i class="bi bi-hand-thumbs-up-fill"></i>추천하기</button>
+			</div>
 			<button type="button" class="favoredit"><i class="bi bi-heart-fill"></i>즐겨찾기 추가</button>
 		</div>
 	</div>
 </body>
+
+<script>
+  document.getElementById("recbtn").addEventListener("click", function () {
+    const recipeid = this.getAttribute("data-recipeid");
+
+    fetch("/post/recommend", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ recipeid: recipeid })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert("추천되었습니다!");
+      } else {
+        alert("추천 실패");
+      }
+    }).catch(error => {
+      console.error("에러 발생:", error);
+      alert("서버 오류가 발생했습니다.");
+    });
+  });
+</script>
 </html>

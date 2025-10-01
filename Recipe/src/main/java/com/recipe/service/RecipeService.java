@@ -23,4 +23,8 @@ public interface RecipeService {
 
 	void updatemore(Ingredient ingredient);
 
+	int recup(int recipeid);
+
+	int recview(int recipeid);
+
 }

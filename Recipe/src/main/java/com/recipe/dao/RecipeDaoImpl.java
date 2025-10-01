@@ -42,22 +42,32 @@ public class RecipeDaoImpl implements RecipeDao{
 
 	@Override
 	public void deletefirst(int recipeid) {
-		sql.delete("ingredient.deletefirst", recipeid);
+		sql.delete("ingredient.deletefirst", recipeid);    //재료 삭제
 	}
 	
 	@Override
 	public void delete(int recipeid) {
-		sql.delete("recipe.delete", recipeid);
+		sql.delete("recipe.delete", recipeid);    //레시피 삭제
 	}
 
 	@Override
 	public void addmore(Ingredient ingredient) {
-		sql.insert("ingredient.addmore", ingredient);
+		sql.insert("ingredient.addmore", ingredient);   //재료 추가
 	}
 
 	@Override
 	public void updatemore(Ingredient ingredient) {
-		sql.update("ingredient.updatemore", ingredient);
+		sql.update("ingredient.updatemore", ingredient);   //재료 수정
+	}
+
+	@Override
+	public int recup(int recipeid) {
+		return sql.update("recipe.recommend", recipeid);  //추천수 증가
+	}
+	
+	@Override
+	public int recview(int recipeid) {
+	    return sql.selectOne("recipe.recview", recipeid); // 추천수 조회
 	}
 
 }

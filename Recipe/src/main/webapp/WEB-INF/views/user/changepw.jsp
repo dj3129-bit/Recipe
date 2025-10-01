@@ -34,5 +34,11 @@
 		</div>
 		<div class="col-3"></div>
 	</div>
+	
+<c:if test="${resetpw}">
+  <script>
+    alert("비밀번호가 재설정되었습니다.");
+  </script>
+</c:if>
 </body>
 </html>

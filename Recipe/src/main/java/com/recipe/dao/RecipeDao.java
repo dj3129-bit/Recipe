@@ -24,5 +24,9 @@ public interface RecipeDao {
 	void updatemore(Ingredient ingredient);
 
 	void deletefirst(int recipeid);
+
+	int recup(int recipeid);
+
+	int recview(int recipeid);
 	
 }

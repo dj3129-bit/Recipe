@@ -138,8 +138,7 @@ form{
 .recbox{
 	display: flex;
 	text-align: center;
-	justify-content: center;
-	gap: 25px;
+	justify-content: space-between;
 }
 .recbox i{
 	margin-right: 10px;

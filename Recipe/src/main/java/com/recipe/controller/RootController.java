@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.recipe.model.Recipe;
@@ -63,7 +64,19 @@ public class RootController {
 	}
 	
 	@PostMapping("/signup")
-	String signup(RecipeUser item) {
+	String signup(String userid, String userpw, String username, String nickname, String usertel, 
+			@RequestParam("emailid") String emailid,
+            @RequestParam("domain") String domain) {
+		String useremail = emailid + "@" + domain;
+		
+		RecipeUser item = new RecipeUser();
+		item.setUserid(userid);
+		item.setUserpw(userpw);
+		item.setUsername(username);
+		item.setNickname(nickname);
+		item.setUsertel(usertel);
+		item.setUseremail(useremail);
+		
 		service.add(item);
 		
 		return "redirect:welcome";

@@ -23,41 +23,51 @@
 				<form method="post" name="signup_form">
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">아이디</label></div>
-						<div><input type="text" name="userid" id="userid" class="custom-input rounded-pill fs-3" style="width: 300px;"></div> 
+						<div><input type="text" name="userid" id="userid" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div> 
 						<div>
-							<button type="button" id="checkid" class="rounded-pill" style="width: 100px; height: 45px;">중복확인</button>
+							<button type="button" id="checkid" class="custom-rounded" style="width: 100px; height: 45px; border-radius: 15px;">중복확인</button>
 						</div>
 					</div>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">비밀번호</label></div>
-						<div><input type="password" name="userpw" class="custom-input rounded-pill fs-3" style="width: 300px;"></div>
-					</div>
+						<div><input type="password" name="userpw" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
+					</div> 
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">비밀번호 확인</label></div>
-						<div><input type="password" name="checkuserpw" class="custom-input rounded-pill fs-3" style="width: 300px;"></div>
-						<div><button type="button" id="checkpw" class="rounded-pill" style="width: 100px; height: 45px;">확인</button></div>
+						<div><input type="password" name="checkuserpw" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
+						<div><button type="button" id="checkpw" class="custom-rounded" style="width: 100px; height: 45px; border-radius: 15px;">확인</button></div>
 					</div>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">성명</label></div>
-						<div><input type="text" name="username" class="custom-input rounded-pill fs-3" style="width: 300px;"></div>
+						<div><input type="text" name="username" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
 					</div>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">닉네임</label></div>
-						<div><input type="text" name="nickname" class="custom-input rounded-pill fs-3" style="width: 300px;"></div>
+						<div><input type="text" name="nickname" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
 					</div>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">휴대폰번호</label></div>
-						<div><input type="text" name="usertel" class="custom-input rounded-pill fs-3" style="width: 300px;"></div>
+						<div><input type="text" name="usertel" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
 					</div>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">이메일</label></div>
-						<div><input type="text" name="useremail" class="custom-input rounded-pill fs-3" style="width: 300px;"></div>
+						<div><input type="text" name="emailid" class="custom-input custom-rounded fs-3" style="width: 180px; border-radius: 15px;"></div>
+						<p style="font-size: 30px;">@</p>
+						<select name="domain" class="custom-rounded fs-4" style="width: 150px; height: 50px; border-radius: 15px;">
+							<option>naver.com</option>
+							<option>hanmail.net</option>
+							<option>gmail.com</option>
+							<option>naver.com</option>
+							<option>kakao.com</option>
+							<option>naver.com</option>
+							<option>직접 입력</option>
+						</select>
 					</div>
 					
 					<div class="d-flex">
