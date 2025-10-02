@@ -67,9 +67,6 @@ public class Recipe {
 	public void setMaincategoryid(int maincategoryid) {
 		this.maincategoryid = maincategoryid;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
 	public String getRecipetag() {
 		return recipetag;
 	}
@@ -91,5 +88,7 @@ public class Recipe {
 	public String getUserid() {
 		return userid;
 	}
-	
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
 }

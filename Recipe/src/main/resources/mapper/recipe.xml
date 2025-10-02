@@ -16,9 +16,9 @@
 	</select>
 	
 	<update id="update">
-		UPDATE recipepost (recipetitle, introduce, recipetag, recipeviews, recommend, isprivate, imagepath, maincategoryid, userid)
-		SET recipetitle=#{recipetitle}, introduce=#{introduce}, recipetag=#{recipetag},recipeviews=#{recipeviews}, recommend=#{recommend}, 
-		isprivate=#{isprivate}, imagepath=#{imagepath}, maincategoryid=#{maincategoryid}, userid=#{userid}
+		UPDATE recipepost 
+		SET recipetitle=#{recipetitle}, introduce=#{introduce}, recipetag=#{recipetag}, recipeviews=#{recipeviews}, recommend=#{recommend}, 
+		isprivate=#{isprivate}, imagepath=#{imagepath}, maincategoryid=#{maincategoryid}
 		WHERE recipeid=#{recipeid}
 	</update>
 	

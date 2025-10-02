@@ -13,8 +13,8 @@
 	</insert>
 	
 	<update id="updatemore">
-		UPDATE ingredients (recipeid, ingname, quantity, unit, exp)
-		SET recipeid=#{recipeid}, ingname=#{ingname}, quantity=#{quantity},unit=#{unit}, exp=#{exp}}
+		UPDATE ingredients 
+		SET ingname=#{ingname}, quantity=#{quantity}, unit=#{unit}, exp=#{exp}
 		WHERE recipeid=#{recipeid}
 	</update>
 	

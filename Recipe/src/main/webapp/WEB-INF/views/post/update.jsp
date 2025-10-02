@@ -11,6 +11,7 @@
 </head>
 <body>
 	<form method="post">
+		<input type="hidden" name="recipeid" value="${item.recipeid}">
 		<div class="container">
 			<div class="info">
 				<h2>기본 정보</h2>
@@ -24,7 +25,7 @@
 				</div>
 				<div>
 					<h3>태그</h3>
-					<input type="text" value="${item.recipetag}" class="shortext">
+					<input type="text" name="recipetag" value="${item.recipetag}" class="shortext">
 				</div>
 				<div>
 					<h3>공개여부</h3>
