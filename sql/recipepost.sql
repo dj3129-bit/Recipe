@@ -8,6 +8,7 @@ CREATE TABLE `recipepost` (
 	`recipeviews` INT NULL DEFAULT '0',
 	`recommend` INT NULL DEFAULT '0',
 	`isprivate` TINYINT(1) NULL DEFAULT NULL,
+	`imagepath` VARCHAR(2048) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
 	`maincategoryid` INT NOT NULL,
 	`userid` VARCHAR(32) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
 	PRIMARY KEY (`recipeid`) USING BTREE,
@@ -18,5 +19,5 @@ CREATE TABLE `recipepost` (
 )
 COLLATE='utf8mb4_0900_ai_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=32
+AUTO_INCREMENT=36
 ;
