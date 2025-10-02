@@ -69,4 +69,9 @@ public class RecipeServiceImpl implements RecipeService{
 		return dao.recview(recipeid);
 	}
 
+	@Override
+	public void viewsup(int recipeid) {
+		dao.viewsup(recipeid);
+	}
+
 }

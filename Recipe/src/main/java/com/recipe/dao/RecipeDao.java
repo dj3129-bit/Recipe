@@ -28,5 +28,7 @@ public interface RecipeDao {
 	int recup(int recipeid);
 
 	int recview(int recipeid);
+
+	void viewsup(int recipeid);
 	
 }

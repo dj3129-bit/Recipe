@@ -140,6 +140,8 @@ public class RecipeController {
 	
 	@GetMapping("/detail/{recipeid}")
 	String detail(@PathVariable int recipeid, Model model) {
+		rservice.viewsup(recipeid);
+		
 		Recipe item = rservice.item(recipeid);
 		Ingredient ingredient = rservice.ingredient(recipeid);
 		

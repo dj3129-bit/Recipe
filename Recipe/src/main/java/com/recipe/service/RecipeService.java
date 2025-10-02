@@ -27,4 +27,6 @@ public interface RecipeService {
 
 	int recview(int recipeid);
 
+	void viewsup(int recipeid);
+
 }

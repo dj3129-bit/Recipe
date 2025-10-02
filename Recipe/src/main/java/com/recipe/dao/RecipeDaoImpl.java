@@ -70,4 +70,9 @@ public class RecipeDaoImpl implements RecipeDao{
 	    return sql.selectOne("recipe.recview", recipeid); // 추천수 조회
 	}
 
+	@Override
+	public void viewsup(int recipeid) {
+		sql.update("recipe.viewsup", recipeid);   //조회수 증가
+	}
+
 }
