@@ -3,8 +3,8 @@
 
 <mapper namespace="question">
 	<insert id="add" useGeneratedKeys="true" keyProperty="questionid">
-		INSERT INTO question (questiontitle, questioncontent, ischecked, userid)
-		VALUES (#{questiontitle}, #{questioncontent}, #{ischecked}, #{userid})
+		INSERT INTO question (questiontitle, questioncontent, ischecked, imagepath, userid)
+		VALUES (#{questiontitle}, #{questioncontent}, #{ischecked}, #{imagepath}, #{userid})
 	</insert>
 	
 	<select id="item" resultType="Question">

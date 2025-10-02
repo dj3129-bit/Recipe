@@ -1,6 +1,9 @@
 package com.recipe.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.recipe.model.Question;
 import com.recipe.pager.Pager;
@@ -19,6 +24,8 @@ import com.recipe.service.QuestionService;
 @Controller
 @RequestMapping("/user")
 public class QuestionController {
+	final String uploadPath = "d:/upload/";
+	
 	@Autowired
 	QuestionService service;
 	
@@ -28,11 +35,24 @@ public class QuestionController {
 	}
 	
 	 @PostMapping("/question") 
-	 String add(Question item, HttpSession session) {
+	 String add(Question item, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
 		item.setUserid(userid);
-		service.add(item);
 	 
+		if(!uploadFile.isEmpty()) {
+			String fileName = UUID.randomUUID().toString() + "-" + uploadFile.getOriginalFilename();
+			File image = new File(uploadPath, fileName);
+			
+			try {
+				uploadFile.transferTo(image);
+				session.setAttribute("fileName", fileName);
+				item.setImagepath("/upload/" + fileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		service.add(item);
 	 	return "redirect:/user/list"; 
 	 }
 	 

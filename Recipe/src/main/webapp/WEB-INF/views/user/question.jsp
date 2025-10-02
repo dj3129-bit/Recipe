@@ -19,17 +19,21 @@
 		
 		<div class="col-4"></div>
 		<div class="col">
-			<form method="post">
+			<form method="post" enctype="multipart/form-data">
 				<div>
 					<div class="qtitle"><input type="text" name="questiontitle" placeholder="제목" class="custom-input rounded fs-3" style="width: 640px;"></div>
-					<div><input type="textarea" name="questioncontent" placeholder="문의 내용" class="custom-input rounded fs-3" style="width: 640px; height: 350px;"></div>
+					<div>
+						<textarea name="questioncontent" placeholder="문의 내용" class="custom-input rounded fs-3" 
+						style="width: 640px; height: 350px; vertical-align: top; padding: 10px;"></textarea>
+					</div>
 					<div>
 						<input type="checkbox" name="ischecked">
 						<label>비밀글</label>
 					</div>
-					<div>
+					<div class="photodiv">
 						<p>사진 첨부</p>
-						<div class="photobox"><button type="button" class="rounded-pill photoedit" style="width: 60px; height: 60px;"><i class="bi bi-plus-circle fs-3"></i></button></div>
+						<ul id="files" class="photobox"></ul>
+						<button type="button" id="photoedit" class="rounded-pill" style="width: 60px; height: 60px;"><i class="bi bi-plus-circle fs-3"></i></button>
 					</div>
 				</div>
 				<div class="submitbtn"><a href=""><button type="submit" class="fs-5 rounded-pill" style="width: 130px; height: 45px;">등록</button></a></div>
@@ -37,5 +41,7 @@
 		</div>
 		<div class="col-4"></div>
 	</div>
+	
+<script src="${pageContext.request.contextPath}/resources/js/question.js"></script>
 </body>
 </html>

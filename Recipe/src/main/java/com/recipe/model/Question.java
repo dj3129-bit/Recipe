@@ -13,6 +13,7 @@ public class Question {
 	private LocalDate questionfixdate;
 	private Boolean ischecked;
 	private String userid;
+	private String imagepath;
 	public int getQuestionid() {
 		return questionid;
 	}
@@ -54,5 +55,11 @@ public class Question {
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
+	}
+	public String getImagepath() {
+		return imagepath;
+	}
+	public void setImagepath(String imagepath) {
+		this.imagepath = imagepath;
 	}
 }

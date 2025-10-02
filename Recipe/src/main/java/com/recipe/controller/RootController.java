@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
 import com.recipe.service.RecipeService;
