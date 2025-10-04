@@ -64,7 +64,7 @@
 								<li class="imgli">
 									<c:choose>
 										<c:when test="${not empty item.imagepath}">
-											<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 90%; height: 75%;">
+											<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 90%; height: 75%; object-fit: cover;">
 										</c:when>
 										<c:otherwise>
 											<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 100%; height: 100%;">

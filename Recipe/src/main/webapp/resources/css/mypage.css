@@ -56,11 +56,14 @@ a button{
 }
 .imgli{
 	text-align:center;
+	height: 100%;
+	width: 100%;
 }
 .iteminfo{
 	display: flex;
 	list-style: none;
 	position: relative;
+	height: 100%;
 }
 .viewli{
 	position:absolute;

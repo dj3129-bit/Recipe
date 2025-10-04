@@ -35,7 +35,7 @@ public class QuestionController {
 	}
 	
 	 @PostMapping("/question") 
-	 String add(Question item, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
+	 String add(Question item, HttpSession session, @RequestParam("imagefile") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
 		item.setUserid(userid);
 	 

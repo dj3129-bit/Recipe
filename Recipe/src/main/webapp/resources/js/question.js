@@ -9,13 +9,13 @@ const appendFile = e => {
 
     const input = document.createElement("input");
     input.setAttribute("type", "file");
-    input.setAttribute("name", "file");
+    input.setAttribute("name", "imagefile");
     input.setAttribute("accept", "image/*");
     input.style.display = "none";
 
     input.addEventListener("change", () => {
-    	const file = input.files[0];
-        if(file){
+    	const imagefile = input.files[0];
+        if(imagefile){
             const reader = new FileReader();
             reader.onload = function(e){
                 const img = document.createElement("img");
@@ -25,7 +25,7 @@ const appendFile = e => {
                 img.style.display = "block";
                 li.appendChild(img);
             };
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(imagefile);
         }
     });
         
@@ -33,6 +33,7 @@ const appendFile = e => {
     ul.append(li);
     
     input.click();
+    document.getElementById("photoedit").style.display = "none";
 };
 
 window.addEventListener("load", () => {
