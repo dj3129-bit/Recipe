@@ -14,33 +14,33 @@
 	<div><h3>로그인</h3></div>
 	<hr class="border border-dark border-3 opacity-100 w-80">
 	<div class="row">
-		<div class="col-4"></div>
+		<div class="col-5"></div>
 		<div class="col">
 			<c:if test="${not empty loginError}">
         		<div style="color:red;">${loginError}</div>
     		</c:if>
 			
-			<div><p>사이트 로고</p></div>
-			<form method="post" class="row g-3">
-				<div class="col-12">
+			<div class="logobox"><p>사이트 로고</p></div>
+			<form method="post" class="row">
+				<div class="col-8">
 					<div><input type="text" name="userid" placeholder="아이디" class="custom-input w-100 rounded-pill fs-3"></div>
 				</div>
 
-				<div class="col-12">
+				<div class="col-8">
 					<div><input type="password" name="userpw" placeholder="비밀번호" class="custom-input w-100 rounded-pill fs-3"></div>
 				</div>
 
-				<div>
-					<div class="text-center"><button type="submit" class="btn btn-secondary btn-lg rounded-pill fs-3" style="width: 200px; height: 65px;">로그인</button></div>
+				<div class="col-8">
+					<div class="text-center"><button type="submit" class="btn btn-secondary btn-lg rounded-pill fs-4" style="width: 170px; height: 45px;">로그인</button></div>
 				</div>
 			</form>
 		</div>
 		<div class="col-4"></div>
 		<div class="row d-flex">
 			<div class="col-4"></div>
-			<div class="col-3"><a href="findid"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
+			<div class="col-3"><a href="findid"><button class="btn btn-default text-secondary text-decoration-underline fs-4" 
 				style="width: 330px; height: 45px;">아이디/비밀번호 찾기</button></a></div>
-			<div class="col-1"><button class="btn btn-default text-secondary text-decoration-underline fs-3" 
+			<div class="col-1"><button class="btn btn-default text-secondary text-decoration-underline fs-4" 
 				style="width: 150px; height: 45px;"><a href="signup" class="text-secondary">회원가입</a></button></div>
 			<div class="col-4"></div>
 		</div>

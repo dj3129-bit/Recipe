@@ -10,24 +10,30 @@
 	margin: 0 auto;
 	display: flex;
 	width: 90%;
-	height: 180px;
+	height: 130px;
 	display: flex;
 	justify-content: center;
-	gap: 50px;
+	gap: 30px;
 	align-items: center;
 }
+h1 a{
+	text-decoration: none;
+	color: #000;
+}
 .headinput{
-	width: 35%;
-	height: 40%;
+	width: 20%;
+	height: 30%;
 	border-radius: 50px;
-	font-size: 30px;
+	font-size: 20px;
 	padding-left: 20px;
+	margin-left: 70px;
 }
 .headbtn{
-	width: 120px;
+	width: 100px;
 	height: 30%;
 	border-radius: 50px;
 	font-size: 18px;
+	margin-right: 70px;
 }
 .welcome{
 	text-align: center;
@@ -57,99 +63,16 @@
 nav{
 	display: flex;
 	background-color: darkred;
-	height: 90px;
+	height: 65px;
 	justify-content: center;
 	gap: 200px;
 	align-items: center;
 }
 nav div a{
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	cursor: pointer;
 	color: #fff;
 	text-decoration: none;
 }
 
-/* --------------------- main ------------------------ */
-.category{
-	display: flex;
-	justify-content: center;
-	gap: 100px;
-	align-items: center;
-	height: 70px;
-	margin-bottom: 30px;
-	cursor: pointer;
-	position: relative;
-}
-.category div a{
-	font-size: 18px;
-}
-.subcategory{
-	display:none;
-	position:absolute;
-	top:70px;
-	left:0;
-	width: 100%;
-	height: 0;
-	background-color: #fff;
-	padding-left: 320px;
-}
-.subcategory div{
-	width: 150px;
-	margin-right: 28px;
-}
-.subcategory div a{
-	display: block;
-	margin-bottom: 10px;
-}
-.category:hover .subcategory{
-	display: flex;
-	height: 600px;
-}
-h3{
-	font-family: 'Noto Sans KR', sans-serif;
-	margin-bottom: 20px;
-}
-.hot, .best, .chef{
-	width: 100%;
-	height: 400px;
-	display: flex;
-	gap: 40px;
-	margin-bottom: 30px;
-}
-.arrow{
-	padding-top: 150px;
-	cursor: pointer
-}
-.hotdiv, .bestdiv, .chefdiv{
-	width: calc(100% / 3);
-}
-.hotphoto, .bestphoto, .chefphoto{
-	width: 100%;
-	height: 50%;
-	background-color: #ccc;
-	border-top-left-radius: 30px;
-	border-top-right-radius: 30px;
-	overflow: hidden;
-}
-.hotcontent, .bestcontent, .chefcontent{
-	width: 100%;
-	height: 50%;
-	background-color: floralwhite;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
-	padding-left: 10px;
-}
-.cook{
-	display: flex;
-	justify-content: space-around;
-	gap: 10px;
-}
-.detail{
-	width: 100%;
-	text-align: center;
-}
-.detail button{
-	width: 85%;
-	border-radius: 10px;
-}

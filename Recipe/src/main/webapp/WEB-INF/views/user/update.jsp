@@ -93,6 +93,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 const dropdown = document.querySelector('.dropdown-toggle')
+const outbtn = document.querySelector('.outbtn')
 const dropdownItem = document.querySelectorAll('.dropdown-item')
 
 dropdownItem.forEach(function(item) {
@@ -102,6 +103,10 @@ dropdownItem.forEach(function(item) {
       dropdown.textContent = selectedText;
     });
 });
+
+outbtn.addEventListener('click', function(e) {
+	alert("서비스를 이용해주셔서 감사합니다.");
+}
 </script>
 </body>
 </html>

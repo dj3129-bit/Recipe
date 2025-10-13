@@ -11,6 +11,8 @@
 <script src="https://kit.fontawesome.com/70bb3411ef.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+	<hr style="width: 100%; border:1px solid #000;">
 	<div class="container">
 		<div class="profile">
 			<div id="photo">

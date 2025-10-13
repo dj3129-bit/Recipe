@@ -112,11 +112,6 @@ public class RootController {
 		return "welcome";
 	}
 	
-	@GetMapping("/goMypage")
-	String goMypage() {
-		return "redirect:/post/mypage";
-	}
-	
 	@ResponseBody
 	@GetMapping("/check_id/{userid}")
 	String checkId(@PathVariable String userid) {

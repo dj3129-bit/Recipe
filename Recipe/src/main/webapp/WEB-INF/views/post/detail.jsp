@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+	<hr style="width: 100%; border:1px solid #000;">
 	<div class="wrapper">
 		<div class="container">
 			<div class="info">

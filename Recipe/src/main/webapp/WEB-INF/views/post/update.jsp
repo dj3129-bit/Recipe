@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+	<hr style="width: 100%; border:1px solid #000;">
 	<form method="post">
 		<input type="hidden" name="recipeid" value="${item.recipeid}">
 		<div class="container">

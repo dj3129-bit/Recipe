@@ -3,8 +3,8 @@
 .container{
 	display: flex;
 	gap: 60px;
-	width: 90%;
-	margin: 0 auto;
+	width: 70%;
+	margin: 40px auto;
 }
 .profile{
 	border: 2px solid #000;

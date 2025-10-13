@@ -6,9 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>레시피 등록</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add.css">
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+	<hr style="width: 100%; border:1px solid #000;">
 	<form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/post/add">
 		<div class="container">
 			<div class="info">

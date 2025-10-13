@@ -1,0 +1,89 @@
+@charset "UTF-8";
+main{
+	width: 100%;
+}
+.container{
+	width: 70%;
+}
+.category{
+	display: flex;
+	justify-content: center;
+	gap: 100px;
+	align-items: center;
+	height: 70px;
+	margin-bottom: 30px;
+	cursor: pointer;
+	position: relative;
+}
+.category div a{
+	font-size: 18px;
+}
+.subcategory{
+	display:none;
+	position:absolute;
+	top:70px;
+	left:0;
+	width: 100%;
+	height: 0;
+	background-color: #fff;
+	padding-left: 320px;
+}
+.subcategory div{
+	width: 150px;
+	margin-right: 28px;
+}
+.subcategory div a{
+	display: block;
+	margin-bottom: 10px;
+}
+.category:hover .subcategory{
+	display: flex;
+	height: 600px;
+}
+h3{
+	font-family: 'Noto Sans KR', sans-serif;
+	margin-bottom: 20px;
+}
+.hot, .best, .chef{
+	width: 100%;
+	height: 400px;
+	display: flex;
+	gap: 40px;
+	margin-bottom: 30px;
+}
+.arrow{
+	padding-top: 150px;
+	cursor: pointer
+}
+.hotdiv, .bestdiv, .chefdiv{
+	width: calc(100% / 3);
+}
+.hotphoto, .bestphoto, .chefphoto{
+	width: 100%;
+	height: 50%;
+	background-color: #ccc;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	overflow: hidden;
+}
+.hotcontent, .bestcontent, .chefcontent{
+	width: 100%;
+	height: 50%;
+	background-color: floralwhite;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	padding-left: 10px;
+}
+.cook{
+	display: flex;
+	justify-content: space-around;
+	gap: 10px;
+}
+.detail{
+	width: 100%;
+	text-align: center;
+}
+.detail button{
+	width: 85%;
+	border-radius: 10px;
+}
