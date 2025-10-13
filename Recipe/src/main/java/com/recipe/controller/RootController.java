@@ -138,10 +138,12 @@ public class RootController {
 	String findpw() {
 		return "findpw";
 	}
+	
+	//검색기능
 //	@GetMapping("/search")
-//	String search(@RequestParam("q") String query, Model model) {
-//		List<SearchResult> items = sservice.searchResult(query);
-//		model.addAttribute("items", items);
+//	String search(@RequestParam("keyword") String keyword, Model model) {
+//		List<SearchResult> results = sservice.searchResult(keyword);
+//		model.addAttribute("results", results);
 //		return "searchresult";
 //	}
 }

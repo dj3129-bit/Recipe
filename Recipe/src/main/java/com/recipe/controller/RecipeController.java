@@ -62,7 +62,7 @@ public class RecipeController {
 	}
 	
 	@PostMapping("/add")
-		String add(Recipe item, @ModelAttribute Ingredient ingredient,  HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
+		String add(Recipe item, @ModelAttribute Ingredient ingredient, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
 		
 		if (userid == null) {

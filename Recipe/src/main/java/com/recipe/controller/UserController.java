@@ -37,8 +37,14 @@ public class UserController {
 	String update(@PathVariable String userid, RecipeUser item) {
 		item.setUserid(userid);
 		
-		rservice.update(item);
+		rservice.update(item);	
 		return "redirect:/post/mypage";
+	}
+	
+	@PostMapping("/userout")
+	String delete(@PathVariable String userid) {
+		rservice.delete(userid);
+		return "redirect:/";
 	}
 	
 	@GetMapping("/changepw/{userid}")

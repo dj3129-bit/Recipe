@@ -56,4 +56,9 @@ public class RecipeUserServiceImpl implements RecipeUserService{
 	public String findUserId(String username, String useremail) {
 		return dao.findUserId(username, useremail);
 	}
+
+	@Override
+	public void delete(String userid) {
+		dao.delete(userid);
+	}
 }

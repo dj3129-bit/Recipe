@@ -12,4 +12,6 @@ public interface RecipeUserDao {
 
 	String findUserId(String username, String useremail);
 
+	void delete(String userid);
+
 }

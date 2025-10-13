@@ -37,4 +37,9 @@ public class RecipeUserDaoImpl implements RecipeUserDao{
 		param.put("useremail", useremail);
 		return sql.selectOne("recipeuser.findId", param);
 	}
+
+	@Override
+	public void delete(String userid) {
+		sql.delete("recipeuser.delete", userid);
+	}
 }

@@ -15,4 +15,6 @@ public interface RecipeUserService {
 	boolean checkId(String userid);
 
 	String findUserId(String username, String useremail);
+
+	void delete(String userid);
 }
