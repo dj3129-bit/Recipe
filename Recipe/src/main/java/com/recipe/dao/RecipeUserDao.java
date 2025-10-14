@@ -1,5 +1,7 @@
 package com.recipe.dao;
 
+import java.util.List;
+
 import com.recipe.model.RecipeUser;
 
 public interface RecipeUserDao {
@@ -13,5 +15,7 @@ public interface RecipeUserDao {
 	String findUserId(String username, String useremail);
 
 	void delete(String userid);
+
+	List<RecipeUser> findAll();
 
 }

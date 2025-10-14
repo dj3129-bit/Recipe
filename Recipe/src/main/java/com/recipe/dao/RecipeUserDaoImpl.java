@@ -1,6 +1,7 @@
 package com.recipe.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -41,5 +42,10 @@ public class RecipeUserDaoImpl implements RecipeUserDao{
 	@Override
 	public void delete(String userid) {
 		sql.delete("recipeuser.delete", userid);
+	}
+
+	@Override
+	public List<RecipeUser> findAll() {
+		return sql.selectList("recipeuser.item");
 	}
 }

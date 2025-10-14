@@ -73,7 +73,7 @@
 	  </div>
 	</div>
 </div>
-
+<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

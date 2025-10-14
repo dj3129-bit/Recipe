@@ -116,6 +116,7 @@ form{
 }
 .editbox{
 	text-align: right;
+	margin-bottom: 100px;
 }
 .cookedit, .recedit, .favoredit{
 	width: 300px;
@@ -139,6 +140,7 @@ form{
 	display: flex;
 	text-align: center;
 	justify-content: space-between;
+	margin-bottom: 70px;
 }
 .recbox i{
 	margin-right: 10px;

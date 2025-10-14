@@ -177,6 +177,7 @@
 			<button type="button" class="favoredit"><i class="bi bi-heart-fill"></i>즐겨찾기 추가</button>
 		</div>
 	</div>
+<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 </body>
 
 <script>

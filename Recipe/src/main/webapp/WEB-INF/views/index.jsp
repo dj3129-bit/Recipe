@@ -14,7 +14,7 @@
 <nav>
 	<div><a href="#">추천 레시피</a></div>
 	<div><a href="/post/hotpost">HOT 레시피</a></div>
-	<div><a href="#">BEST 셰프</a></div>
+	<div><a href="/post/chef">BEST 셰프</a></div>
 	<div><a href="/user/question">고객센터</a></div>
 </nav>		
 <main>
@@ -51,10 +51,10 @@
 						</div>
 						<div class="cook">
 							<p><i class="bi bi-clock"></i>요리 시간</p>
-							<p><i class="bi bi-bookmark"></i>요리 종류</p>
+							<p><i class="bi bi-bookmark"></i>${item.maincategoryname}</p>
 							<p id="recup"><i class="bi bi-hash"></i>추천수 : ${item.recommend}</p>
 						</div>
-						<div>재료 : </div>
+						<div>#${item.recipetag}</div>
 						<div class="detail"><a href="/post/detail/${item.recipeid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a></div>
 					</div>
 				</div>

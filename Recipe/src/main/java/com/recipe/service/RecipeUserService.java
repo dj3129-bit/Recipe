@@ -1,5 +1,7 @@
 package com.recipe.service;
 
+import java.util.List;
+
 import com.recipe.model.RecipeUser;
 
 public interface RecipeUserService {
@@ -17,4 +19,6 @@ public interface RecipeUserService {
 	String findUserId(String username, String useremail);
 
 	void delete(String userid);
+
+	List<RecipeUser> findAll();
 }

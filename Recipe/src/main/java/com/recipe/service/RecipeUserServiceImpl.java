@@ -1,5 +1,7 @@
 package com.recipe.service;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +62,10 @@ public class RecipeUserServiceImpl implements RecipeUserService{
 	@Override
 	public void delete(String userid) {
 		dao.delete(userid);
+	}
+
+	@Override
+	public List<RecipeUser> findAll() {
+		return dao.findAll();
 	}
 }

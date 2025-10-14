@@ -18,6 +18,8 @@ public class Recipe {
 	private String imagepath;
 	private int maincategoryid;
 	private String userid;
+	private CategoryType categorytype;
+	private String maincategoryname;
 	
 	public int getRecipeid() {
 		return recipeid;
@@ -90,5 +92,17 @@ public class Recipe {
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
+	}
+	public CategoryType getCategorytype() {
+		return categorytype;
+	}
+	public void setCategorytype(CategoryType categorytype) {
+		this.categorytype = categorytype;
+	}
+	public String getMaincategoryname() {
+		return maincategoryname;
+	}
+	public void setMaincategoryname(String maincategoryname) {
+		this.maincategoryname = maincategoryname;
 	}
 }

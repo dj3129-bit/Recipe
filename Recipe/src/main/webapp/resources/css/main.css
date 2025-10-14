@@ -86,6 +86,7 @@ h3{
 .detail{
 	width: 100%;
 	text-align: center;
+	margin-top: 10px;
 }
 .detail button{
 	width: 85%;

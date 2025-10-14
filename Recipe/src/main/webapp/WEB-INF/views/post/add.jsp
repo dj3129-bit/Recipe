@@ -168,7 +168,8 @@
 			<button type="submit" class="cookedit">레시피 등록</button>
 		</div>
 	</form>
-	
+
+<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/resources/js/imageadd.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/materialinfo.js"></script>
 </body>

@@ -183,6 +183,6 @@
 			<button type="submit" class="cookedit">레시피 재등록</button>
 		</div>
 	</form>
-
+<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 </body>
 </html>

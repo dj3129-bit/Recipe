@@ -187,5 +187,10 @@ public class RecipeController {
 		
 		return "post/hotpost";
 	}
+	
+	@GetMapping("/chef")
+	String chef() {
+		return "post/chef";
+	}
 }
 

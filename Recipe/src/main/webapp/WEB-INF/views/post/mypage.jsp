@@ -86,7 +86,7 @@
 		</div>
 		<div><a href="${pageContext.request.contextPath}/user/question"><button type="button" class="qbtn">문의작성</button></a></div>
 	</div>
-
+<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/resources/js/delete.js"></script>
 <script>
   document.getElementById('inputProfile').addEventListener('change', function() {

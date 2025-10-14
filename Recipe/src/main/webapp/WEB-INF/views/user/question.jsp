@@ -11,9 +11,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+<hr style="width: 100%; border:1px solid #000;">
 	<div>
 		<h3>1:1 문의</h3>
-		<hr class="border border-dark border-3 opacity-100 hrq">
 	</div>
 	<div class="row">
 		
@@ -41,7 +42,7 @@
 		</div>
 		<div class="col-4"></div>
 	</div>
-	
+<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/resources/js/question.js"></script>
 </body>
 </html>
