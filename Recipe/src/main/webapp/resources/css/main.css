@@ -44,6 +44,10 @@ h3{
 	font-family: 'Noto Sans KR', sans-serif;
 	margin-bottom: 20px;
 }
+.navtitle{
+	margin-left: 100px;	
+	margin-bottom: 20px;
+}
 .hot, .best, .chef{
 	width: 100%;
 	height: 400px;
@@ -86,4 +90,14 @@ h3{
 .detail button{
 	width: 85%;
 	border-radius: 10px;
+}
+
+/* ---------------hotpost.jsp---------------- */
+#home-tab-pane {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+.tab-pane:not(.active) .hot{
+	display: none;
 }

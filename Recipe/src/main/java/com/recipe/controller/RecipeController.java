@@ -2,6 +2,7 @@ package com.recipe.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -167,6 +168,24 @@ public class RecipeController {
 			result.put("success", false);
 		}
 		return result;
+	}
+	
+	@GetMapping("/hotpost")
+	String hotpost(Model model) {
+		List<Recipe> list = rservice.list();
+		
+		// 추천수 기준 내림차순 정렬
+		List<Recipe> recommendList = new ArrayList<>(list);
+		recommendList.sort((a, b) -> Integer.compare(b.getRecommend(), a.getRecommend()));
+		
+		// 조회수 기준 내림차순 정렬
+	    List<Recipe> viewList = new ArrayList<>(list);
+	    viewList.sort((a, b) -> Integer.compare(b.getRecipeviews(), a.getRecipeviews()));
+	    
+	    model.addAttribute("recommendList", recommendList);
+	    model.addAttribute("viewList", viewList);
+		
+		return "post/hotpost";
 	}
 }
 

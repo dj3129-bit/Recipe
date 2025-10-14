@@ -13,9 +13,9 @@
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <nav>
 	<div><a href="#">추천 레시피</a></div>
-	<div><a href="#">HOT 레시피</a></div>
+	<div><a href="/post/hotpost">HOT 레시피</a></div>
 	<div><a href="#">BEST 셰프</a></div>
-	<div><a href="#">고객센터</a></div>
+	<div><a href="/user/question">고객센터</a></div>
 </nav>		
 <main>
 	<div class="container">
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		
-		<h3>HOT 레시피</h3>
+		<h3 class="navtitle">HOT 레시피</h3>
 		<div class="hot">
 			<div class="arrow"><i class="bi bi-chevron-compact-left" style="font-size: 4rem;"></i></div>
 			<c:forEach var="item" items="${list}" begin="0" end="2">
@@ -62,7 +62,7 @@
 			<div class="arrow"><i class="bi bi-chevron-compact-right" style="font-size: 4rem;"></i></div>
 		</div>
 					
-		<h3>BEST 레시피</h3>
+		<h3 class="navtitle">BEST 레시피</h3>
 		<div class="best">
 			<div class="arrow"><i class="bi bi-chevron-compact-left" style="font-size: 4rem;"></i></div>
 			<c:forEach var="item" items="${list}" begin="0" end="2">
@@ -86,7 +86,7 @@
 			<div class="arrow"><i class="bi bi-chevron-compact-right" style="font-size: 4rem;"></i></div>
 		</div>
 			
-		<h3>인기 요리사</h3>
+		<h3 class="navtitle">인기 요리사</h3>
 		<div class="chef">
 			<div class="arrow"><i class="bi bi-chevron-compact-left" style="font-size: 4rem;"></i></div>
 			<c:forEach var="item" items="${list}" begin="0" end="2">
