@@ -1,7 +1,23 @@
 @charset "UTF-8";
 
+nav{
+	display: flex;
+	background-color: darkred;
+	height: 65px;
+	justify-content: center;
+	gap: 200px;
+	align-items: center;
+}
+nav div a{
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+}
 .container{
 	width: 70%;
+	margin-top: 30px;
 }
 ul li{
 	display: flex;

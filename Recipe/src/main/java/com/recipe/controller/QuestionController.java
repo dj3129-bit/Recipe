@@ -39,7 +39,7 @@ public class QuestionController {
 		String userid = (String) session.getAttribute("userid");
 		item.setUserid(userid);
 	 
-		if(!uploadFile.isEmpty()) {
+		if(uploadFile != null && !uploadFile.isEmpty()) {
 			String fileName = UUID.randomUUID().toString() + "-" + uploadFile.getOriginalFilename();
 			File image = new File(uploadPath, fileName);
 			

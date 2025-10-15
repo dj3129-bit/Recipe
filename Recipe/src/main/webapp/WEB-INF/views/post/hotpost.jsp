@@ -10,8 +10,13 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-<hr style="width: 100%; border:1px solid #000;">
-<div class="container" style="width: 70%;">
+<nav>
+	<div class="recrecipe"><a href="/">추천 레시피</a></div>
+	<div><a href="/post/hotpost">HOT 레시피</a></div>
+	<div><a href="/post/chef">BEST 셰프</a></div>
+	<div><a href="/user/question">고객센터</a></div>
+</nav>
+<div class="container" style="width: 70%; margin-top: 30px;">
 	<ul class="nav nav-tabs">
 		<li class="nav-item">
 		  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" aria-current="page" type="button">추천순</button>

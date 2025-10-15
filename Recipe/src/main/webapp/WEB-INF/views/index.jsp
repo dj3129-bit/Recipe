@@ -12,8 +12,8 @@
 <body>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <nav>
-	<div><a href="#">추천 레시피</a></div>
-	<div><a href="/post/hotpost">HOT 레시피</a></div>
+	<div class="nav1"><a href="/">추천 레시피</a></div>
+	<div class="nav2"><a href="/post/hotpost">HOT 레시피</a></div>
 	<div><a href="/post/chef">BEST 셰프</a></div>
 	<div><a href="/user/question">고객센터</a></div>
 </nav>		
@@ -107,5 +107,11 @@
 </main>
 
 <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
+<script>
+document.querySelector(".nav1").addEventListener("click", function(e) {
+	e.preventDefault();
+	this.classList.add("clicked");
+});
+</script>
 </body>
 </html>

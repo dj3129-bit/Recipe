@@ -41,7 +41,6 @@
 				<div class="memberchild"><a href="logout"><i class="bi bi-box-arrow-right fs-2"></i><p>로그아웃</p></a></div>
 			</div>
 		</c:if>
-	
 	</div>
 </body>
 </html>
