@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -123,9 +122,22 @@ public class RecipeController {
 	}
 	
 	@PostMapping("/update/{recipeid}")
-	String update(@PathVariable int recipeid, Recipe item, @ModelAttribute Ingredient ingredient) {
+	String update(@PathVariable int recipeid, Recipe item, @ModelAttribute Ingredient ingredient, HttpSession session, @RequestParam("file") MultipartFile changeFile) {
 		item.setRecipeid(recipeid);
 		ingredient.setRecipeid(item.getRecipeid());
+		
+		if(!changeFile.isEmpty()) {
+			String newFileName = UUID.randomUUID().toString() + "-" + changeFile.getOriginalFilename();
+			File newImage = new File(uploadPath, newFileName);
+			
+			try {
+				changeFile.transferTo(newImage);
+				session.setAttribute("fileName", newFileName);
+				item.setImagepath("/upload/" + newFileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		rservice.update(item);
 		rservice.updatemore(ingredient);

@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 	<hr style="width: 100%; border:1px solid #000;">
-	<form method="post">
+	<form method="post" enctype="multipart/form-data">
 		<input type="hidden" name="recipeid" value="${item.recipeid}">
 		<div class="container">
 			<div class="info">
@@ -42,24 +42,26 @@
 					<h2>대표 이미지</h2>
 					<c:choose>
 						<c:when test="${not empty item.imagepath}">
-							<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 30%; height: 30%;">
+							<img id="mainimage" src="${pageContext.request.contextPath}${item.imagepath}" style="width: 30%; height: 30%;">
 						</c:when>
 						<c:otherwise>
 							<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 30%; height: 30%;">
 						</c:otherwise>
 					</c:choose>
+					<input type="file" name="file" id="changefile" accept="image/*" style="display:none;">
 					<button type="button" id="mainchange">변경</button>
 				</div>
 				<div width="200" height="150">
 					<h2>완성 요리 이미지</h2>
 					<c:choose>
 						<c:when test="${not empty item.imagepath}">
-							<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 30%; height: 30%;">
+							<img id="comimage" src="${pageContext.request.contextPath}${item.imagepath}" style="width: 30%; height: 30%;">
 						</c:when>
 						<c:otherwise>
 							<img src="${pageContext.request.contextPath}/resources/images/default.webp" style="width: 30%; height: 30%;">
 						</c:otherwise>
 					</c:choose>
+					<input type="file" name="file" id="changefile2" accept="image/*" style="display:none;">
 					<button type="button" id="comchange">변경</button>
 				</div>
 			</div>
@@ -184,5 +186,6 @@
 		</div>
 	</form>
 <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/resources/js/imagechange.js"></script>
 </body>
 </html>
