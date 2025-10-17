@@ -1,11 +1,14 @@
 package com.recipe.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,8 +37,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/update/{userid}")
-	String update(@PathVariable String userid, RecipeUser item) {
+	String update(@PathVariable String userid, @ModelAttribute("item") @Valid RecipeUser item, BindingResult bindingResult) {
 		item.setUserid(userid);
+		
+		if (bindingResult.hasErrors()) {
+	        return "user/update"; 
+	    }
 		
 		rservice.update(item);	
 		return "redirect:/post/mypage";
@@ -48,7 +55,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/changepw/{userid}")
-	String changepw() {
+	String changepw(@PathVariable String userid) {
 		
 		return "user/changepw";
 	}
@@ -57,13 +64,13 @@ public class UserController {
 	String changepw(@RequestParam("newpw") String newpw, HttpSession session, RedirectAttributes redirectAttributes) {
 		//String encodedPw = passwordEncoder.encode(newpw);   Spring security 사용시
 		
-		RecipeUser user = (RecipeUser) session.getAttribute("user");
+		RecipeUser recipeUser = (RecipeUser) session.getAttribute("recipeuser");
 		
-		user.setUserpw(newpw);
-		rservice.update(user);
+		recipeUser.setUserpw(newpw);
+		rservice.update(recipeUser);
 		
 		redirectAttributes.addFlashAttribute("resetpw", true);
 		
-		return "user/changepw";
+		return "redirect:/post/mypage";
 	}
 }

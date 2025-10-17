@@ -33,7 +33,8 @@ public class QuestionController {
 	String question() {
 		return "user/question";
 	}
-	
+	 
+	//문의 등록
 	 @PostMapping("/question") 
 	 String add(Question item, HttpSession session, @RequestParam(value = "imagefile", required = false) MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
@@ -56,6 +57,7 @@ public class QuestionController {
 	 	return "redirect:/user/list"; 
 	 }
 	 
+	//문의 목록 조회
 	 @GetMapping("/list")
 	 String list(Model model, Pager pager) {
 		List<Question> list = service.list(pager);
@@ -64,6 +66,7 @@ public class QuestionController {
 		return "user/list";
 	 }
 	 
+	 //문의 삭제
 	 @GetMapping("/delete/{questionid}")
 		String delete(@PathVariable int questionid) {
 			service.delete(questionid);

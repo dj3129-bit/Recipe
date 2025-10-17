@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,45 +10,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div>
+	<div style="width: 100%;">
 		<div>
 			<h3>회원정보 수정</h3>		
 		</div>
-		<hr class="border border-dark border-3 opacity-100 w-80">
+		<hr class="border border-dark border-3 opacity-100" style="width:95%; margin: 0 auto; margin-bottom: 40px;">
 		
 		<div class="row">
 			<div class="col-4"></div>
 			<div class="col">
-				<div class="d-flex">
-					<div class="lbbox"><label class="label">성명</label></div>
-					<div><input type="text" name="username" value="${item.username}" class="custom-input rounded-pill fs-3"></div>
-				</div>
+				<form:form modelAttribute="item">
+					<div class="d-flex">
+						<div class="lbbox"><label class="label">성명</label></div>
+						<div>
+							<form:input type="text" path="username" name="username" class="custom-input rounded-pill fs-3"></form:input>
+							<form:errors path="username" cssClass="error"></form:errors>
+						</div>
+					</div>
 							
-				<div class="d-flex">
-					<div class="lbbox"><label class="label">닉네임</label></div>
-					<div><input type="text" name="nickname" value="${item.nickname}" class="custom-input rounded-pill fs-3"></div>
-					<div><button type="button" class="fs-5 rounded-pill checknick" style="width: 170px; height: 45px;">중복확인 체크</button></div>
-				</div>
-							
-				<div class="d-flex">
-					<div class="lbbox"><label class="label">휴대폰번호</label></div>
-					<div><input type="text" name="usertel" value="${item.usertel}" class="custom-input rounded-pill fs-3"></div>
-					<div><button type="button" class="fs-5 rounded-pill auth1" style="width: 130px; height: 45px;">인증</button></div>
-				</div>
-							
-				<div class="d-flex">
-					<div class="lbbox"><label class="label">이메일</label></div>
-					<div><input type="text" name="useremail" value="${item.useremail}" class="custom-input rounded-pill fs-3"></div>
-					<div><button type="button" class="fs-5 rounded-pill auth2" style="width: 130px; height: 45px;">인증</button></div>
-				</div>
+					<div class="d-flex">
+						<div class="lbbox"><label class="label">닉네임</label></div>
+						<div><input type="text" name="nickname" value="${item.nickname}" class="custom-input rounded-pill fs-3"></div>
+						<div><button type="button" class="fs-5 rounded-pill checknick" style="width: 170px; height: 45px;">중복확인 체크</button></div>
+					</div>
+								
+					<div class="d-flex">
+						<div class="lbbox"><label class="label">휴대폰번호</label></div>
+						<div><input type="text" name="usertel" value="${item.usertel}" class="custom-input rounded-pill fs-3"></div>
+						<div><button type="button" class="fs-5 rounded-pill auth1" style="width: 130px; height: 45px;">인증</button></div>
+					</div>
+								
+					<div class="d-flex">
+						<div class="lbbox"><label class="label">이메일</label></div>
+						<div><input type="text" name="useremail" value="${item.useremail}" class="custom-input rounded-pill fs-3"></div>
+						<div><button type="button" class="fs-5 rounded-pill auth2" style="width: 130px; height: 45px;">인증</button></div>
+					</div>
+					<div>
+						<div class="complete"><a href="${pageContext.request.contextPath}/post/mypage" class="logoutlink"><button type="submit" class="fs-5 rounded-pill complete" style="width: 170px; height: 65px;">수정 완료</button></a></div>
+					</div>
+				</form:form>
+					
 				<div class="d-flex btnbox">
 					<div class="userout">
 						<button type="button" class="fs-5 rounded-pill" style="width: 130px; height: 45px;" data-bs-toggle="modal" data-bs-target="#userout">회원 탈퇴</button>
 					</div>
 					<div><a href="${pageContext.request.contextPath}/user/changepw/${userid}"><button class="fs-5 rounded-pill" style="width: 170px; height: 45px;">비밀번호 변경</button></a></div>
-				</div>
-				<div>
-					<div class="logout"><a href="logout" class="logoutlink"><button class="fs-5 rounded-pill" style="width: 170px; height: 65px;">로그아웃</button></a></div>
 				</div>
 			</div>
 			<div class="col-4"></div>
@@ -95,6 +101,7 @@
 const dropdown = document.querySelector('.dropdown-toggle')
 const outbtn = document.querySelector('.outbtn')
 const dropdownItem = document.querySelectorAll('.dropdown-item')
+const completebtn = document.querySelector('.complete')
 
 dropdownItem.forEach(function(item) {
     item.addEventListener('click', function(e) {
@@ -106,7 +113,11 @@ dropdownItem.forEach(function(item) {
 
 outbtn.addEventListener('click', function(e) {
 	alert("서비스를 이용해주셔서 감사합니다.");
-}
+});
+
+completebtn.addEventListener('click', function(e) {
+	alert("수정이 완료되었습니다.");
+});
 </script>
 </body>
 </html>

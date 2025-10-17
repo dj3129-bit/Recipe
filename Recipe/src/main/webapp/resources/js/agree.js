@@ -4,6 +4,8 @@ document.getElementById('allchecked').addEventListener('change', function() {
 });
 
 document.getElementById('next').addEventListener('click', function(e) {
+  e.preventDefault();
+
   const req = document.querySelectorAll('input[name="required"]');
   let allChecked = true;
   

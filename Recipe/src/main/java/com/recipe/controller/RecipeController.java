@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
@@ -40,12 +41,13 @@ public class RecipeController {
 	@Autowired
 	RecipeUserService ruservice;
 	
+	//마이페이지(레시피 목록 조회)
 	@GetMapping("/mypage")
 	String list(HttpSession session, Model model) {
 		List<Recipe> list = rservice.list();
-		model.addAttribute("list", list);
-		
 		String userid = (String) session.getAttribute("userid");
+		
+		model.addAttribute("list", list);
 		model.addAttribute("userid", userid);
 		
 		if(userid != null) {
@@ -61,6 +63,7 @@ public class RecipeController {
 		return "post/add";
 	}
 	
+	//레시피 등록
 	@PostMapping("/add")
 		String add(Recipe item, @ModelAttribute Ingredient ingredient, HttpSession session, @RequestParam("file") MultipartFile uploadFile) {
 		String userid = (String) session.getAttribute("userid");
@@ -91,6 +94,7 @@ public class RecipeController {
 		return "redirect:mypage";
 	}
 	
+	//프로필 사진 등록
 	@PostMapping("/profile")
 	String addProfile(@RequestParam("profilefile") MultipartFile imageFile, Model model) {
 		if(!imageFile.isEmpty()) {
@@ -121,6 +125,7 @@ public class RecipeController {
 		return "post/update";
 	}
 	
+	//레시피 수정
 	@PostMapping("/update/{recipeid}")
 	String update(@PathVariable int recipeid, Recipe item, @ModelAttribute Ingredient ingredient, HttpSession session, @RequestParam("file") MultipartFile changeFile) {
 		item.setRecipeid(recipeid);
@@ -144,6 +149,7 @@ public class RecipeController {
 		return "redirect:/post/mypage";
 	}
 	
+	//레시피 삭제
 	@GetMapping("/delete/{recipeid}")
 	String delete(@PathVariable int recipeid) {
 		rservice.delete(recipeid);
@@ -151,6 +157,7 @@ public class RecipeController {
 		return "redirect:/post/mypage";
 	}
 	
+	//레시피 상세보기
 	@GetMapping("/detail/{recipeid}")
 	String detail(@PathVariable int recipeid, Model model) {
 		rservice.viewsup(recipeid);
@@ -163,6 +170,7 @@ public class RecipeController {
 		return "post/detail";
 	}
 	
+	//레시피 추천 시 추천수 증가
 	@PostMapping("/recommend")
 	@ResponseBody
 	public Map<String, Object> recommend(@RequestBody Map<String, Object> payload) {
@@ -182,6 +190,7 @@ public class RecipeController {
 		return result;
 	}
 	
+	//Hot레시피 페이지
 	@GetMapping("/hotpost")
 	String hotpost(Model model) {
 		List<Recipe> list = rservice.list();
@@ -204,5 +213,17 @@ public class RecipeController {
 	String chef() {
 		return "post/chef";
 	}
+	
+//	@GetMapping("/favor")
+//	String favor(@RequestParam("recipeid") int recipeid, HttpSession session, RedirectAttributes redirectAttributes) {
+//		String userid = (String) session.getAttribute("userid");
+//		if(userid != null) {
+//			rservice.addfavor(userid, recipeid);
+//		}
+//		
+//		redirectAttributes.addAttribute("recipeid", recipeid);
+//		return "redirect:/post/detail/{recipeid}";
+//	}
+	
 }
 

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -174,7 +174,10 @@
 				<input type="hidden" name="recipeid" value="${item.recipeid}" />
 				<button type="button" class="recedit" id="recbtn" data-recipeid="${item.recipeid}"><i class="bi bi-hand-thumbs-up-fill"></i>추천하기</button>
 			</div>
-			<button type="button" class="favoredit"><i class="bi bi-heart-fill"></i>즐겨찾기 추가</button>
+			<form method="post" action="/post/favor" class="favorbox">
+				<input type="hidden" name="recipeid" value="${item.recipeid}">
+				<button type="submit" class="favoredit"><i class="bi bi-heart-fill"></i>즐겨찾기 추가</button>
+			</form>
 		</div>
 	</div>
 <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>

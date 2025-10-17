@@ -40,3 +40,8 @@ hr{
 .btnsu{
 	width: 400px;
 }
+.error{
+	color: red;
+	display: block;
+	margin-bottom: 25px;
+}

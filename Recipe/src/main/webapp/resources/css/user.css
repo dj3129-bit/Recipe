@@ -53,11 +53,16 @@ h3{
 .userout{
 	margin-right: 360px;
 }
-.logout{
-	margin-left: 240px;
+.complete{
+	margin-left: 120px;
 }
 .logoutlink{
 	display: inline-block;
+}
+.error{
+	color: red;
+	display: block;
+	margin-bottom: 25px;
 }
 /* question.jsp */
 .qtitle{

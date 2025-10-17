@@ -3,11 +3,14 @@ package com.recipe.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -59,25 +62,26 @@ public class RootController {
 	}
 	
 	@GetMapping("/signup")
-	String signup() {
+	String signup(Model model) {
+		model.addAttribute("recipeuser", new RecipeUser());
+		
 		return "signup";
 	}
 	
 	@PostMapping("/signup")
-	String signup(String userid, String userpw, String username, String nickname, String usertel, 
+	String signup(@ModelAttribute("recipeuser") @Valid RecipeUser recipeuser, 
+			BindingResult bindingResult,
 			@RequestParam("emailid") String emailid,
-            @RequestParam("domain") String domain) {
-		String useremail = emailid + "@" + domain;
+            @RequestParam("domain") String domain,
+            Model model) {
 		
-		RecipeUser item = new RecipeUser();
-		item.setUserid(userid);
-		item.setUserpw(userpw);
-		item.setUsername(username);
-		item.setNickname(nickname);
-		item.setUsertel(usertel);
-		item.setUseremail(useremail);
+		if (bindingResult.hasErrors()) {
+	        return "signup"; 
+	    }
 		
-		service.add(item);
+		recipeuser.setUseremail(emailid + "@" + domain);
+		
+		service.add(recipeuser);
 		
 		return "redirect:welcome";
 	}

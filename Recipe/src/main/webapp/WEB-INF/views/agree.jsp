@@ -10,6 +10,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/agree.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="agreebody">
 	<div>
@@ -42,13 +43,15 @@
 					<input type="checkbox" class="checked round">
 					<label class="fs-3 agree">마케팅 정보, 메일, SMS 수신 동의 (선택)</label>
 				</div>
-				<div class="text-end"><button type="button" class="fs-3 rounded-pill" id="next" style="width: 200px; height: 65px;">다음으로</button></div>
+				<div class="text-end"><a href="signup">
+					<button type="button" class="fs-3 rounded-pill" id="next" style="width: 200px; height: 65px;">다음으로<i class="bi bi-caret-right-fill"></i></button>
+				</a></div>
 			</form>
 		</div>
 		<div class="col-4"></div>
 	</div>
 	<div class="before">
-		<div><a href="."><button type="button" class="fs-3 rounded-pill btnbefore" style="width: 200px; height: 65px;">이전</button></a></div>
+		<div><a href="."><button type="button" class="fs-3 rounded-pill btnbefore" style="width: 200px; height: 65px;"><i class="bi bi-caret-left-fill"></i>이전</button></a></div>
 	</div>
 	
 <script src="${pageContext.request.contextPath}/resources/js/agree.js"></script>

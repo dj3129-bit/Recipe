@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,19 +20,25 @@
 		<div class="row">
 			<div class="col-4"></div>
 			<div class="col">
-				<form method="post" name="signup_form">
+				<form:form modelAttribute="recipeuser" method="post" name="signup_form">
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">아이디</label></div>
-						<div><input type="text" name="userid" id="userid" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div> 
+						<div>
+							<form:input type="text" path="userid" name="userid" id="userid" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></form:input>
+						</div> 
 						<div>
 							<button type="button" id="checkid" class="custom-rounded" style="width: 100px; height: 45px; border-radius: 15px;">중복확인</button>
 						</div>
 					</div>
+					<form:errors path="userid" cssClass="error"></form:errors>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">비밀번호</label></div>
-						<div><input type="password" name="userpw" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
+						<div>
+							<form:input type="password" path="userpw" name="userpw" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></form:input>
+						</div>
 					</div> 
+					<form:errors path="userpw" cssClass="error"></form:errors>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">비밀번호 확인</label></div>
@@ -42,8 +48,11 @@
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">성명</label></div>
-						<div><input type="text" name="username" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></div>
+						<div>
+							<form:input type="text" path="username" name="username" class="custom-input custom-rounded fs-3" style="width: 300px; border-radius: 15px;"></form:input>
+						</div>
 					</div>
+					<form:errors path="username" cssClass="error"></form:errors>
 					
 					<div class="d-flex">
 						<div class="lbbox"><label class="label">닉네임</label></div>
@@ -74,7 +83,7 @@
 						<div class="btnsu"><button type="button" id="signup" class="fs-3 rounded-pill" style="width: 200px; height: 65px;">회원가입</button></div>
 						<div class="text-end"><a href="."><button type="button" class="fs-3 rounded-pill" style="width: 200px; height: 65px;">취소</button></a></div>
 					</div>
-				</form>		
+				</form:form>		
 			</div>
 			<div class="col-4"></div>
 		</div>

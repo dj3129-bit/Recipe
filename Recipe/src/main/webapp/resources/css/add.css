@@ -145,3 +145,8 @@ form{
 .recbox i{
 	margin-right: 10px;
 }
+.favorbox{
+	display:block;
+	text-align: end;
+	margin: 0;
+}
