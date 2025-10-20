@@ -13,6 +13,13 @@
 
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+<nav>
+	<div class="recrecipe"><a href="/">추천 레시피</a></div>
+	<div><a href="/post/hotpost">HOT 레시피</a></div>
+	<div><a href="/post/chef">BEST 셰프</a></div>
+	<div><a href="/user/question">고객센터</a></div>
+</nav>
 	<div class="container">
 		<div><h3>문의 목록</h3></div>
 		<hr class="border border-dark border-2 opacity-100 hrl">
@@ -65,7 +72,7 @@
 			</table>
 		</div>
 		
-		<div class="mb-2">
+		<div class="mb-2 searchdiv">
 			<form class="row">
 				<div class="col-3"></div>
 				<div class="col-2">

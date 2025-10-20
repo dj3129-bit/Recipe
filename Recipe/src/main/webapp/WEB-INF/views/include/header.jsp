@@ -10,7 +10,10 @@
 </head>
 <body>
 	<div class="headerbox">
-		<h1><a href="/">레시피 로고</a></h1>
+		<h1><a href="/">
+			<img src="${pageContext.request.contextPath}/resources/images/recipeoplelogo.png" style="width: 80px; height: 70px;">
+			<img src="${pageContext.request.contextPath}/resources/images/recipeopletitle.png" style="width: 250px; height: 80px;">
+		</a></h1>
 		<input type="text" name="q" class="headinput">	
 		<button type="submit" class="headbtn">검색</button>
 		

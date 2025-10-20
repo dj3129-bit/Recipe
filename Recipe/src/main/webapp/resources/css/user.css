@@ -95,6 +95,9 @@ ul{
 	z-index: 1;
 }
 /* list.jsp */
+.container{
+	margin-bottom: 50px;
+}
 table tr {
   height: 50px;
   vertical-align: middle;
@@ -109,4 +112,7 @@ table tr {
 	position: absolute;
 	top: 10px;
 	right: 25px;
+}
+.searchdiv{
+	margin-top: 25px;
 }
