@@ -3,6 +3,7 @@ CREATE TABLE `comment` (
 	`recipeid` INT NOT NULL,
 	`commentcontent` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
 	`commentdate` DATE NULL DEFAULT NULL,
+	`commentfixdate` DATE NULL DEFAULT NULL,
 	`isreport` TINYINT(1) NULL DEFAULT NULL,
 	`userid` VARCHAR(32) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
 	PRIMARY KEY (`commentid`, `recipeid`) USING BTREE,
