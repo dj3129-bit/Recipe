@@ -4,7 +4,7 @@ CREATE TABLE `comment` (
 	`commentcontent` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
 	`commentdate` DATE NULL DEFAULT NULL,
 	`commentfixdate` DATE NULL DEFAULT NULL,
-	`isreport` TINYINT(1) NULL DEFAULT NULL,
+	`isreport` TINYINT(1) NULL DEFAULT 'false',
 	`userid` VARCHAR(32) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
 	PRIMARY KEY (`commentid`, `recipeid`) USING BTREE,
 	INDEX `recipeid` (`recipeid`) USING BTREE,
