@@ -48,4 +48,15 @@
 	    SET recipeviews = recipeviews + 1
 	    WHERE recipeid = #{recipeid}
 	</update>
+	
+	<select id="comlist" resultType="comment">
+		SELECT *
+		FROM comment
+		WHERE recipeid=#{recipeid}
+	</select>
+	
+	<insert id="comment" useGeneratedKeys="true" keyProperty="commentid">
+		INSERT INTO comment (recipeid, commentcontent, commentdate, userid)
+		VALUES (#{recipeid}, #{commentcontent}, #{commentdate}, #{userid})
+	</insert>
 </mapper>

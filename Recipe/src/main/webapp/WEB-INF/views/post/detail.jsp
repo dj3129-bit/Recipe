@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -169,6 +170,26 @@
 			</div>
 		</div>
 		<hr>
+		<div>
+			<h3>댓글</h3>
+			<ul id="commentul"></ul>
+		</div>
+		<div>
+			<ul id="commentul">
+				<c:forEach var="comment" items="${comlist}">
+				  <li>
+				    <p>${comment.userid} | <fmt:formatDate value="${comment.commentdate}" pattern="yyyy-MM-dd HH:mm" /> | 답글 | 신고</p>
+				    <p>${comment.commentcontent}</p>
+				  </li>
+				</c:forEach>
+			</ul>
+			<div class="commentbox">
+				<input type="hidden" name="commentinput" value="${item.recipeid}" />
+				<textarea class="comment" placeholder="댓글을 남겨주세요." name="commentcontent"></textarea>
+				<input type="hidden" id="isLogin" value="${sessionScope.userid != null}" />
+				<button type="button" id="commentedit">등록</button>
+			</div>
+		</div>
 		<div class="recbox">
 			<div class="text-start" style="width: 300px;">
 				<input type="hidden" name="recipeid" value="${item.recipeid}" />
@@ -181,30 +202,6 @@
 		</div>
 	</div>
 <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/resources/js/detail.js"></script>
 </body>
-
-<script>
-  document.getElementById("recbtn").addEventListener("click", function () {
-    const recipeid = this.getAttribute("data-recipeid");
-
-    fetch("/post/recommend", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ recipeid: recipeid })
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        alert("추천되었습니다!");
-      } else {
-        alert("추천 실패");
-      }
-    }).catch(error => {
-      console.error("에러 발생:", error);
-      alert("서버 오류가 발생했습니다.");
-    });
-  });
-</script>
 </html>

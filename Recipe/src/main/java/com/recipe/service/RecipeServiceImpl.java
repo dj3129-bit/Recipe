@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.recipe.dao.RecipeDao;
+import com.recipe.model.Comment;
 import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 
@@ -72,6 +73,16 @@ public class RecipeServiceImpl implements RecipeService{
 	@Override
 	public void viewsup(int recipeid) {
 		dao.viewsup(recipeid);
+	}
+
+	@Override
+	public void comment(int recipeid, Comment comment) {
+		dao.comment(recipeid, comment);
+	}
+
+	@Override
+	public List<Comment> comlist(int recipeid) {
+		return dao.comlist(recipeid);
 	}
 
 }

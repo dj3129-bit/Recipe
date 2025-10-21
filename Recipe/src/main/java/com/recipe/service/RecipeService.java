@@ -2,6 +2,7 @@ package com.recipe.service;
 
 import java.util.List;
 
+import com.recipe.model.Comment;
 import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 
@@ -28,5 +29,9 @@ public interface RecipeService {
 	int recview(int recipeid);
 
 	void viewsup(int recipeid);
+
+	void comment(int recipeid, Comment comment);
+
+	List<Comment> comlist(int recipeid);
 
 }

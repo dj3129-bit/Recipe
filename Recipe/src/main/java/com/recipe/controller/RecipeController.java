@@ -2,6 +2,9 @@ package com.recipe.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.recipe.model.Comment;
 import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
@@ -164,9 +168,11 @@ public class RecipeController {
 		
 		Recipe item = rservice.item(recipeid);
 		Ingredient ingredient = rservice.ingredient(recipeid);
+		List<Comment> comlist = rservice.comlist(recipeid);
 		
 		model.addAttribute("item", item);
 		model.addAttribute("ingredient", ingredient);
+		model.addAttribute("comlist", comlist);
 		return "post/detail";
 	}
 	
@@ -212,6 +218,23 @@ public class RecipeController {
 	@GetMapping("/chef")
 	String chef() {
 		return "post/chef";
+	}
+	
+	//댓글 추가
+	@PostMapping("/comment")
+	@ResponseBody
+	Map<String, Object> comment(@RequestBody Comment comment, HttpSession session) {
+		String userid = (String) session.getAttribute("userid");
+		
+		comment.setUserid(userid);
+		comment.setCommentdate(Timestamp.valueOf(LocalDateTime.now()));
+		rservice.comment(comment.getRecipeid(), comment);
+		
+		Map<String, Object> result = new HashMap<>();
+		result.put("success", true);
+		result.put("comment", comment);
+		
+		return result;
 	}
 	
 //	@GetMapping("/favor")

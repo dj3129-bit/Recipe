@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.recipe.model.Comment;
 import com.recipe.model.Ingredient;
 import com.recipe.model.Recipe;
 
@@ -73,6 +74,16 @@ public class RecipeDaoImpl implements RecipeDao{
 	@Override
 	public void viewsup(int recipeid) {
 		sql.update("recipe.viewsup", recipeid);   //조회수 증가
+	}
+
+	@Override
+	public void comment(int recipeid, Comment comment) { 
+		sql.insert("recipe.comment", comment);    //댓글 추가
+	}
+
+	@Override
+	public List<Comment> comlist(int recipeid) {   
+		return sql.selectList("recipe.comlist", recipeid);    //댓글 조회
 	}
 
 }

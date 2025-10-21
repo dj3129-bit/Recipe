@@ -12,6 +12,7 @@
 		<typeAlias type="com.recipe.model.Recipe" alias="recipe"/>
 		<typeAlias type="com.recipe.model.Question" alias="question"/>
 		<typeAlias type="com.recipe.model.Ingredient" alias="ingredient"/>
+		<typeAlias type="com.recipe.model.Comment" alias="comment"/>
 	</typeAliases>
 	
 	<mappers>
