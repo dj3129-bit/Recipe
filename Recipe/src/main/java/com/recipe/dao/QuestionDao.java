@@ -2,6 +2,7 @@ package com.recipe.dao;
 
 import java.util.List;
 
+import com.recipe.model.Notification;
 import com.recipe.model.Question;
 import com.recipe.pager.Pager;
 
@@ -14,4 +15,8 @@ public interface QuestionDao {
 	void delete(int questionid);
 
 	int total(Pager pager);
+
+	void add(Notification item);
+
+	List<Notification> nlist(Pager pager);
 }

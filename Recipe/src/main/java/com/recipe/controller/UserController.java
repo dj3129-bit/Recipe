@@ -1,5 +1,7 @@
 package com.recipe.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.recipe.model.Notification;
 import com.recipe.model.RecipeUser;
+import com.recipe.pager.Pager;
 import com.recipe.service.QuestionService;
 import com.recipe.service.RecipeUserService;
 
@@ -75,7 +79,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/usercenter")
-	String usercenter() {
+	String usercenter(Model model, Pager pager) {
+		List<Notification> nlist = qservice.nlist(pager);
+		model.addAttribute("nlist", nlist);
+		
 		return "user/usercenter";
 	}
 		

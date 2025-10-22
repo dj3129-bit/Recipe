@@ -2,6 +2,7 @@ package com.recipe.service;
 
 import java.util.List;
 
+import com.recipe.model.Notification;
 import com.recipe.model.Question;
 import com.recipe.pager.Pager;
 
@@ -12,4 +13,8 @@ public interface QuestionService {
 	List<Question> list(Pager pager);
 
 	void delete(int questionid);
+
+	void add(Notification item);
+
+	List<Notification> nlist(Pager pager);
 }

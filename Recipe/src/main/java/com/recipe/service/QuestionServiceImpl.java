@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.recipe.dao.QuestionDao;
+import com.recipe.model.Notification;
 import com.recipe.model.Question;
 import com.recipe.pager.Pager;
 
@@ -32,5 +33,19 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public void delete(int questionid) {
 		dao.delete(questionid);
+	}
+
+	@Override
+	public void add(Notification item) {
+		dao.add(item);
+	}
+
+	@Override
+	public List<Notification> nlist(Pager pager) {
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
+		return dao.nlist(pager);
 	}
 }

@@ -18,7 +18,7 @@
 	<div class="recrecipe"><a href="/">추천 레시피</a></div>
 	<div><a href="/post/hotpost">HOT 레시피</a></div>
 	<div><a href="/post/chef">BEST 셰프</a></div>
-	<div><a href="/user/question">고객센터</a></div>
+	<div><a href="/user/usercenter">고객센터</a></div>
 </nav>
 	<div class="container">
 		<div><h3>문의 목록</h3></div>

@@ -43,4 +43,16 @@
         ORDER BY questionid
         LIMIT #{perPage} OFFSET ${(page - 1) * perPage}
 	</select>
+	
+	<insert id="notifyadd" useGeneratedKeys="true" keyProperty="notificationid">
+		INSERT INTO notification (notifytitle, type, message, userid)
+		VALUES (#{notifytitle}, #{type}, #{message}, #{userid})
+	</insert>
+	
+	<select id="nlist" resultType="notification">
+		SELECT * FROM notification
+		<include refid="search"></include>
+        ORDER BY notificationid
+        LIMIT #{perPage} OFFSET ${(page - 1) * perPage}
+	</select>
 </mapper>

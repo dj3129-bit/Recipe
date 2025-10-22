@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,16 +48,16 @@
 					</thead>
 					
 					<tbody class="table-group-divider">
-						<c:if test="${list.size() < 1}">
+						<c:if test="${nlist.size() < 1}">
 							<tr><td colspan="5">공지사항이 없습니다</td></tr>
 						</c:if>
 						
-						<c:forEach var="item" items="${list}">
+						<c:forEach var="item" items="${nlist}">
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>${item.notificationid}</td>
+								<td>${item.notifytitle}</td>
+								<td>${item.message}</td>
+								<td>${item.createdate}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -113,5 +113,7 @@
 	  </div>
 	</div>
 </div>
+
+<script src="${pageContext.request.contextPath}/resources/js/question.js"></script>
 </body>
 </html>

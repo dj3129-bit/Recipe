@@ -19,14 +19,14 @@
 		
 		<c:if test="${sessionScope.recipeuser == null}">
 			<div class="libox">
-				<a href="login">
+				<a href="/login">
 					<i class="bi bi-person fs-2"></i>
 					<p>로그인</p>
 				</a>
 			</div>
 			<div class="lobox">
 				<div>
-					<a href="agree">
+					<a href="/agree">
 						<i class="bi bi-person-plus fs-2"></i>
 						<p>회원가입</p>
 					</a>

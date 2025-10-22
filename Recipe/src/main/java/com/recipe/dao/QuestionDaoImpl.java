@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.recipe.model.Notification;
 import com.recipe.model.Question;
 import com.recipe.pager.Pager;
 
@@ -33,5 +34,15 @@ public class QuestionDaoImpl implements QuestionDao {
 	@Override
 	public int total(Pager pager) {
 		return sql.selectOne("question.total", pager);
+	}
+
+	@Override
+	public void add(Notification item) {
+		sql.insert("question.notifyadd", item);
+	}
+
+	@Override
+	public List<Notification> nlist(Pager pager) {
+		return sql.selectList("question.nlist", pager);
 	}
 }
