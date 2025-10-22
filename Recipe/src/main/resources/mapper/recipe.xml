@@ -53,6 +53,7 @@
 		SELECT *
 		FROM comment
 		WHERE recipeid=#{recipeid}
+		ORDER BY commentdate DESC
 	</select>
 	
 	<insert id="comment" useGeneratedKeys="true" keyProperty="commentid">

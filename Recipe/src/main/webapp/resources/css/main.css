@@ -79,6 +79,7 @@ h3{
 }
 .hotdiv, .bestdiv, .chefdiv{
 	width: calc(100% / 3);
+	/* box-sizing: border-box; */
 }
 .hotphoto, .bestphoto, .chefphoto{
 	width: 100%;
@@ -112,11 +113,26 @@ h3{
 }
 
 /* ---------------hotpost.jsp---------------- */
+.hotpost{
+	margin-bottom: 800px;
+}
 #home-tab-pane {
   display: flex;
   flex-wrap: wrap; 
   gap: 20px; 
 }
-.tab-pane:not(.active) .hot{
+.tab-pane:not(.active) .hot2{
 	display: none;
+}
+.hot2{
+	width: 100%;
+	height: 400px;
+	display: flex;
+	gap: 40px;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+}
+.hotdiv2{
+	width: calc(100% / 3 - 40px);
+	box-sizing: border-box;
 }

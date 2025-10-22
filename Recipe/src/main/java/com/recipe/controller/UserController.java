@@ -73,4 +73,10 @@ public class UserController {
 		
 		return "redirect:/post/mypage";
 	}
+	
+	@GetMapping("/usercenter")
+	String usercenter() {
+		return "user/usercenter";
+	}
+		
 }

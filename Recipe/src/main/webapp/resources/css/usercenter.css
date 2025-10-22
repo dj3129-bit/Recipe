@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+nav{
+	display: flex;
+	background-color: darkred;
+	height: 65px;
+	justify-content: center;
+	gap: 200px;
+	align-items: center;
+}
+nav div a{
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+}
+.hrl{
+	margin: 0;
+}
+table tr {
+  height: 50px;
+  vertical-align: middle;
+}
+.title{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.title h1{
+	text-align: center;
+}
+.searchbox{
+	position: relative;	
+}
+.search{
+	position: absolute;
+	top: 10px;
+	right: 25px;
+}
+.searchdiv{
+	margin-top: 25px;
+}

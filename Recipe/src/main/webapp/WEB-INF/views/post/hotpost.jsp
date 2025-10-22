@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>HOT 레시피</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
@@ -14,9 +14,9 @@
 	<div class="recrecipe"><a href="/">추천 레시피</a></div>
 	<div><a href="/post/hotpost">HOT 레시피</a></div>
 	<div><a href="/post/chef">BEST 셰프</a></div>
-	<div><a href="/user/question">고객센터</a></div>
+	<div><a href="/user/usercenter">고객센터</a></div>
 </nav>
-<div class="container" style="width: 70%; margin-top: 30px;">
+<div class="container hotpost" style="width: 70%; margin-top: 30px;">
 	<ul class="nav nav-tabs">
 		<li class="nav-item">
 		  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" aria-current="page" type="button">추천순</button>
@@ -28,9 +28,9 @@
 	
 	<div class="tab-content" id="myTabContent">
 	  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-	  	<div class="hot">
+	  	<div class="hot2">
 	  	   <c:forEach var="item" items="${recommendList}" begin="0" end="9">
-				<div class="hotdiv">
+				<div class="hotdiv2">
 					<div class="hotphoto">
 						<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 100%; height: 100%; object-fit: cover;">
 					</div>
@@ -53,9 +53,9 @@
 	  </div>
 	  
 	  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="1">
-	  	<div class="hot">
+	  	<div class="hot2">
 	  	   <c:forEach var="item" items="${viewList}" begin="0" end="9">
-				<div class="hotdiv">
+				<div class="hotdiv2">
 					<div class="hotphoto">
 						<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 100%; height: 100%; object-fit: cover;">
 					</div>
