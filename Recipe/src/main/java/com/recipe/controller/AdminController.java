@@ -48,8 +48,18 @@ public class AdminController {
 	}
 	
 	public enum Status{
-		NORMAL,
-		REPLY,
-		IMPORTANT
+		NORMAL("일반"),
+		REPLY("답변"),
+		IMPORTANT("중요");
+		
+		private final String label;
+
+	    Status(String label) {
+	        this.label = label;
+	    }
+
+	    public String getLabel() {
+	        return label;
+	    }
 	}
 }

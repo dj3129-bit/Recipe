@@ -18,7 +18,7 @@
       	<td>${recipeuser.username}</td>
       	<td>${recipeuser.useremail}</td>
         <td>${recipeuser.nickname}</td>
-        <td>${recipeuser.role}</td>
+        <!-- <td>${recipeuser.role}</td> -->
         <td>
           <a href="/admin/users/${recipeuser.userid}">상세</a>
           <form method="post" style="display:inline;">

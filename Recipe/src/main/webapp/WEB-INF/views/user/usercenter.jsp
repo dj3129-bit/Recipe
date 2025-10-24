@@ -7,6 +7,7 @@
 <title>고객센터</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/usercenter.css">
 </head>
 <body>
@@ -40,8 +41,9 @@
 				<table class="table table-sm">
 					<thead class="table-secondary">
 						<tr>
-							<th class="fs-5" style="width: 10%;">No.</th>
-							<th class="fs-5">제목</th>
+							<th class="fs-5" style="width: 7%;">No.</th>
+							<th class="fs-5" style="width: 10%;">유형</th>
+							<th class="fs-5" style="width: 15%;">제목</th>
 							<th class="fs-5">내용</th>
 							<th class="fs-5" style="width: 20%;">작성일시</th>
 						</tr>
@@ -55,6 +57,7 @@
 						<c:forEach var="item" items="${nlist}">
 							<tr>
 								<td>${item.notificationid}</td>
+								<td>${item.type.label}</td>
 								<td>${item.notifytitle}</td>
 								<td>${item.message}</td>
 								<td>${item.createdate}</td>
