@@ -119,6 +119,7 @@ public class RecipeController {
 		return "post/mypage";
 	}
 	
+	//레시피 수정 페이지
 	@GetMapping("/update/{recipeid}")
 	String update(@PathVariable int recipeid, Model model) {
 		Recipe item = rservice.item(recipeid);
@@ -129,7 +130,7 @@ public class RecipeController {
 		return "post/update";
 	}
 	
-	//레시피 수정
+	//레시피 수정 폼 제출
 	@PostMapping("/update/{recipeid}")
 	String update(@PathVariable int recipeid, Recipe item, @ModelAttribute Ingredient ingredient, HttpSession session, @RequestParam("file") MultipartFile changeFile) {
 		item.setRecipeid(recipeid);
@@ -215,6 +216,7 @@ public class RecipeController {
 		return "post/hotpost";
 	}
 	
+	//셰프 목록
 	@GetMapping("/chef")
 	String chef() {
 		return "post/chef";

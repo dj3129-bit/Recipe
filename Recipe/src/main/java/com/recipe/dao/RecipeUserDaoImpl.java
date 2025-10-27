@@ -46,6 +46,6 @@ public class RecipeUserDaoImpl implements RecipeUserDao{
 
 	@Override
 	public List<RecipeUser> findAll() {
-		return sql.selectList("recipeuser.item");
+		return sql.selectList("recipeuser.findAll");
 	}
 }

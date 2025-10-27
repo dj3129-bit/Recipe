@@ -47,6 +47,10 @@
 					<p></p>
 				</div>
 			</div>
+			<div>
+				<div class="historybox"><a href="/user/list"><button type="button">문의 내역</button></a></div>
+				<div class="historybox"><a href="#"><button type="button">내 댓글</button></a></div>
+			</div>
 		</div>
 		<div class="recipe">
 			<h3>즐겨찾기 레시피</h3>

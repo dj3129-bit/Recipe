@@ -20,6 +20,7 @@ import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
 import com.recipe.service.RecipeService;
 import com.recipe.service.RecipeUserService;
+import com.recipe.service.SearchService;
 
 @Controller
 public class RootController {
@@ -29,7 +30,11 @@ public class RootController {
 	
 	@Autowired
 	RecipeService rservice;
+	
+	@Autowired
+	SearchService sservice;
 
+	//메인 페이지
 	@GetMapping("/")
 	String index(Model model){
 		List<Recipe> list = rservice.list();
@@ -38,11 +43,13 @@ public class RootController {
 		return "index";
 	}	
 	
+	////로그인 페이지
 	@GetMapping("/login")
 	String login() {
 		return "login";
 	}
 	
+	//로그인 폼 제출
 	@PostMapping("/login")
 	String login(RecipeUser recipeuser, HttpSession session, Model model) {
 		RecipeUser recipeUser = service.login(recipeuser); 
@@ -56,11 +63,13 @@ public class RootController {
 		return "login";
 	}
 	
+	//약관 동의
 	@GetMapping("/agree")
 	String agree() {
 		return "agree";
 	}
 	
+	//회원가입 페이지
 	@GetMapping("/signup")
 	String signup(Model model) {
 		model.addAttribute("recipeuser", new RecipeUser());
@@ -68,6 +77,7 @@ public class RootController {
 		return "signup";
 	}
 	
+	//회원가입 폼 제출
 	@PostMapping("/signup")
 	String signup(@ModelAttribute("recipeuser") @Valid RecipeUser recipeuser, 
 			BindingResult bindingResult,
@@ -86,6 +96,7 @@ public class RootController {
 		return "redirect:welcome";
 	}
 	
+	//로그아웃
 	@GetMapping("/logout")
 	String logout(HttpSession session) {
 		session.invalidate();
@@ -93,11 +104,13 @@ public class RootController {
 		return "redirect:/";
 	}
 	
+	//아이디찾기 페이지
 	@GetMapping("/findid")
 	String findid() {
 		return "findid";
 	}
 	
+	//아이디찾기 폼 제출
 	@PostMapping("/findid")
 	String findid(String username, String useremail, Model model) {
 		String userId = service.findUserId(username, useremail);
@@ -105,16 +118,19 @@ public class RootController {
 		return "findresult";
 	}
 	
+	//아이디찾기 완료 페이지
 	@GetMapping("/findresult")
 	String findresult() {
 		return "findresult";
 	}
 	
+	//회원가입 완료 및 환영 페이지
 	@GetMapping("/welcome")
 	String welcome() {
 		return "welcome";
 	}
 	
+	//중복확인
 	@ResponseBody
 	@GetMapping("/check_id/{userid}")
 	String checkId(@PathVariable String userid) {
@@ -123,6 +139,7 @@ public class RootController {
 		return "FAIL";
 	}
 	
+	//레시피 상세페이지
 	@GetMapping("/detail/{recipeid}")
 	String detail(@PathVariable int recipeid, Model model) {
 		Recipe item = rservice.item(recipeid);
@@ -132,16 +149,17 @@ public class RootController {
 		return "redirect:/post/detail";
 	}
 	
+	//비밀번호 찾기 페이지
 	@GetMapping("/findpw")
 	String findpw() {
 		return "findpw";
 	}
 	
 	//검색기능
-//	@GetMapping("/search")
-//	String search(@RequestParam("keyword") String keyword, Model model) {
-//		List<SearchResult> results = sservice.searchResult(keyword);
-//		model.addAttribute("results", results);
-//		return "searchresult";
-//	}
+	@GetMapping("/search")
+	String search(@RequestParam("q") String keyword, Model model) {
+		List<Recipe> results = sservice.search(keyword);
+		model.addAttribute("results", results);
+		return "searchresult";
+	}
 }

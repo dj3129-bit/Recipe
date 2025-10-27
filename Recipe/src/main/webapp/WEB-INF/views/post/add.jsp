@@ -6,11 +6,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>레시피 등록</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add.css">
+<style>
+h1 a{
+	display: flex;
+}
+.headerbox form{
+	width: 36% !important;
+}
+</style>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+<div style="width: 75%; margin: 0 auto;">
+	<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+</div>
 	<hr style="width: 100%; border:1px solid #000;">
 	<form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/post/add">
 		<div class="container">

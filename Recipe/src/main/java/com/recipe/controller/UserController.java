@@ -32,6 +32,7 @@ public class UserController {
 	@Autowired
 	QuestionService qservice;
 	
+	//레시피 수정 페이지
 	@GetMapping("/update/{userid}")
 	String update(@PathVariable String userid, Model model) {
 		RecipeUser item = rservice.item(userid);
@@ -40,6 +41,7 @@ public class UserController {
 		return "user/update";
 	}
 	
+	//레시피 수정 폼 제출
 	@PostMapping("/update/{userid}")
 	String update(@PathVariable String userid, @ModelAttribute("item") @Valid RecipeUser item, BindingResult bindingResult) {
 		item.setUserid(userid);
@@ -58,12 +60,14 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	//비밀번호 변경 페이지
 	@GetMapping("/changepw/{userid}")
 	String changepw(@PathVariable String userid) {
 		
 		return "user/changepw";
 	}
 	
+	//비밀번호 변경 폼 제출
 	@PostMapping("/changepw/{userid}")
 	String changepw(@RequestParam("newpw") String newpw, HttpSession session, RedirectAttributes redirectAttributes) {
 		//String encodedPw = passwordEncoder.encode(newpw);   Spring security 사용시
@@ -78,6 +82,7 @@ public class UserController {
 		return "redirect:/post/mypage";
 	}
 	
+	//고객센터 페이지
 	@GetMapping("/usercenter")
 	String usercenter(Model model, Pager pager) {
 		List<Notification> nlist = qservice.nlist(pager);

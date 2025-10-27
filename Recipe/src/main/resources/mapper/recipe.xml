@@ -60,4 +60,12 @@
 		INSERT INTO comment (recipeid, commentcontent, commentdate, userid)
 		VALUES (#{recipeid}, #{commentcontent}, #{commentdate}, #{userid})
 	</insert>
+	
+	<select id="searchresult" resultType="recipe">
+	  SELECT *, c.maincategoryname 
+	  FROM recipepost r 
+	  JOIN categorytype c ON r.maincategoryid = c.maincategoryid
+	  WHERE recipetitle LIKE CONCAT('%', #{keyword}, '%')
+	     OR recipetag LIKE CONCAT('%', #{keyword}, '%')
+	</select>
 </mapper>

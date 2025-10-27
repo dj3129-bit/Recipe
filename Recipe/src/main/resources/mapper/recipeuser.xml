@@ -22,4 +22,8 @@
 		SELECT userid FROM recipeuser
 		WHERE username=#{username} AND useremail=#{useremail}
 	</select>
+	
+	<select id="findAll" resultType="RecipeUser">
+	    SELECT * FROM recipeuser
+	</select>
 </mapper>
