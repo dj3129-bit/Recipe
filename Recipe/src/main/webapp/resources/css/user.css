@@ -77,10 +77,15 @@ h3{
 	height: 250px;
 	background-color: #ccc;
 	margin-left: 170px;
-	display:block;
+	display:flex;
+	flex-direction: row;
+	padding-left: 0;
 }
 ul{
 	padding-left: 0;
+}
+.photobox li {
+  width: 100%;
 }
 .submitbtn{
 	margin-left: 520px;

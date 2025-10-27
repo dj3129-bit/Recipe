@@ -6,6 +6,7 @@ const appendFile = e => {
     li.style.width = "100%";
     li.style.height = "100%";
     li.style.display = "block";
+    li.style.flex = "1";
 
     const input = document.createElement("input");
     input.setAttribute("type", "file");
@@ -22,6 +23,7 @@ const appendFile = e => {
                 img.src = e.target.result;
                 img.style.width = "100%";
                 img.style.height = "100%";
+                img.style.objectFit = "cover";
                 img.style.display = "block";
                 li.appendChild(img);
             };
