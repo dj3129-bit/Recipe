@@ -109,6 +109,6 @@ public class AdminController {
 		item.setUserid(userid);
 		mservice.add(item);
 		
-		return "redirect:/user/mealkit";
+		return "redirect:/post/mealkit";
 	}
 }

@@ -35,9 +35,6 @@ public class UserController {
 	@Autowired
 	QuestionService qservice;
 	
-	@Autowired
-	MealkitService mservice;
-	
 	//레시피 수정 페이지
 	@GetMapping("/update/{userid}")
 	String update(@PathVariable String userid, Model model) {
@@ -97,14 +94,5 @@ public class UserController {
 		return "user/usercenter";
 	}
 	
-	//밀키트 판매 페이지
-	@GetMapping("/mealkit")
-	String mealkit(Model model) {
-		List<Mealkit> list = mservice.list();
-		
-		model.addAttribute("list", list);
-		
-		return "user/mealkit";
-	}
 		
 }

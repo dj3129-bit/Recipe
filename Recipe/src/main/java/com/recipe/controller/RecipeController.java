@@ -29,8 +29,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.recipe.model.Comment;
 import com.recipe.model.Ingredient;
+import com.recipe.model.Mealkit;
 import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
+import com.recipe.service.MealkitService;
 import com.recipe.service.RecipeService;
 import com.recipe.service.RecipeUserService;
 
@@ -44,6 +46,9 @@ public class RecipeController {
 	
 	@Autowired
 	RecipeUserService ruservice;
+	
+	@Autowired
+	MealkitService mservice;
 	
 	//마이페이지(레시피 목록 조회)
 	@GetMapping("/mypage")
@@ -237,6 +242,16 @@ public class RecipeController {
 		result.put("comment", comment);
 		
 		return result;
+	}
+	
+	//밀키트 판매 페이지
+	@GetMapping("/mealkit")
+	String mealkit(Model model) {
+		List<Mealkit> list = mservice.list();
+		
+		model.addAttribute("list", list);
+		
+		return "post/mealkit";
 	}
 	
 //	@GetMapping("/favor")

@@ -70,11 +70,13 @@ h3{
 	gap: 10px;
 }
 .detail{
-	width: 100%;
+	width: 95%;
+	display: flex;
+	gap: 10px;
 	text-align: center;
 	margin-top: 10px;
 }
 .detail button{
-	width: 85%;
+	width: 150px;
 	border-radius: 10px;
 }
