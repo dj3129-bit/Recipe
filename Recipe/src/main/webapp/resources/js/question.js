@@ -1,5 +1,7 @@
 const appendFile = e => {
     const ul = document.getElementById("files");
+    
+    ul.innerHTML = "";
 
     const li = document.createElement("li");
     li.style.listStyle = "none";
@@ -25,17 +27,24 @@ const appendFile = e => {
                 img.style.height = "100%";
                 img.style.objectFit = "cover";
                 img.style.display = "block";
+
+                img.addEventListener("click", () =>{
+                     document.getElementById("photoedit").click();
+                });
+                
                 li.appendChild(img);
+
             };
             reader.readAsDataURL(imagefile);
         }
     });
-        
+
     li.append(input);
     ul.append(li);
-    
+
     input.click();
     document.getElementById("photoedit").style.display = "none";
+    
 };
 
 window.addEventListener("load", () => {

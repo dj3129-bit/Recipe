@@ -42,6 +42,7 @@
 						<ul id="files" class="photobox"></ul>
 						<button type="button" id="photoedit" class="rounded-pill" style="width: 60px; height: 60px;"><i class="bi bi-plus-circle fs-3"></i></button>
 					</div>
+					<p style="padding-left: 95px;">* 이미지 업로드 후 이미지를 클릭하면 이미지가 변경됩니다.</p>
 				</div>
 				<div class="submitbtn"><a href=""><button type="submit" class="fs-5 rounded-pill" style="width: 130px; height: 45px;">등록</button></a></div>
 			</form>

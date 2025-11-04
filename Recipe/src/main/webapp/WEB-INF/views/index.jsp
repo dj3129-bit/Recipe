@@ -6,6 +6,7 @@
 	<title>Recipe</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
+	<script src="https://kit.fontawesome.com/70bb3411ef.js" crossorigin="anonymous"></script>
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +16,8 @@
 	<div class="nav1"><a href="/">추천 레시피</a></div>
 	<div class="nav2"><a href="/post/hotpost">HOT 레시피</a></div>
 	<div><a href="/post/chef">BEST 셰프</a></div>
+	<div><a href="/user/mealkit">밀키트 전용 라운지</a>
+	</div>
 	<div><a href="/user/usercenter">고객센터</a></div>
 </nav>		
 <main>

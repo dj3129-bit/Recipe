@@ -15,6 +15,7 @@
 	<div class="recrecipe"><a href="/">추천 레시피</a></div>
 	<div><a href="/post/hotpost">HOT 레시피</a></div>
 	<div><a href="/post/chef">BEST 셰프</a></div>
+	<div><a href="/user/mealkit">밀키트 전용 라운지</a></div>
 	<div><a href="/user/usercenter">고객센터</a></div>
 </nav>
 <div class="container hotpost" style="width: 70%; margin-top: 30px;">

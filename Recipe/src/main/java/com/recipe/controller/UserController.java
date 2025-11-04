@@ -17,9 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.recipe.model.Mealkit;
 import com.recipe.model.Notification;
+import com.recipe.model.Recipe;
 import com.recipe.model.RecipeUser;
 import com.recipe.pager.Pager;
+import com.recipe.service.MealkitService;
 import com.recipe.service.QuestionService;
 import com.recipe.service.RecipeUserService;
 
@@ -31,6 +34,9 @@ public class UserController {
 	
 	@Autowired
 	QuestionService qservice;
+	
+	@Autowired
+	MealkitService mservice;
 	
 	//레시피 수정 페이지
 	@GetMapping("/update/{userid}")
@@ -89,6 +95,16 @@ public class UserController {
 		model.addAttribute("nlist", nlist);
 		
 		return "user/usercenter";
+	}
+	
+	//밀키트 판매 페이지
+	@GetMapping("/mealkit")
+	String mealkit(Model model) {
+		List<Mealkit> list = mservice.list();
+		
+		model.addAttribute("list", list);
+		
+		return "user/mealkit";
 	}
 		
 }

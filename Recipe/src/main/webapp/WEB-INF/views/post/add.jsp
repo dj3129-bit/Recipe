@@ -50,11 +50,13 @@ h1 a{
 				<div width="200" height="150">
 					<h2>대표 이미지</h2>
 					<ul id="files"></ul>
+					<input type="file" name="file1" id="file1" accept="image/*" style="display:none;">
 					<div><button type="button" id="mainedit">추가</button></div>
 				</div>
 				<div width="200" height="150">
 					<h2>완성 요리 이미지</h2>
 					<ul id="files2"></ul>
+					<input type="file" name="file2" id="file2" accept="image/*" style="display:none;">
 					<button type="button" id="comedit">추가</button>
 				</div>
 			</div>

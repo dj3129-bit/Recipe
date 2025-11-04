@@ -25,11 +25,13 @@
 		<p><a href="/admin/userlist">사용자 목록</a></p>
 		<p><a href="/user/list">문의 목록</a></p>
 		<p><a href="/user/question">문의 답글 작성</a></p>
+		<p><a href="/admin/kitadd">밀키트 등록</a></p>
 	</div>
 	<div class="adminbox">
 		<h4><strong>추가해야 할 관리자 기능</strong></h4>
 		<p>불순한 게시글 삭제</p>
 		<p>문의 목록 관리자만 볼 수 있도록 설정</p>
+		<p>문의 삭제 버튼 관리자에게만 보이도록 설정</p>
 		<p>공지사항 수정</p>
 		<p>신고된 컨텐츠 처리</p>
 		<p>알림 발송(?)</p>

@@ -4,6 +4,7 @@ main{
 }
 .container{
 	width: 70%;
+	margin-top: 30px;
 }
 nav{
 	display: flex;
@@ -23,41 +24,6 @@ nav div a{
 .nav1.clicked a{
 	color: #ffe880;
 }
-.category{
-	display: flex;
-	justify-content: center;
-	gap: 100px;
-	align-items: center;
-	height: 70px;
-	margin-bottom: 30px;
-	cursor: pointer;
-	position: relative;
-}
-.category div a{
-	font-size: 18px;
-}
-.subcategory{
-	display:none;
-	position:absolute;
-	top:70px;
-	left:0;
-	width: 100%;
-	height: 0;
-	background-color: #fff;
-	padding-left: 320px;
-}
-.subcategory div{
-	width: 150px;
-	margin-right: 28px;
-}
-.subcategory div a{
-	display: block;
-	margin-bottom: 10px;
-}
-.category:hover .subcategory{
-	display: flex;
-	height: 600px;
-}
 h3{
 	font-family: 'Noto Sans KR', sans-serif;
 	margin-bottom: 20px;
@@ -66,7 +32,7 @@ h3{
 	margin-left: 100px;	
 	margin-bottom: 20px;
 }
-.hot, .best, .chef{
+.recdiv, .easydiv, .dietdiv, .healthdiv{
 	width: 100%;
 	height: 400px;
 	display: flex;
@@ -77,11 +43,12 @@ h3{
 	padding-top: 150px;
 	cursor: pointer
 }
-.hotdiv, .bestdiv, .chefdiv{
-	width: calc(100% / 3);
+.recmeal, .easymeal, .dietmeal, .healthmeal{
+	width: 350px;
+	height: 100%;
 	/* box-sizing: border-box; */
 }
-.hotphoto, .bestphoto, .chefphoto{
+.recphoto, .easyphoto, .dietphoto, .healthphoto{
 	width: 100%;
 	height: 50%;
 	background-color: #ccc;
@@ -89,7 +56,7 @@ h3{
 	border-top-right-radius: 30px;
 	overflow: hidden;
 }
-.hotcontent, .bestcontent, .chefcontent{
+.reccontent, .easycontent, .dietcontent, .healthcontent{
 	width: 100%;
 	height: 50%;
 	background-color: floralwhite;
@@ -110,29 +77,4 @@ h3{
 .detail button{
 	width: 85%;
 	border-radius: 10px;
-}
-
-/* ---------------hotpost.jsp---------------- */
-.hotpost{
-	margin-bottom: 800px;
-}
-#home-tab-pane {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 20px; 
-}
-.tab-pane:not(.active) .hot2{
-	display: none;
-}
-.hot2{
-	width: 100%;
-	height: 400px;
-	display: flex;
-	gap: 40px;
-	margin-bottom: 30px;
-	flex-wrap: wrap;
-}
-.hotdiv2{
-	width: calc(100% / 3 - 40px);
-	box-sizing: border-box;
 }

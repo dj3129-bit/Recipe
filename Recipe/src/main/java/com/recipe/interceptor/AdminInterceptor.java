@@ -12,7 +12,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		// TODO Auto-generated method stub
+
 		HttpSession session = request.getSession();
 		
 		RecipeUser recipeuser = (RecipeUser) session.getAttribute("recipeuser");

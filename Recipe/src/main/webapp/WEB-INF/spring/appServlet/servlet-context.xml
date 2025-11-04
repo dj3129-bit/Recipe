@@ -32,7 +32,13 @@
 	<interceptors>
       <interceptor>
          <mapping path="/post/**"/>
+         <mapping path="/user/**"/>
          <beans:bean class="com.recipe.interceptor.UserInterceptor"></beans:bean>
+      </interceptor>
+      
+      <interceptor>
+         <mapping path="/admin/**"/>
+         <beans:bean class="com.recipe.interceptor.AdminInterceptor"></beans:bean>
       </interceptor>
    </interceptors>
 	
