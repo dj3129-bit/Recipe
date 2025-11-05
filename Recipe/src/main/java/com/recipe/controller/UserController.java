@@ -94,5 +94,11 @@ public class UserController {
 		return "user/usercenter";
 	}
 	
+	//장바구니 페이지
+	@GetMapping("/cartlist")
+	String cartlist() {
+		return "user/cartlist";
+	}
+	
 		
 }

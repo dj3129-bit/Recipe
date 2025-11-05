@@ -10,4 +10,6 @@ public interface MealkitDao {
 
 	List<Mealkit> list();
 
+	Mealkit item(int kitid);
+
 }

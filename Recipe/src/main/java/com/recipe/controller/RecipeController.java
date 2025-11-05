@@ -254,6 +254,23 @@ public class RecipeController {
 		return "post/mealkit";
 	}
 	
+	//밀키트 상세보기
+	@GetMapping("/detail2/{kitid}")
+	String detail2(@PathVariable int kitid, Model model) {
+		rservice.viewsup(kitid);
+		
+		Mealkit item = mservice.item(kitid);
+		
+		model.addAttribute("item", item);
+		return "post/detail2";
+	}
+	
+	//밀키트 주문/결제
+	@GetMapping("/order")
+	String order() {
+		return "post/order";
+	}
+	
 //	@GetMapping("/favor")
 //	String favor(@RequestParam("recipeid") int recipeid, HttpSession session, RedirectAttributes redirectAttributes) {
 //		String userid = (String) session.getAttribute("userid");

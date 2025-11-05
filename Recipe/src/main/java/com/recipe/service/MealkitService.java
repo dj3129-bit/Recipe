@@ -10,4 +10,6 @@ public interface MealkitService {
 
 	List<Mealkit> list();
 
+	Mealkit item(int kitid);
+
 }

@@ -8,7 +8,8 @@ public class Mealkit {
 	private int kitid;
 	private String kititle;
 	private String kitintroduce;
-	private String kitag;
+	private int price;
+	private int shiprice;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate kitwritedate;
 	private LocalDate kitfixdate;
@@ -33,11 +34,17 @@ public class Mealkit {
 	public void setKitintroduce(String kitintroduce) {
 		this.kitintroduce = kitintroduce;
 	}
-	public String getKitag() {
-		return kitag;
+	public int getPrice() {
+		return price;
 	}
-	public void setKitag(String kitag) {
-		this.kitag = kitag;
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getShiprice() {
+		return shiprice;
+	}
+	public void setShiprice(int shiprice) {
+		this.shiprice = shiprice;
 	}
 	public LocalDate getKitwritedate() {
 		return kitwritedate;

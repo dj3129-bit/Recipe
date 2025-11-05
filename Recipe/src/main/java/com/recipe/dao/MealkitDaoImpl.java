@@ -24,4 +24,9 @@ public class MealkitDaoImpl implements MealkitDao {
 		return sql.selectList("mealkit.list");
 	}
 
+	@Override
+	public Mealkit item(int kitid) {
+		return sql.selectOne("mealkit.item", kitid);
+	}
+
 }

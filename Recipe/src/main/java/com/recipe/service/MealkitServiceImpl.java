@@ -23,5 +23,10 @@ public class MealkitServiceImpl implements MealkitService {
 	public List<Mealkit> list() {
 		return dao.list();
 	}
+
+	@Override
+	public Mealkit item(int kitid) {
+		return dao.item(kitid);
+	}
 	
 }
