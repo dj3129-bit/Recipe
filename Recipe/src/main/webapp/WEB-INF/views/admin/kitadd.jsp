@@ -20,6 +20,14 @@ h1 a{
 }
 .kitedit{
 	display: inline-block;
+	width: 300px;
+	height: 75px;
+	border-radius: 15px;
+	border: 1px solid #000;
+	cursor: pointer;
+	background-color: darkred;
+	color: white;
+	font-size: 25px;
 }
 </style>
 </head>
@@ -33,12 +41,17 @@ h1 a{
 					<input type="text" name="kititle" class="shortext">
 				</div>
 				<div>
-					<h3>밀키트 소개</h3>
+					<h3>밀키트 설명</h3>
 					<textarea name="kitintroduce" class="longtext"></textarea>
+					<button type="button">이미지 추가</button>
+				</div>
+				<div style="margin-bottom: 20px;">
+					<label for="price">가격:</label>
+					<input type="number" name="price" min="0" step="100" inputmode="decimal" class="shortext">
 				</div>
 				<div>
-					<h3>태그</h3>
-					<input type="text" name="kitag" class="shortext">
+					<label for="shiprice">배송비:</label>
+					<input type="number" name="shiprice" min="0" step="100" inputmode="decimal" class="shortext">
 				</div>
 			</div>
 			<div class="img">

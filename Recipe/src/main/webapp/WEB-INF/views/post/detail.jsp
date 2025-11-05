@@ -6,11 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>상세 페이지</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
+<div style="width: 75%; margin: 0 auto;">
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+</div>
 	<hr style="width: 100%; border:1px solid #000;">
 	<div class="wrapper">
 		<div class="container">

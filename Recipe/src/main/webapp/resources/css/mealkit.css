@@ -48,6 +48,9 @@ h3{
 	height: 100%;
 	/* box-sizing: border-box; */
 }
+.recmeal{
+	position:relative;
+}
 .recphoto, .easyphoto, .dietphoto, .healthphoto{
 	width: 100%;
 	height: 50%;
@@ -58,7 +61,7 @@ h3{
 }
 .reccontent, .easycontent, .dietcontent, .healthcontent{
 	width: 100%;
-	height: 50%;
+	height: 45%;
 	background-color: floralwhite;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
@@ -77,6 +80,19 @@ h3{
 	margin-top: 10px;
 }
 .detail button{
-	width: 150px;
+	width: 320px;
 	border-radius: 10px;
+}
+#addcart{
+	position:absolute;
+	top: 35%;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	font-size: 35px;
+	line-height: 35px;
+	padding-bottom: 5px;
+	background-color: #fff;
+	border: 1px solid #ccc;
 }

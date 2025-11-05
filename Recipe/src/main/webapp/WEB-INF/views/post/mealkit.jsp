@@ -31,18 +31,17 @@
 					<div class="reccontent">
 						<div>
 							<h3>${item.kititle}</h3>
-							<p>${item.kitintroduce}</p>
 						</div>
 						<div class="cook">
 							<p><i class="bi bi-bookmark"></i>한식</p>
 							<p id="recup"><i class="bi bi-hash"></i>추천수 : ${item.recommend}</p>
 						</div>
-						<div>태그명</div>
+						<div>${item.price}원</div>
 						<div class="detail">
-							<a href="#"><button type="button"><i class="bi bi-book"></i>상세보기</button></a>
-							<a href="#"><button type="button"><i class="bi bi-cart"></i>구매</button></a>
+							<a href="/post/detail2/${item.kitid}"><button type="button"><i class="bi bi-book"></i>상세보기</button></a>
 						</div>
 					</div>
+					<button type="button" id="addcart">+</button>
 				</div>
 			</c:forEach>
 			<div class="arrow"><i class="bi bi-chevron-compact-right" style="font-size: 4rem;"></i></div>
@@ -124,5 +123,14 @@
 		</div>
 	</div>
 </main>
+
+<script>
+document.getElementById('addcart').addEventListener('click', function(){
+	const answer = confirm("장바구니에 저장되었습니다. 장바구니로 이동하시겠습니까?");
+	if(answer){
+		window.location.href = "/user/cartlist";
+	}
+})
+</script>
 </body>
 </html>

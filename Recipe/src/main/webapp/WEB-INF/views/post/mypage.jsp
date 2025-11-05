@@ -49,6 +49,7 @@
 			</div>
 			<div>
 				<div class="historybox"><a href="/user/list"><button type="button">문의 내역</button></a></div>
+				<div class="historybox"><a href="/user/cartlist"><button type="button">장바구니</button></a></div>
 				<div class="historybox"><a href="#"><button type="button">내 댓글</button></a></div>
 			</div>
 		</div>
