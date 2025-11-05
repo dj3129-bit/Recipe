@@ -8,7 +8,13 @@
 	</select>
 	
 	<insert id="add" useGeneratedKeys="true" keyProperty="kitid">
-		INSERT INTO mealkit (kititle, kitintroduce, kitag, recommend, imagepath, userid)
-		VALUES (#{kititle}, #{kitintroduce}, #{kitag}, #{recommend}, #{imagepath}, #{userid})
+		INSERT INTO mealkit (kititle, kitintroduce, price, shiprice, recommend, imagepath, userid)
+		VALUES (#{kititle}, #{kitintroduce}, #{price}, #{shiprice}, #{recommend}, #{imagepath}, #{userid})
 	</insert>
+	
+	<select id="item" resultType="mealkit">
+		SELECT *
+		FROM mealkit
+		WHERE kitid=#{kitid}
+	</select>
 </mapper>
