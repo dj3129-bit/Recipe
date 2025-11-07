@@ -257,7 +257,8 @@ public class RecipeController {
 	//밀키트 상세보기
 	@GetMapping("/detail2/{kitid}")
 	String detail2(@PathVariable int kitid, Model model) {
-		rservice.viewsup(kitid);
+		//밀키트 조회수 기능 처리시 복구
+		//rservice.viewsup(kitid);
 		
 		Mealkit item = mservice.item(kitid);
 		
@@ -266,8 +267,11 @@ public class RecipeController {
 	}
 	
 	//밀키트 주문/결제
-	@GetMapping("/order")
-	String order() {
+	@GetMapping("/order/{kitid}")
+	String order(@PathVariable int kitid, Model model) {
+		Mealkit item = mservice.item(kitid);
+		
+		model.addAttribute("item", item);
 		return "post/order";
 	}
 	
