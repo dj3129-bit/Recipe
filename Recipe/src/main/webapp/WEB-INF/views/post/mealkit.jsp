@@ -125,11 +125,13 @@
 </main>
 
 <script>
-document.getElementById('addcart').addEventListener('click', function(){
-	const answer = confirm("장바구니에 저장되었습니다. 장바구니로 이동하시겠습니까?");
-	if(answer){
-		window.location.href = "/user/cartlist";
-	}
+document.querySelectorAll('#addcart').forEach(function(e){
+	e.addEventListener('click', function(){
+		const answer = confirm("장바구니에 저장되었습니다. 장바구니로 이동하시겠습니까?");
+		if(answer){
+			window.location.href = "/user/cartlist";
+		}
+	})
 })
 </script>
 </body>

@@ -5,12 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>주문/결제</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <style>
-.container{
-	width: 65%;
-	margin: 0 auto;
-}
 form>div{
 	border: 1px solid #ccc;
 	border-radius: 15px;
@@ -29,7 +27,7 @@ form>div{
 <body>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <hr style="width: 100%; border:1px solid #000;">
-<div class="container">
+<div class="container" style="width: 60%; margin: 0 auto;">
 	<form>
 		<div class="info">
 			<h1>주문 정보</h1>
@@ -73,39 +71,40 @@ form>div{
 		</div>
 		<div class="product">
 			<h2>주문 상품</h2>
-			<div class="img"></div>
-			<div>
-				<p>상품명</p>
-				<p>수량 : 개</p>
-				<p>가격</p>
-			</div>
-			<div>
-				<p>배송비</p>
-				<p>원</p>
+			<div style="display: flex;">
+				<div class="img" style="margin-right: 50px;">
+					<img src="${pageContext.request.contextPath}${item.imagepath}" style="width: 250px; height: 250px;">
+				</div>
+				<div>
+					<p>${kititle}</p>
+					<p>수량 : 개</p>
+					<p>${item.price + item.shiprice}원</p>
+					<p>배송비</p>
+					<p>${item.shiprice}원</p>
+				</div>
 			</div>
 		</div>
 		<div class="discount">
 			<h2>쿠폰 할인/혜택</h2>
 			<div>
 				<p>적용 금액</p>
-				<p>-원</p>
+				<p>0원</p>
 			</div>
 		</div>
 		<div class="payment">
 			<h2>결제 정보</h2>
 			<div>
-				<p>주문 상품</p>
-				<p>배송비</p>
-				<p>할인 금액</p>
+				<p>주문 상품 : ${item.kititle}</p>
+				<p>배송비 : ${item.shiprice}원</p>
+				<p>할인 금액 : 0원</p>
 			</div>
 			<div>
-				<p>상품명</p>
-				<p>원</p>
-				<p>-원</p>
+				<p>${item.price + item.shiprice}원</p>
+				<p>-0원</p>
 			</div>
 			<div>
 				<p>최종 결제 금액</p>
-				<p>원</p>
+				<p>${item.price + item.shiprice}원</p>
 			</div>
 		</div>
 		<div class="method">
@@ -119,7 +118,7 @@ form>div{
 		<div class="agree">
 			<p>주문 내용을 확인하였으며 약관에 동의합니다.</p>
 		</div>
-		<button type="submit">원 결제하기</button>
+		<button type="submit">${item.price + item.shiprice}원 결제하기</button>
 	</form>
 </div>
 </body>

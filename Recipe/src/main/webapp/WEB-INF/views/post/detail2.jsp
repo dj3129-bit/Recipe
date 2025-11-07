@@ -33,18 +33,18 @@
 				<div class="pricebox">
 					<div class="counter">
 						<button onclick="decrease()" class="counterbtn">-</button>
-						<input type="number" id="kitquantity" value="1" />
+						<input type="number" id="kitquantity" value="1" min="1" />
 						<button onclick="increase()" class="counterbtn">+</button>
 					</div>
-					<div class="buypricebox"><p class="buyprice">${item.price}원</p></div>
+					<div class="buypricebox"><p class="buyprice" id="buyprice">${item.price}원</p></div>
 				</div>
 				<div class="totalbox">
 					<p>구매 예정 금액</p>
-					<p class="totalprice">${item.price + item.shiprice}원</p>
+					<p class="totalprice" id="totalprice">${item.price + item.shiprice}원</p>
 				</div>
 				<div>
 					<button type="button" class="cart" id="addcart"><i class="bi bi-cart-check"></i>&nbsp;장바구니</button>
-					<a href="/post/order"><button type="button" class="buy">바로 구매</button></a>
+					<a href="/post/order/${item.kitid}"><button type="button" class="buy">바로 구매</button></a>
 				</div>
 			</div>
 		</div>
@@ -64,14 +64,33 @@
 	</div>
 	
 <script>
+	const unitPrice = ${item.price};
+	const shipPrice = ${item.shiprice};
+	
     function increase() {
       const input = document.getElementById("kitquantity");
-      input.value = parseInt(input.value) + 1;
+      const buyPrice = document.getElementById("buyprice");
+      const totalPrice = document.getElementById("totalprice");
+      
+      let quantity = parseInt(input.value);
+      input.value = quantity += 1;
+      
+      const total = unitPrice * quantity;
+      buyPrice.innerText = total.toLocaleString() + "원";
+      totalPrice.innerText = (total + shipPrice).toLocaleString() + "원";
     }
 
     function decrease() {
       const input = document.getElementById("kitquantity");
-      input.value = parseInt(input.value) - 1;
+      const buyPrice = document.getElementById("buyprice");
+      const totalPrice = document.getElementById("totalprice");
+      
+      let quantity = parseInt(input.value);
+      input.value = quantity -= 1;
+      
+      const total = unitPrice * quantity;
+      buyPrice.innerText = total.toLocaleString() + "원";
+      totalPrice.innerText = (total + shipPrice).toLocaleString() + "원";
     }
     
     document.getElementById('addcart').addEventListener('click', function(){
