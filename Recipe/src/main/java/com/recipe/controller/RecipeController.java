@@ -268,9 +268,13 @@ public class RecipeController {
 	
 	//밀키트 주문/결제
 	@GetMapping("/order/{kitid}")
-	String order(@PathVariable int kitid, Model model) {
+	String order(@PathVariable int kitid, Model model, 
+			@RequestParam(required=false) String quantity,
+			@RequestParam(required=false) String totalprice) {
 		Mealkit item = mservice.item(kitid);
 		
+		model.addAttribute("quantity", quantity);
+        model.addAttribute("totalprice", totalprice);
 		model.addAttribute("item", item);
 		return "post/order";
 	}
