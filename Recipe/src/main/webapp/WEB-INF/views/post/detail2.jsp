@@ -44,7 +44,7 @@
 				</div>
 				<div>
 					<button type="button" class="cart" id="addcart"><i class="bi bi-cart-check"></i>&nbsp;장바구니</button>
-					<a href="/post/order/${item.kitid}"><button type="button" class="buy">바로 구매</button></a>
+					<a href="/post/order/${item.kitid}"><button type="button" class="buy" id="buy">바로 구매</button></a>
 				</div>
 			</div>
 		</div>
@@ -66,12 +66,13 @@
 <script>
 	const unitPrice = ${item.price};
 	const shipPrice = ${item.shiprice};
+	const input = document.getElementById("kitquantity");
+	const buyPrice = document.getElementById("buyprice");
+	const totalPrice = document.getElementById("totalprice");
+	const kitId = ${item.kitid};
+	const contextPath = "<%=request.getContextPath()%>";
 	
     function increase() {
-      const input = document.getElementById("kitquantity");
-      const buyPrice = document.getElementById("buyprice");
-      const totalPrice = document.getElementById("totalprice");
-      
       let quantity = parseInt(input.value);
       input.value = quantity += 1;
       
@@ -80,11 +81,7 @@
       totalPrice.innerText = (total + shipPrice).toLocaleString() + "원";
     }
 
-    function decrease() {
-      const input = document.getElementById("kitquantity");
-      const buyPrice = document.getElementById("buyprice");
-      const totalPrice = document.getElementById("totalprice");
-      
+    function decrease() {   
       let quantity = parseInt(input.value);
       input.value = quantity -= 1;
       
@@ -98,6 +95,13 @@
     	if(answer){
     		window.location.href = "/user/cartlist";
     	}
+    })
+    
+    document.getElementById('buy').addEventListener('click', function(){
+    	let quantity = parseInt(input.value);
+    	const total = unitPrice * quantity;
+    	const finalPrice = total + shipPrice
+    	location.href = contextPath + "/post/order/" + kitId + "?quantity=" + quantity + "&totalprice=" + finalPrice;
     })
 </script>
 <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>

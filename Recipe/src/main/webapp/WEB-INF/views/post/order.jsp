@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +24,10 @@ form>div{
 </style>
 </head>
 <body>
+<%
+  String quantity = request.getParameter("quantity");
+  String finalPrice = request.getParameter("totalprice");
+%>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <hr style="width: 100%; border:1px solid #000;">
 <div class="container" style="width: 60%; margin: 0 auto;">
@@ -77,7 +80,7 @@ form>div{
 				</div>
 				<div>
 					<p>${kititle}</p>
-					<p>수량 : 개</p>
+					<p>수량 : <%= quantity %>개</p>
 					<p>${item.price + item.shiprice}원</p>
 					<p>배송비</p>
 					<p>${item.shiprice}원</p>
@@ -104,7 +107,7 @@ form>div{
 			</div>
 			<div>
 				<p>최종 결제 금액</p>
-				<p>${item.price + item.shiprice}원</p>
+				<p><%= finalPrice %></p>
 			</div>
 		</div>
 		<div class="method">

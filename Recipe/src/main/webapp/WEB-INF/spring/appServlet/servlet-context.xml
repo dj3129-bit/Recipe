@@ -31,7 +31,8 @@
 	
 	<interceptors>
       <interceptor>
-         <mapping path="/post/**"/>
+         <mapping path="/post/add/**"/>
+         <mapping path="/post/order/**"/>
          <mapping path="/user/**"/>
          <beans:bean class="com.recipe.interceptor.UserInterceptor"></beans:bean>
       </interceptor>
