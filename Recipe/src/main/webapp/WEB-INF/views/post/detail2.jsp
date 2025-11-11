@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
 				</div>
 				<div>
 					<button type="button" class="cart" id="addcart"><i class="bi bi-cart-check"></i>&nbsp;장바구니</button>
-					<a href="/post/order/${item.kitid}"><button type="button" class="buy" id="buy">바로 구매</button></a>
+					<button type="button" class="buy" id="buy">바로 구매</button>
 				</div>
 			</div>
 		</div>
@@ -100,7 +100,7 @@
     document.getElementById('buy').addEventListener('click', function(){
     	let quantity = parseInt(input.value);
     	const total = unitPrice * quantity;
-    	const finalPrice = total + shipPrice
+    	const finalPrice = total + shipPrice;
     	location.href = contextPath + "/post/order/" + kitId + "?quantity=" + quantity + "&totalprice=" + finalPrice;
     })
 </script>

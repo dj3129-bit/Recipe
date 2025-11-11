@@ -24,10 +24,10 @@ form>div{
 </style>
 </head>
 <body>
-<%
+<%-- <%
   String quantity = request.getParameter("quantity");
   String finalPrice = request.getParameter("totalprice");
-%>
+%> --%>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <hr style="width: 100%; border:1px solid #000;">
 <div class="container" style="width: 60%; margin: 0 auto;">
@@ -80,8 +80,8 @@ form>div{
 				</div>
 				<div>
 					<p>${kititle}</p>
-					<p>수량 : <%= quantity %>개</p>
-					<p>${item.price + item.shiprice}원</p>
+					<p>수량 : ${quantity}개</p>
+					<p>${totalprice}원</p>
 					<p>배송비</p>
 					<p>${item.shiprice}원</p>
 				</div>
@@ -102,12 +102,12 @@ form>div{
 				<p>할인 금액 : 0원</p>
 			</div>
 			<div>
-				<p>${item.price + item.shiprice}원</p>
+				<p>상품 금액 : ${totalprice}원</p>
 				<p>-0원</p>
 			</div>
 			<div>
 				<p>최종 결제 금액</p>
-				<p><%= finalPrice %></p>
+				<p>${totalprice}원</p>
 			</div>
 		</div>
 		<div class="method">
@@ -121,7 +121,7 @@ form>div{
 		<div class="agree">
 			<p>주문 내용을 확인하였으며 약관에 동의합니다.</p>
 		</div>
-		<button type="submit">${item.price + item.shiprice}원 결제하기</button>
+		<button type="submit">${totalprice}원 결제하기</button>
 	</form>
 </div>
 </body>
