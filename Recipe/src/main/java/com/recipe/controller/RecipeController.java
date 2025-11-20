@@ -279,6 +279,7 @@ public class RecipeController {
 		return "post/order";
 	}
 	
+	//레시피 즐겨찾기 추가
 //	@GetMapping("/favor")
 //	String favor(@RequestParam("recipeid") int recipeid, HttpSession session, RedirectAttributes redirectAttributes) {
 //		String userid = (String) session.getAttribute("userid");
