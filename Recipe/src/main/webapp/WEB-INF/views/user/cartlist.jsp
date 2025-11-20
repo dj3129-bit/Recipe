@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <script src="https://kit.fontawesome.com/70bb3411ef.js" crossorigin="anonymous"></script>
 </head>
+<style>
+.headinput{
+	margin-right: 15px !important;
+	width: 45% !important;
+}
+</style>
 <body>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 	<hr style="width: 100%; border:1px solid #000;">

@@ -24,10 +24,6 @@ form>div{
 </style>
 </head>
 <body>
-<%-- <%
-  String quantity = request.getParameter("quantity");
-  String finalPrice = request.getParameter("totalprice");
-%> --%>
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <hr style="width: 100%; border:1px solid #000;">
 <div class="container" style="width: 60%; margin: 0 auto;">
